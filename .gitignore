@@ -1,4 +1,7 @@
-.sass-cache/
-*.css.map
-*.sass.map
-*.scss.map
+*.gem
+.bundle
+.sass-cache
+_site
+Gemfile.lock
+*.code-workspace
+
