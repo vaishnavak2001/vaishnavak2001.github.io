@@ -51,7 +51,7 @@ content:
           - title: GitHub Repository
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/diabetic-retinopathy-detection
-        quote: |+
+        quote: |
           Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images. 
 
          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>EfficientNetB3</mark>, <mark>Transfer Learning</mark>, <mark>ImageDataGenerator</mark>, <mark>Regularization</mark>, <mark>Data Augmentation</mark>
@@ -78,24 +78,29 @@ content:
           - title: GitHub Repository
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/pneumonia-detection
-        quote: |+
+        quote: |
           <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>Deep Learning</mark>, <mark>Transfer Learning</mark>
+          
           CNN-based classification of X-ray images to detect pneumonia in patients.
 
-        description: |+
+        description: |
           • Developed a deep learning-based image classification system to detect pneumonia from chest X-ray images using pre-trained Convolutional Neural Networks (CNNs).
+          
           • Evaluated the performance of multiple CNN architectures including MobileNet, Inception, VGG16, and DenseNet for accuracy and efficiency.
+          
           • MobileNet achieved the highest accuracy of 88.6%, demonstrating a strong balance between performance and computational cost.
+          
           • Inception (85.3%) and VGG16 (85.1%) also showed robust results, while DenseNet (79.8%) had comparatively lower accuracy, highlighting potential areas for model optimization.
+          
           • Employed transfer learning techniques and conducted comparative analysis to determine the most effective model for real-time deployment in medical imaging scenarios.
-                        - layout: top-middle
+      - layout: top-middle
         title: Skin Disorder Detection
         link: https://github.com/vaishnavak2001/skin-disorder-detection
         additional_links:
           - title: GitHub Repository
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/skin-disorder-detection
-        quote: |+
+        quote: |
           Skin Disorder Detection using Machine Learning.Differentiating six types of Erythemato-Squamous Diseases (ESD).
           <mark>Python</mark>, <mark>Machine Learning</mark>, <mark>Classification</mark>, <mark>Data Preprocessing</mark>, <mark>Feature Selection</mark>, <mark>EDA</mark>, <mark>Scikit-learn</mark>, <mark>XGBoos</mark>t, <mark>Random Forest</mark>, <mark>SVM</mark>, <mark>Logistic Regression</mark>, <mark>Supervised Learning</mark>
         description: |+
