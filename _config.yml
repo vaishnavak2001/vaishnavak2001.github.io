@@ -53,13 +53,20 @@ content:
             url: https://github.com/vaishnavak2001/diabetic-retinopathy-detection
         quote: >
           Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images.
-        description: |
+
           <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>EfficientNetB3</mark>, <mark>Transfer Learning</mark>, <mark>ImageDataGenerator</mark>, <mark>Regularization</mark>, <mark>Data Augmentation</mark>
+          
           • Developed an image classification model to detect stages of diabetic retinopathy using retinal fundus images.
+        description: |
+          
           • Implemented EfficientNetB3 with custom dense layers, L1/L2 regularization, and dropout to prevent overfitting.
+          
           • Applied extensive data augmentation (rotation, ZCA whitening, etc.) to enhance dataset variability and improve model generalization.
+          
           • Achieved ~99.7% training accuracy, ~86.3% validation accuracy, and ~81.9% test accuracy.
+          
           • Conducted model evaluation across multiple architectures (VGG16, ResNet50, InceptionV3) and fine-tuned hyperparameters for optimal performance.
+          
           • Used transfer learning and fine-tuning (Phase 1 & 2) strategies for efficient model training and performance improvement on limited medical image data.
 
       - layout: top-middle
