@@ -52,9 +52,9 @@ content:
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/diabetic-retinopathy-detection
         quote: >
-          Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images.\n
+          Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images. \n
 
-          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>EfficientNetB3</mark>, <mark>Transfer Learning</mark>, <mark>ImageDataGenerator</mark>, <mark>Regularization</mark>, <mark>Data Augmentation</mark> \n
+         \n<mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>EfficientNetB3</mark>, <mark>Transfer Learning</mark>, <mark>ImageDataGenerator</mark>, <mark>Regularization</mark>, <mark>Data Augmentation</mark>\n
           
 
         description: |
