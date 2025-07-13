@@ -111,7 +111,7 @@ content:
           • Built and evaluated five classification models: Decision Tree, Random Forest, Support Vector Machine (SVM), XGBoost, and Logistic Regression using Scikit-learn and XGBoost library, achieving up to 93% accuracy.
           
           • Finalized Random Forest Classifier based on its high precision and robustness in predicting the correct skin disease class, enabling accurate diagnosis of ESD types such as psoriasis, seborrheic dermatitis, and lichen planus.
-            - layout: top-middle
+      - layout: top-middle
         title: Face Detection and Gender Prediction
         link: https://github.com/vaishnavak2001/face-gender-prediction
         additional_links:
