@@ -103,6 +103,89 @@ content:
           • Built five supervised classification models: Decision Tree, Random Forest, Support Vector Machine (SVM), XGBoost, and Logistic Regression.<br>
           • Tuned hyperparameters using GridSearchCV and cross-validation; Random Forest outperformed others with ~93% accuracy, high recall, and robustness.<br>
           • Enabled early diagnosis of skin conditions like psoriasis, seborrheic dermatitis, lichen planus, pityriasis rosea, chronic dermatitis, and lichen simplex using structured diagnostic inputs.<br>
+            - layout: top-middle
+        title: Face Detection and Gender Prediction
+        link: https://github.com/vaishnavak2001/face-gender-prediction
+        additional_links:
+          - title: GitHub Repository
+            icon: fab fa-github
+            url: https://github.com/vaishnavak2001/face-gender-prediction
+        quote: >
+          Real-time face and gender classification using MobileNet and OpenCV.
+          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>OpenCV</mark>, <mark>InceptionV3</mark>, <mark>VGG16</mark>, <mark>MobileNet</mark>, <mark>DenseNet</mark>
+        description: |
+          • Developed a deep learning model to detect faces and predict gender from images using CNN-based architectures.
+          • Evaluated and compared four pretrained models (InceptionV3, VGG16, MobileNet, DenseNet); fine-tuned InceptionV3 achieved the highest accuracy.
+          • Implemented data preprocessing, augmentation, and model optimization techniques to improve performance.
+          • Proposed future enhancements for real-time deployment through hyperparameter tuning and optimized preprocessing.
+          • Deployed deep learning inference in real time using webcam for accurate face/gender recognition.
+      - layout: top-middle
+        title: Handwritten Digit Recognition (MNIST)
+        link: https://github.com/vaishnavak2001/handwritten-digit-recognition
+        additional_links:
+          - title: GitHub Repository
+            icon: fab fa-github
+            url: https://github.com/vaishnavak2001/handwritten-digit-recognition
+        quote: >
+          Trained and tuned a deep neural net to classify digits with high accuracy.
+          
+        description: |
+          <mark>Python</mark>, <mark>Deep Learning</mark>, <mark>Neural Networks</mark>, <mark>TensorFlow</mark>
+          
+          • Developed a neural network model to recognize handwritten digits from the MNIST dataset.
+          
+          • Implemented and optimized a multi-layered neural network, achieving high accuracy in classification.
+          
+          • Utilized techniques like regularization and data normalization to improve model performance and reduce overfitting.
+          
+          • Gained hands-on experience with model evaluation, accuracy measurement, and debugging in python using libraries such as TensorFlow/Keras or PyTorch.
+          
+          • Integrated dropout, normalization, and parameter tuning for MNIST dataset classification using Keras.
+
+      - layout: top-middle
+        title: Auto Price Prediction
+        link: https://github.com/vaishnavak2001/auto-price-prediction
+        additional_links:
+          - title: GitHub Repository
+            icon: fab fa-github
+            url: https://github.com/vaishnavak2001/auto-price-prediction
+        quote: >
+          Predictive modeling for estimating car prices from structured data.
+          
+        description: |
+          <mark>Python</mark>, <mark>Regression</mark>, <mark>EDA</mark>, <mark>Feature Engineering</mark>
+          
+          • Conducted a complete data analysis report to explore relationships between car features and prices, uncovering significant pricing trends
+          
+          • Build a predictive model using data science techniques to estimate car prices based on independent variables.
+          
+          • Employed feature engineering and model optimization to enhance prediction accuracy and interpretability.
+          
+          • Enabled management to make data-driven decisions for car design and business strategy by understanding pricing dynamics in a new market.
+          
+          • Applied regression models (XGBoost, Random Forest) with feature engineering to predict vehicle pricing.
+
+      - layout: top-middle
+        title: FIFA20 Player Clustering
+        link: https://github.com/vaishnavak2001/fifa20-clustering
+        additional_links:
+          - title: GitHub Repository
+            icon: fab fa-github
+            url: https://github.com/vaishnavak2001/fifa20-clustering
+        quote: >
+          Grouping football players by attributes using unsupervised learning.
+        description: |
+          <mark>Python</mark>, <mark>Clustering</mark> , <mark>Unsupervised Learning</mark>, <mark>K-Means</mark>, <mark>Hierarchical Clustering</mark>
+          
+          • Analyzed the FIFA20 dataset to cluster soccer players based on attributes using K-Means and Hierarchical Clustering, achieving a silhouette score of 0.74.
+          
+          • Developed three player clusters: Defenders/Central Midfielders, Attackers/Central Midfielders, and Goalkeepers.
+          
+          • Analyzed age vs. overall rating trends and salary distributions among offensive players.
+          
+          • Performed data preprocessing to handle missing values and reduce redundancy.
+          
+          • Implemented K-Means and Hierarchical clustering to extract skill-based groupings for player roles.  
 
 # Footer
 footer_show_references: true
