@@ -8,7 +8,7 @@ version: 2
 # Theme Customization
 theme_color: "#0F172A"          # Tailwind Slate-900
 accent_color: "#4F46E5"         # Tailwind Indigo-600
-darkmode: true                  # true / false / never
+darkmode: false                  # true / false / never
 
 # Personal info
 name: Vaishnav AK
