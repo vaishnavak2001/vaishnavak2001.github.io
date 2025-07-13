@@ -101,7 +101,6 @@ content:
           Skin Disorder Detection using Machine Learning.Differentiating six types of Erythemato-Squamous Diseases (ESD).
          
         description: |
-        
            <mark>Python</mark>, <mark>Machine Learning</mark>, <mark>Classification</mark>, <mark>Data Preprocessing</mark>, <mark>Feature Selection</mark>, <mark>EDA</mark>, <mark>Scikit-learn</mark>, <mark>XGBoos</mark>t, <mark>Random Forest</mark>, <mark>SVM</mark>, <mark>Logistic Regression</mark>, <mark>Supervised Learning</mark>
           
           • Utilized a dermatology dataset with 366 samples and 35 features (clinical and histopathological); performed data cleaning, handled missing and invalid values in the Age attribute, and applied feature selection by removing 13 highly correlated attributes to reduce overfitting and improve model interpretability.
@@ -182,7 +181,6 @@ content:
             url: https://github.com/vaishnavak2001/fifa20-clustering
         quote: >
           Grouping football players by attributes using unsupervised learning.
-          
         description: |
           <mark>Python</mark>, <mark>Clustering</mark> , <mark>Unsupervised Learning</mark>, <mark>K-Means</mark>, <mark>Hierarchical Clustering</mark>
           
