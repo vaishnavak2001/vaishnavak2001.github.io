@@ -54,10 +54,11 @@ content:
         quote: |
           Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images. 
 
-         <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>EfficientNetB3</mark>, <mark>Transfer Learning</mark>, <mark>ImageDataGenerator</mark>, <mark>Regularization</mark>, <mark>Data Augmentation</mark>
+         
           
 
         description: |
+          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>EfficientNetB3</mark>, <mark>Transfer Learning</mark>, <mark>ImageDataGenerator</mark>, <mark>Regularization</mark>, <mark>Data Augmentation</mark>
           
           • Developed an image classification model to detect stages of diabetic retinopathy using retinal fundus images.
           
@@ -79,11 +80,11 @@ content:
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/pneumonia-detection
         quote: |
-          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>Deep Learning</mark>, <mark>Transfer Learning</mark>
-          
           CNN-based classification of X-ray images to detect pneumonia in patients.
 
         description: |
+          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>Deep Learning</mark>, <mark>Transfer Learning</mark>
+          
           • Developed a deep learning-based image classification system to detect pneumonia from chest X-ray images using pre-trained Convolutional Neural Networks (CNNs).
           
           • Evaluated the performance of multiple CNN architectures including MobileNet, Inception, VGG16, and DenseNet for accuracy and efficiency.
@@ -102,11 +103,17 @@ content:
             url: https://github.com/vaishnavak2001/skin-disorder-detection
         quote: |
           Skin Disorder Detection using Machine Learning.Differentiating six types of Erythemato-Squamous Diseases (ESD).
-          <mark>Python</mark>, <mark>Machine Learning</mark>, <mark>Classification</mark>, <mark>Data Preprocessing</mark>, <mark>Feature Selection</mark>, <mark>EDA</mark>, <mark>Scikit-learn</mark>, <mark>XGBoos</mark>t, <mark>Random Forest</mark>, <mark>SVM</mark>, <mark>Logistic Regression</mark>, <mark>Supervised Learning</mark>
-        description: |+
+         
+        description: |
+        
+           <mark>Python</mark>, <mark>Machine Learning</mark>, <mark>Classification</mark>, <mark>Data Preprocessing</mark>, <mark>Feature Selection</mark>, <mark>EDA</mark>, <mark>Scikit-learn</mark>, <mark>XGBoos</mark>t, <mark>Random Forest</mark>, <mark>SVM</mark>, <mark>Logistic Regression</mark>, <mark>Supervised Learning</mark>
+          
           • Utilized a dermatology dataset with 366 samples and 35 features (clinical and histopathological); performed data cleaning, handled missing and invalid values in the Age attribute, and applied feature selection by removing 13 highly correlated attributes to reduce overfitting and improve model interpretability.
+          
           • Applied exploratory data analysis (EDA) and correlation matrix techniques to identify multicollinearity; optimized dataset by dropping redundant features like itching, melanin incontinence, and band-like infiltrate for better performance.
+          
           • Built and evaluated five classification models: Decision Tree, Random Forest, Support Vector Machine (SVM), XGBoost, and Logistic Regression using Scikit-learn and XGBoost library, achieving up to 93% accuracy.
+          
           • Finalized Random Forest Classifier based on its high precision and robustness in predicting the correct skin disease class, enabling accurate diagnosis of ESD types such as psoriasis, seborrheic dermatitis, and lichen planus.
             - layout: top-middle
         title: Face Detection and Gender Prediction
@@ -115,10 +122,10 @@ content:
           - title: GitHub Repository
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/face-gender-prediction
-        quote: |+
+        quote: |
           Real-time face and gender classification using MobileNet and OpenCV.
           <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>OpenCV</mark>, <mark>InceptionV3</mark>, <mark>VGG16</mark>, <mark>MobileNet</mark>, <mark>DenseNet</mark>
-        description: |+
+        description: |
           • Developed a deep learning model to detect faces and predict gender from images using CNN-based architectures.
           • Evaluated and compared four pretrained models (InceptionV3, VGG16, MobileNet, DenseNet); fine-tuned InceptionV3 achieved the highest accuracy.
           • Implemented data preprocessing, augmentation, and model optimization techniques to improve performance.
@@ -131,7 +138,7 @@ content:
           - title: GitHub Repository
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/handwritten-digit-recognition
-        quote: |+
+        quote: |
           Trained and tuned a deep neural net to classify digits with high accuracy.
           <mark>Python</mark>, <mark>Deep Learning</mark>, <mark>Neural Networks</mark>, <mark>TensorFlow</mark>
         description: |+
