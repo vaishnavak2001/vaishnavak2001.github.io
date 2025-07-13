@@ -5,6 +5,11 @@ favicon: images/favicon.ico
 # Content configuration version
 version: 2
 
+# Theme Customization
+theme_color: "#0F172A"          # Tailwind Slate-900
+accent_color: "#4F46E5"         # Tailwind Indigo-600
+darkmode: true                  # true / false / never
+
 # Personal info
 name: Vaishnav AK
 title: Data Scientist & AI Enthusiast | Biomedical Engineer
@@ -12,10 +17,7 @@ email: vaishnavak001@gmail.com
 website: https://github.com/vaishnavak2001
 resume: assets/Vaishnav_Ak_Resume.pdf
 
-# Dark Mode (true/false/never)
-darkmode: false
-
-# Social links
+# Social Links
 github_username: vaishnavak2001
 linkedin_username: vaishnav-ak
 instagram_username: vaishnav__ak
@@ -30,16 +32,16 @@ additional_links:
 about_profile_image: images/profile.jpg
 about_content: |
   I’m Vaishnav AK, an Engineer on a mission to redefine the future of healthcare through AI, Data Science, and Biomedical Innovation.
-  
+
   With a core academic foundation in Applied Electronics and Instrumentation Engineering from KTU University, my passion lies in merging the physical world of medical devices with the digital intelligence of machine learning. I specialize in building AI-powered healthcare solutions, applying deep learning, predictive analytics, and biomedical signal processing to solve complex clinical problems.
-  
+
   My journey into Artificial Intelligence and Data Science began with curiosity—driven by a question: How can we use data and algorithms to improve early diagnosis, personalize treatment, and ultimately save lives? This curiosity quickly evolved into structured learning and hands-on experimentation.
-  
-  To pursue this mission, I enrolled in a Certified Data Science Program (Sept 2023 – July 2024), which provided me with a rigorous foundation in Python, Pandas, NumPy, machine learning algorithms, data visualization, statistics, and model deployment. I didn’t stop there. Understanding the importance of deeper intelligence systems, I further advanced into an AI Expert Program (July 2024 – April 2025), where I focused on deep learning, CNNs, transfer learning, NLP, and AI for medical imaging and signals. During this time, I worked on multiple AI projects specifically targeted at healthcare challenges
-  
-  In parallel, I was gaining hands-on experience in clinical environments. As a Biomedical Instrumentation Engineer Trainee (since Nov 2024), I have worked in hospital departments dealing with ECG machines, ventilators, defibrillators, patient monitoring systems, and diagnostic imaging equipment. This dual experience in both hardware instrumentation and healthcare data analysis has given me a rare and valuable perspective on the end-to-end healthcare system—from device calibration to disease prediction.
-  
-  One of the most transformative parts of my journey was my role as a Data Science and AI Consultant Intern at Rubixe® (Oct 2023 – June 2024), an emerging tech company focused on delivering smart AI solutions to global clients. At Rubixe, I Worked on end-to-end data science projects including EDA, feature engineering, model training, evaluation, and fine-tuning. Designed and implemented ML pipelines tailored to specific industry requirements, from healthcare prediction models to smart automation tools. Gained exposure to real-world AI deployment challenges, such as handling imbalanced datasets, model interpretability, and data governance. Led a capstone project focused on predictive analytics in health diagnostics, where I collaborated with a team to build a solution that could identify health risk patterns from structured patient datasets. Participated in code reviews, client requirement discussions, and research on cutting-edge tools in deep learning (TensorFlow, Keras) and computer vision. My experience at Rubixe helped solidify my applied AI skills and showed me how to transform theoretical knowledge into scalable, real-world systems.
+
+  To pursue this mission, I enrolled in a Certified Data Science Program (Sept 2023 – July 2024), which provided me with a rigorous foundation in Python, Pandas, NumPy, machine learning algorithms, data visualization, statistics, and model deployment. I didn’t stop there. Understanding the importance of deeper intelligence systems, I further advanced into an AI Expert Program (July 2024 – April 2025), where I focused on deep learning, CNNs, transfer learning, NLP, and AI for medical imaging and signals. During this time, I worked on multiple AI projects specifically targeted at healthcare challenges.
+
+  In parallel, I gained hands-on experience in clinical environments. As a Biomedical Instrumentation Engineer Trainee (since Nov 2024), I’ve worked with hospital departments on ECG machines, ventilators, defibrillators, patient monitors, and imaging systems. This dual expertise in hardware instrumentation and healthcare data analytics offers a rare and valuable end-to-end view of the healthcare ecosystem.
+
+  One of the most transformative parts of my journey was my internship as a Data Science and AI Consultant at Rubixe® (Oct 2023 – June 2024), an emerging tech company delivering smart AI solutions to global clients. At Rubixe, I worked on end-to-end data science projects: EDA, feature engineering, model development, evaluation, and deployment. I designed ML pipelines for real-world problems, including healthcare diagnostics and smart automation. My capstone project focused on predictive health diagnostics—extracting risk patterns from structured patient data. I also contributed to code reviews, client sessions, and deep learning research (TensorFlow, Keras, CV). This experience shaped my ability to turn AI theory into scalable systems.
 
 content:
   - title: Projects
@@ -56,12 +58,13 @@ content:
           Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images.
         description: |
           <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>EfficientNetB3</mark>, <mark>Transfer Learning</mark>, <mark>ImageDataGenerator</mark>, <mark>Regularization</mark>, <mark>Data Augmentation</mark><br>
-          • Developed an image classification model to detect stages of diabetic retinopathy using retinal fundus images.<br>
-          • Implemented EfficientNetB3 with custom dense layers, L1/L2 regularization, and dropout to prevent overfitting.<br>
-          • Applied extensive data augmentation (rotation, ZCA whitening, etc.) to enhance dataset variability and improve model generalization.<br>
-          • Achieved ~99.7% training accuracy, ~86.3% validation accuracy, and ~81.9% test accuracy.<br>
-          • Conducted model evaluation across multiple architectures (VGG16, ResNet50, InceptionV3) and fine-tuned hyperparameters for optimal performance.<br>
-          • Used transfer learning and fine-tuning (Phase 1 & 2) strategies for efficient model training and performance improvement on limited medical image data.<br>
+          • Developed a deep learning-based image classification model to detect the severity of diabetic retinopathy using high-resolution retinal fundus images from the APTOS and EyePACS datasets.<br>
+          • Implemented EfficientNetB3 as the backbone architecture with custom dense layers, L1/L2 regularization, batch normalization, and dropout to mitigate overfitting.<br>
+          • Applied advanced data augmentation techniques, including rotation, zoom, shear, and ZCA whitening, to artificially expand dataset variability and improve generalization.<br>
+          • Achieved strong performance with ~99.7% training accuracy, ~86.3% validation accuracy, and ~81.9% test accuracy across cross-validated folds.<br>
+          • Compared and benchmarked performance across other pre-trained models like VGG16, ResNet50, and InceptionV3 to validate architectural choice.<br>
+          • Employed a two-phase training approach using transfer learning and fine-tuning strategies to adapt models on limited medical image data.<br>
+          • Implemented model evaluation metrics including confusion matrix, AUC, precision-recall, and class-wise F1-score to assess clinical reliability.<br>
 
       - layout: top-middle
         title: Pneumonia Detection via Chest X-rays
@@ -74,29 +77,32 @@ content:
           CNN-based classification of X-ray images to detect pneumonia in patients.
         description: |
           <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>Deep Learning</mark>, <mark>Transfer Learning</mark><br>
-          • Developed a deep learning-based image classification system to detect pneumonia from chest X-ray images using pre-trained Convolutional Neural Networks (CNNs).<br>
-          • Evaluated the performance of multiple CNN architectures including MobileNet, Inception, VGG16, and DenseNet for accuracy and efficiency.<br>
-          • MobileNet achieved the highest accuracy of 88.6%, demonstrating a strong balance between performance and computational cost.<br>
-          • Inception (85.3%) and VGG16 (85.1%) also showed robust results, while DenseNet (79.8%) had comparatively lower accuracy, highlighting potential areas for model optimization.<br>
-          • Employed transfer learning techniques and conducted comparative analysis to determine the most effective model for real-time deployment in medical imaging scenarios.<br>
+          • Built a convolutional neural network (CNN)-based image classification system to identify pneumonia from grayscale chest X-ray images, leveraging the NIH Chest X-ray and Kaggle dataset.<br>
+          • Integrated and fine-tuned pre-trained models such as MobileNet, InceptionV3, VGG16, and DenseNet to assess diagnostic accuracy and computational efficiency.<br>
+          • MobileNet architecture achieved the highest overall test accuracy of 88.6%, balancing predictive performance with low inference latency for clinical deployment.<br>
+          • InceptionV3 and VGG16 demonstrated robust diagnostic capabilities with accuracy scores of 85.3% and 85.1% respectively; DenseNet yielded 79.8%, indicating sensitivity to overfitting.<br>
+          • Applied preprocessing steps including grayscale normalization, image resizing, and CLAHE (Contrast Limited Adaptive Histogram Equalization) to enhance contrast and reduce noise.<br>
+          • Implemented real-time image classification logic with softmax output and thresholding for binary disease classification (normal vs pneumonia).<br>
+          • Used key performance indicators such as ROC-AUC, confusion matrix, and recall to evaluate potential clinical use in resource-limited radiology units.<br>
 
       - layout: top-middle
-        title: Skin Disorder Detection
+        title: Skin Disorder Detection (ESD)
         link: https://github.com/vaishnavak2001/skin-disorder-detection
         additional_links:
           - title: GitHub Repository
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/skin-disorder-detection
         quote: >
-          Skin Disorder Detection using Machine Learning.Differentiating six types of Erythemato-Squamous Diseases (ESD).
+          Classification of six types of Erythemato-Squamous Diseases using ML classifiers.
         description: |
-          <mark>Python</mark>, <mark>Machine Learning</mark>, <mark>Classification</mark>, <mark>Data Preprocessing</mark>, <mark>Feature Selection</mark>, <mark>EDA</mark>, <mark>Scikit-learn</mark>, <mark>XGBoost</mark>, <mark>Random Forest</mark>, <mark>SVM</mark>, <mark>Logistic Regression</mark>, <mark>Supervised Learning</mark><br>
-          • Utilized a dermatology dataset with 366 samples and 35 features (clinical and histopathological); performed data cleaning, handled missing and invalid values in the Age attribute, and applied feature selection by removing 13 highly correlated attributes to reduce overfitting and improve model interpretability.<br>
-          • Applied exploratory data analysis (EDA) and correlation matrix techniques to identify multicollinearity; optimized dataset by dropping redundant features like itching, melanin incontinence, and band-like infiltrate for better performance.<br>
-          • Built and evaluated five classification models: Decision Tree, Random Forest, Support Vector Machine (SVM), XGBoost, and Logistic Regression using Scikit-learn and XGBoost library, achieving up to 93% accuracy.<br>
-          • Finalized Random Forest Classifier based on its high precision and robustness in predicting the correct skin disease class, enabling accurate diagnosis of ESD types such as psoriasis, seborrheic dermatitis, and lichen planus.<br>
-
-# (Continue other projects in the same pattern if needed…)
+          <mark>Python</mark>, <mark>Machine Learning</mark>, <mark>Classification</mark>, <mark>Data Preprocessing</mark>, <mark>Feature Selection</mark>, <mark>EDA</mark>, <mark>Scikit-learn</mark>, <mark>XGBoost</mark>, <mark>Random Forest</mark>, <mark>SVM</mark>, <mark>Logistic Regression</mark><br>
+          • Utilized a dermatology dataset from the UCI Machine Learning Repository containing 366 samples and 35 features (clinical + histopathological attributes) for multiclass classification of Erythemato-Squamous Diseases (ESD).<br>
+          • Conducted robust data preprocessing including imputation of missing values in the ‘Age’ attribute, label encoding for categorical features, and outlier detection.<br>
+          • Applied feature selection by removing 13 highly correlated variables to reduce multicollinearity, overfitting risk, and improve model explainability.<br>
+          • Performed detailed EDA using seaborn correlation matrices, boxplots, and pairwise distribution graphs to interpret the underlying data structure.<br>
+          • Built five supervised classification models: Decision Tree, Random Forest, Support Vector Machine (SVM), XGBoost, and Logistic Regression.<br>
+          • Tuned hyperparameters using GridSearchCV and cross-validation; Random Forest outperformed others with ~93% accuracy, high recall, and robustness.<br>
+          • Enabled early diagnosis of skin conditions like psoriasis, seborrheic dermatitis, lichen planus, pityriasis rosea, chronic dermatitis, and lichen simplex using structured diagnostic inputs.<br>
 
 # Footer
 footer_show_references: true
