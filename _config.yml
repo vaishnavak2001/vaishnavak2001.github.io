@@ -28,13 +28,17 @@ additional_links:
 # About Section
 about_profile_image: images/profile.jpg
 about_content: |
-  mark>I’m Vaishnav AK, an Engineer on a mission to redefine the future of healthcare through AI, Data Science, and Biomedical Innovation.mark>
+  I’m Vaishnav AK, an Engineer on a mission to redefine the future of healthcare through AI, Data Science, and Biomedical Innovation.
+  
   With a core academic foundation in Applied Electronics and Instrumentation Engineering from KTU University, my passion lies in merging the physical world of medical devices with the digital intelligence of machine learning. I specialize in building AI-powered healthcare solutions, applying deep learning, predictive analytics, and biomedical signal processing to solve complex clinical problems.
+  
   My journey into Artificial Intelligence and Data Science began with curiosity—driven by a question: How can we use data and algorithms to improve early diagnosis, personalize treatment, and ultimately save lives? This curiosity quickly evolved into structured learning and hands-on experimentation.
+  
   To pursue this mission, I enrolled in a Certified Data Science Program (Sept 2023 – July 2024), which provided me with a rigorous foundation in Python, Pandas, NumPy, machine learning algorithms, data visualization, statistics, and model deployment. I didn’t stop there. Understanding the importance of deeper intelligence systems, I further advanced into an AI Expert Program (July 2024 – April 2025), where I focused on deep learning, CNNs, transfer learning, NLP, and AI for medical imaging and signals. During this time, I worked on multiple AI projects specifically targeted at healthcare challenges
+  
   In parallel, I was gaining hands-on experience in clinical environments. As a Biomedical Instrumentation Engineer Trainee (since Nov 2024), I have worked in hospital departments dealing with ECG machines, ventilators, defibrillators, patient monitoring systems, and diagnostic imaging equipment. This dual experience in both hardware instrumentation and healthcare data analysis has given me a rare and valuable perspective on the end-to-end healthcare system—from device calibration to disease prediction.
-  One of the most transformative parts of my journey was my role as a Data Science and AI Consultant Intern at Rubixe® (Oct 2023 – June 2024), an emerging tech company focused on delivering smart AI solutions to global clients. 
-  At Rubixe, I Worked on end-to-end data science projects including EDA, feature engineering, model training, evaluation, and fine-tuning. Designed and implemented ML pipelines tailored to specific industry requirements, from healthcare prediction models to smart automation tools. Gained exposure to real-world AI deployment challenges, such as handling imbalanced datasets, model interpretability, and data governance. Led a capstone project focused on predictive analytics in health diagnostics, where I collaborated with a team to build a solution that could identify health risk patterns from structured patient datasets. Participated in code reviews, client requirement discussions, and research on cutting-edge tools in deep learning (TensorFlow, Keras) and computer vision. My experience at Rubixe helped solidify my applied AI skills and showed me how to transform theoretical knowledge into scalable, real-world systems.
+  
+  One of the most transformative parts of my journey was my role as a Data Science and AI Consultant Intern at Rubixe® (Oct 2023 – June 2024), an emerging tech company focused on delivering smart AI solutions to global clients. At Rubixe, I Worked on end-to-end data science projects including EDA, feature engineering, model training, evaluation, and fine-tuning. Designed and implemented ML pipelines tailored to specific industry requirements, from healthcare prediction models to smart automation tools. Gained exposure to real-world AI deployment challenges, such as handling imbalanced datasets, model interpretability, and data governance. Led a capstone project focused on predictive analytics in health diagnostics, where I collaborated with a team to build a solution that could identify health risk patterns from structured patient datasets. Participated in code reviews, client requirement discussions, and research on cutting-edge tools in deep learning (TensorFlow, Keras) and computer vision. My experience at Rubixe helped solidify my applied AI skills and showed me how to transform theoretical knowledge into scalable, real-world systems.
 
 content:
   - title: Projects
@@ -50,7 +54,7 @@ content:
         quote: >
           Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images.
         description: |
-          <mark>Python<mark>, <mark>TensorFlow<mark>, <mark>Keras, <mark>EfficientNetB3, <mark>Transfer Learning, <mark>ImageDataGenerator, <mark>Regularization<mark>, <mark>Data Augmentation
+          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>EfficientNetB3</mark>, <mark>Transfer Learning</mark>, <mark>ImageDataGenerator</mark>, <mark>Regularization</mark>, <mark>Data Augmentation</mark>
           • Developed an image classification model to detect stages of diabetic retinopathy using retinal fundus images.
           • Implemented EfficientNetB3 with custom dense layers, L1/L2 regularization, and dropout to prevent overfitting.
           • Applied extensive data augmentation (rotation, ZCA whitening, etc.) to enhance dataset variability and improve model generalization.
@@ -66,8 +70,10 @@ content:
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/pneumonia-detection
         quote: >
+          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>Deep Learning</mark>, <mark>Transfer Learning</mark>
+        quote: >
           CNN-based classification of X-ray images to detect pneumonia in patients.
-          <mark>Python<mark>, <mark>TensorFlow<mark>, <mark>Keras, <mark>Deep Learning, <mark>Transfer Learning
+
         description: |
           • Developed a deep learning-based image classification system to detect pneumonia from chest X-ray images using pre-trained Convolutional Neural Networks (CNNs).
           • Evaluated the performance of multiple CNN architectures including MobileNet, Inception, VGG16, and DenseNet for accuracy and efficiency.
@@ -83,7 +89,7 @@ content:
             url: https://github.com/vaishnavak2001/skin-disorder-detection
         quote: >
           Skin Disorder Detection using Machine Learning.Differentiating six types of Erythemato-Squamous Diseases (ESD).
-          <mark>Python<mark>, <mark>Machine Learning<mark>, <mark>Classification<mark>, <mark>Data Preprocessing<mark>, <mark>Feature Selection<mark>, <mark>EDA<mark>, <mark>Scikit-learn<mark>, <mark>XGBoos<mark>t, <mark>Random Forest<mark>, <mark>SVM<mark>, <mark>Logistic Regression<mark>, <mark>Supervised Learning
+          <mark>Python</mark>, <mark>Machine Learning</mark>, <mark>Classification</mark>, <mark>Data Preprocessing</mark>, <mark>Feature Selection</mark>, <mark>EDA</mark>, <mark>Scikit-learn</mark>, <mark>XGBoos</mark>t, <mark>Random Forest</mark>, <mark>SVM</mark>, <mark>Logistic Regression</mark>, <mark>Supervised Learning</mark>
         description: |
           • Utilized a dermatology dataset with 366 samples and 35 features (clinical and histopathological); performed data cleaning, handled missing and invalid values in the Age attribute, and applied feature selection by removing 13 highly correlated attributes to reduce overfitting and improve model interpretability.
           • Applied exploratory data analysis (EDA) and correlation matrix techniques to identify multicollinearity; optimized dataset by dropping redundant features like itching, melanin incontinence, and band-like infiltrate for better performance.
@@ -98,7 +104,7 @@ content:
             url: https://github.com/vaishnavak2001/face-gender-prediction
         quote: >
           Real-time face and gender classification using MobileNet and OpenCV.
-          <mark>Python<mark>, <mark>TensorFlow<mark>, <mark>Keras<mark>, <mark>OpenCV<mark>, <mark>InceptionV3<mark>, <mark>VGG16<mark>, <mark>MobileNet<mark>, <mark>DenseNet
+          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>OpenCV</mark>, <mark>InceptionV3</mark>, <mark>VGG16</mark>, <mark>MobileNet</mark>, <mark>DenseNet</mark>
         description: |
           • Developed a deep learning model to detect faces and predict gender from images using CNN-based architectures.
           • Evaluated and compared four pretrained models (InceptionV3, VGG16, MobileNet, DenseNet); fine-tuned InceptionV3 achieved the highest accuracy.
@@ -114,7 +120,7 @@ content:
             url: https://github.com/vaishnavak2001/handwritten-digit-recognition
         quote: >
           Trained and tuned a deep neural net to classify digits with high accuracy.
-          <mark>Python<mark>, <mark>Deep Learning<mark>, <mark>Neural Networks<mark>, <mark>TensorFlow
+          <mark>Python</mark>, <mark>Deep Learning</mark>, <mark>Neural Networks</mark>, <mark>TensorFlow</mark>
         description: |
           • Developed a neural network model to recognize handwritten digits from the MNIST dataset.
           • Implemented and optimized a multi-layered neural network, achieving high accuracy in classification.
@@ -131,7 +137,7 @@ content:
             url: https://github.com/vaishnavak2001/auto-price-prediction
         quote: >
           Predictive modeling for estimating car prices from structured data.
-          <mark>Python<mark>, <mark>Regression, <mark>EDA<mark>, <mark>Feature Engineering
+          <mark>Python</mark>, <mark>Regression</mark>, <mark>EDA</mark>, <mark>Feature Engineering</mark>
         description: |
           • Conducted a complete data analysis report to explore relationships between car features and prices, uncovering significant pricing trends
           • Build a predictive model using data science techniques to estimate car prices based on independent variables.
@@ -148,7 +154,7 @@ content:
             url: https://github.com/vaishnavak2001/fifa20-clustering
         quote: >
           Grouping football players by attributes using unsupervised learning.
-          <mark>Python<mark>, <mark>Clustering<mark> , <mark>Unsupervised Learning<mark>, <mark>K-Means<mark>, <mark>Hierarchical Clustering
+          <mark>Python</mark>, <mark>Clustering</mark> , <mark>Unsupervised Learning</mark>, <mark>K-Means</mark>, <mark>Hierarchical Clustering</mark>
         description: |
           • Analyzed the FIFA20 dataset to cluster soccer players based on attributes using K-Means and Hierarchical Clustering, achieving a silhouette score of 0.74.
           • Developed three player clusters: Defenders/Central Midfielders, Attackers/Central Midfielders, and Goalkeepers.
