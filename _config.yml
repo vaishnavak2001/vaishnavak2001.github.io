@@ -52,12 +52,14 @@ content:
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/diabetic-retinopathy-detection
         quote: >
-          Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images.
+          Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images.\n
 
-          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>EfficientNetB3</mark>, <mark>Transfer Learning</mark>, <mark>ImageDataGenerator</mark>, <mark>Regularization</mark>, <mark>Data Augmentation</mark>
+          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>EfficientNetB3</mark>, <mark>Transfer Learning</mark>, <mark>ImageDataGenerator</mark>, <mark>Regularization</mark>, <mark>Data Augmentation</mark> \n
+          
+
+        description: |
           
           • Developed an image classification model to detect stages of diabetic retinopathy using retinal fundus images.
-        description: |
           
           • Implemented EfficientNetB3 with custom dense layers, L1/L2 regularization, and dropout to prevent overfitting.
           
@@ -77,7 +79,7 @@ content:
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/pneumonia-detection
         quote: >
-          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>Deep Learning</mark>, <mark>Transfer Learning</mark>
+          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>Deep Learning</mark>, <mark>Transfer Learning</mark>\n
         quote: >
           CNN-based classification of X-ray images to detect pneumonia in patients.
 
