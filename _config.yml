@@ -55,9 +55,9 @@ content:
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/diabetic-retinopathy-detection
         quote: >
-          Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images.
+          Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images.<br>
+                    <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>EfficientNetB3</mark>, <mark>Transfer Learning</mark>, <mark>ImageDataGenerator</mark>, <mark>Regularization</mark>, <mark>Data Augmentation</mark><br>
         description: |
-          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>EfficientNetB3</mark>, <mark>Transfer Learning</mark>, <mark>ImageDataGenerator</mark>, <mark>Regularization</mark>, <mark>Data Augmentation</mark><br>
           • Developed a deep learning-based image classification model to detect the severity of diabetic retinopathy using high-resolution retinal fundus images from the APTOS and EyePACS datasets.<br>
           • Implemented EfficientNetB3 as the backbone architecture with custom dense layers, L1/L2 regularization, batch normalization, and dropout to mitigate overfitting.<br>
           • Applied advanced data augmentation techniques, including rotation, zoom, shear, and ZCA whitening, to artificially expand dataset variability and improve generalization.<br>
@@ -74,9 +74,9 @@ content:
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/pneumonia-detection
         quote: >
-          CNN-based classification of X-ray images to detect pneumonia in patients.
-        description: |
+          CNN-based classification of X-ray images to detect pneumonia in patients.<br>
           <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>Deep Learning</mark>, <mark>Transfer Learning</mark><br>
+        description: |
           • Built a convolutional neural network (CNN)-based image classification system to identify pneumonia from grayscale chest X-ray images, leveraging the NIH Chest X-ray and Kaggle dataset.<br>
           • Integrated and fine-tuned pre-trained models such as MobileNet, InceptionV3, VGG16, and DenseNet to assess diagnostic accuracy and computational efficiency.<br>
           • MobileNet architecture achieved the highest overall test accuracy of 88.6%, balancing predictive performance with low inference latency for clinical deployment.<br>
@@ -93,9 +93,9 @@ content:
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/skin-disorder-detection
         quote: >
-          Classification of six types of Erythemato-Squamous Diseases using ML classifiers.
-        description: |
+          Classification of six types of Erythemato-Squamous Diseases using ML classifiers.<br>
           <mark>Python</mark>, <mark>Machine Learning</mark>, <mark>Classification</mark>, <mark>Data Preprocessing</mark>, <mark>Feature Selection</mark>, <mark>EDA</mark>, <mark>Scikit-learn</mark>, <mark>XGBoost</mark>, <mark>Random Forest</mark>, <mark>SVM</mark>, <mark>Logistic Regression</mark><br>
+        description: |
           • Utilized a dermatology dataset from the UCI Machine Learning Repository containing 366 samples and 35 features (clinical + histopathological attributes) for multiclass classification of Erythemato-Squamous Diseases (ESD).<br>
           • Conducted robust data preprocessing including imputation of missing values in the ‘Age’ attribute, label encoding for categorical features, and outlier detection.<br>
           • Applied feature selection by removing 13 highly correlated variables to reduce multicollinearity, overfitting risk, and improve model explainability.<br>
@@ -127,10 +127,9 @@ content:
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/handwritten-digit-recognition
         quote: >
-          Trained and tuned a deep neural net to classify digits with high accuracy.
-          
+          Trained and tuned a deep neural net to classify digits with high accuracy.<br>
+          <mark>Python</mark>, <mark>Deep Learning</mark>, <mark>Neural Networks</mark>, <mark>TensorFlow</mark><br>  
         description: |
-          <mark>Python</mark>, <mark>Deep Learning</mark>, <mark>Neural Networks</mark>, <mark>TensorFlow</mark><br>
           
           • Developed a neural network model to recognize handwritten digits from the MNIST dataset.<br>
           
@@ -150,10 +149,9 @@ content:
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/auto-price-prediction
         quote: >
-          Predictive modeling for estimating car prices from structured data.
-          
+          Predictive modeling for estimating car prices from structured data.<br>
+          <mark>Python</mark>, <mark>Regression</mark>, <mark>EDA</mark>, <mark>Feature Engineering</mark><br>   
         description: |
-          <mark>Python</mark>, <mark>Regression</mark>, <mark>EDA</mark>, <mark>Feature Engineering</mark>
           
           • Conducted a complete data analysis report to explore relationships between car features and prices, uncovering significant pricing trends
           
