@@ -103,7 +103,7 @@ content:
           • Built five supervised classification models: Decision Tree, Random Forest, Support Vector Machine (SVM), XGBoost, and Logistic Regression.<br>
           • Tuned hyperparameters using GridSearchCV and cross-validation; Random Forest outperformed others with ~93% accuracy, high recall, and robustness.<br>
           • Enabled early diagnosis of skin conditions like psoriasis, seborrheic dermatitis, lichen planus, pityriasis rosea, chronic dermatitis, and lichen simplex using structured diagnostic inputs.<br>
-            - layout: top-middle
+      - layout: top-middle
         title: Face Detection and Gender Prediction
         link: https://github.com/vaishnavak2001/face-gender-prediction
         additional_links:
@@ -111,14 +111,14 @@ content:
             icon: fab fa-github
             url: https://github.com/vaishnavak2001/face-gender-prediction
         quote: >
-          Real-time face and gender classification using MobileNet and OpenCV.
-          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>OpenCV</mark>, <mark>InceptionV3</mark>, <mark>VGG16</mark>, <mark>MobileNet</mark>, <mark>DenseNet</mark>
+          Real-time face and gender classification using MobileNet and OpenCV.<br>
+          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>OpenCV</mark>, <mark>InceptionV3</mark>, <mark>VGG16</mark>, <mark>MobileNet</mark>, <mark>DenseNet</mark><br>
         description: |
-          • Developed a deep learning model to detect faces and predict gender from images using CNN-based architectures.
-          • Evaluated and compared four pretrained models (InceptionV3, VGG16, MobileNet, DenseNet); fine-tuned InceptionV3 achieved the highest accuracy.
-          • Implemented data preprocessing, augmentation, and model optimization techniques to improve performance.
-          • Proposed future enhancements for real-time deployment through hyperparameter tuning and optimized preprocessing.
-          • Deployed deep learning inference in real time using webcam for accurate face/gender recognition.
+          • Developed a deep learning model to detect faces and predict gender from images using CNN-based architectures.<br>
+          • Evaluated and compared four pretrained models (InceptionV3, VGG16, MobileNet, DenseNet); fine-tuned InceptionV3 achieved the highest accuracy.<br>
+          • Implemented data preprocessing, augmentation, and model optimization techniques to improve performance.<br>
+          • Proposed future enhancements for real-time deployment through hyperparameter tuning and optimized preprocessing.<br>
+          • Deployed deep learning inference in real time using webcam for accurate face/gender recognition.<br>
       - layout: top-middle
         title: Handwritten Digit Recognition (MNIST)
         link: https://github.com/vaishnavak2001/handwritten-digit-recognition
@@ -130,17 +130,17 @@ content:
           Trained and tuned a deep neural net to classify digits with high accuracy.
           
         description: |
-          <mark>Python</mark>, <mark>Deep Learning</mark>, <mark>Neural Networks</mark>, <mark>TensorFlow</mark>
+          <mark>Python</mark>, <mark>Deep Learning</mark>, <mark>Neural Networks</mark>, <mark>TensorFlow</mark><br>
           
-          • Developed a neural network model to recognize handwritten digits from the MNIST dataset.
+          • Developed a neural network model to recognize handwritten digits from the MNIST dataset.<br>
           
-          • Implemented and optimized a multi-layered neural network, achieving high accuracy in classification.
+          • Implemented and optimized a multi-layered neural network, achieving high accuracy in classification.<br>
           
-          • Utilized techniques like regularization and data normalization to improve model performance and reduce overfitting.
+          • Utilized techniques like regularization and data normalization to improve model performance and reduce overfitting.<br>
           
-          • Gained hands-on experience with model evaluation, accuracy measurement, and debugging in python using libraries such as TensorFlow/Keras or PyTorch.
+          • Gained hands-on experience with model evaluation, accuracy measurement, and debugging in python using libraries such as TensorFlow/Keras or PyTorch.<br>
           
-          • Integrated dropout, normalization, and parameter tuning for MNIST dataset classification using Keras.
+          • Integrated dropout, normalization, and parameter tuning for MNIST dataset classification using Keras.<br>
 
       - layout: top-middle
         title: Auto Price Prediction
