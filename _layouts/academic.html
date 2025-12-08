@@ -24,6 +24,17 @@
         <h1>{{ site.name }}</h1>
         <p>{{ site.title }}</p>
       </header>
+
+      <!-- Personal Statement -->
+      <section class="personal-statement">
+        <p class="statement-text">
+          A research-driven software engineer specializing in scalable architecture, machine learning systems, and
+          algorithmic optimization. My work bridges the gap between theoretical computer science and practical
+          application, with a focus on healthcare AI, data science, and biomedical innovation.
+        </p>
+        <small class="statement-note">💡 Professional bio showcasing expertise areas</small>
+      </section>
+
       <nav class="project-list" id="project-list">
         {% assign projects = site.data.projects %}
         {% if projects %}
@@ -68,14 +79,44 @@
 
       var index = parseInt(element.getAttribute('data-index'));
       var p = projects[index];
+
+      // Render technical architecture if available
+      var techArchSection = '';
+      if (p.technical_architecture) {
+        techArchSection = `
+          <div class="tech-arch-section">
+            <button class="tech-arch-toggle" onclick="toggleTechArch(event)">
+              <span class="toggle-icon">▶</span> Technical Architecture
+            </button>
+            <div class="tech-arch-content" style="display:none">
+              ${marked.parse(p.technical_architecture || '')}
+            </div>
+          </div>
+        `;
+      }
+
+      // Render abstract if available
+      var abstractSection = '';
+      if (p.abstract) {
+        abstractSection = `
+          <div class="abstract-section">
+            <h3>Abstract</h3>
+            <p class="abstract-text">${p.abstract}</p>
+          </div>
+        `;
+      }
+
       var content = `
             <article class="paper-modal">
                 <h1>${p.name}</h1>
                 <div class="meta-row">
-                    <span>${(p.languages || []).join(', ')}</span>
+                    <span>${(p.languages || []).join(', ')}${p.frameworks && p.frameworks.length ? ' • ' + p.frameworks.join(', ') : ''}</span>
                     <a href="${p.url}" target="_blank" class="git-link">View on GitHub →</a>
                 </div>
+                ${abstractSection}
+                ${techArchSection}
                 <div class="markdown-body">
+                    <h3>Documentation</h3>
                     ${marked.parse(p.documentation || '')}
                 </div>
             </article>
@@ -85,6 +126,21 @@
 
       // Scroll to top of canvas
       document.getElementById('project-canvas').scrollTop = 0;
+    }
+
+    function toggleTechArch(event) {
+      event.stopPropagation();
+      var button = event.currentTarget;
+      var content = button.nextElementSibling;
+      var icon = button.querySelector('.toggle-icon');
+
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.textContent = '▼';
+      } else {
+        content.style.display = 'none';
+        icon.textContent = '▶';
+      }
     }
 
     // Auto-select first project if available

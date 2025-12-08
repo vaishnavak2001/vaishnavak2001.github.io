@@ -2,7 +2,8 @@
   --bg-color: #f9f9f9;
   --sidebar-bg: #eaeaea;
   --text-color: #2c2c2c;
-  --accent-color: #8b0000; /* Dark Red for Academic feel */
+  --accent-color: #8b0000;
+  /* Dark Red for Academic feel */
   --border-color: #d0d0d0;
   --font-serif: 'Merriweather', 'Times New Roman', serif;
   --font-sans: 'Inter', sans-serif;
@@ -102,7 +103,7 @@ body {
   max-width: 800px;
   background: #fff;
   padding: 3rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   border: 1px solid var(--border-color);
   min-height: 800px;
 }
@@ -135,7 +136,8 @@ body {
 }
 
 .markdown-body pre {
-  background: #fdf6e3; /* Solarized Light background */
+  background: #fdf6e3;
+  /* Solarized Light background */
   padding: 1rem;
   border-radius: 4px;
   overflow-x: auto;
@@ -145,4 +147,100 @@ body {
   align-self: center;
   color: #888;
   font-style: italic;
+}
+
+/* Personal Statement */
+.personal-statement {
+  padding: 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid var(--border-color);
+  border-left: 3px solid var(--accent-color);
+}
+
+.statement-text {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+  text-align: justify;
+}
+
+.statement-note {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* Abstract Section */
+.abstract-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #fafafa;
+  border-left: 3px solid var(--accent-color);
+}
+
+.abstract-section h3 {
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.abstract-text {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: justify;
+  color: #2c2c2c;
+}
+
+/* Technical Architecture */
+.tech-arch-section {
+  margin: 2rem 0;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tech-arch-toggle {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: #f5f5f5;
+  border: none;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tech-arch-toggle:hover {
+  background: #eaeaea;
+}
+
+.toggle-icon {
+  font-size: 0.8rem;
+  transition: transform 0.2s;
+}
+
+.tech-arch-content {
+  padding: 1.5rem;
+  background: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.tech-arch-content strong {
+  color: var(--accent-color);
+  font-weight: 600;
 }
