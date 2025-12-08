@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,14 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
   <!-- Prism -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-solarizedlight.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-solarizedlight.min.css"
+    rel="stylesheet" />
 </head>
+
 <body>
   <div class="academic-container">
     <aside class="academic-sidebar">
@@ -22,20 +27,20 @@
       <nav class="project-list" id="project-list">
         {% assign projects = site.data.projects %}
         {% if projects %}
-            {% for project in projects %}
-            <div class="project-item" onclick="showProject({{ forloop.index0 }}, this)">
-                <span class="project-title">{{ project.name }}</span>
-                <span class="project-meta">
-                    {% if project.stars > 0 %}★ {{ project.stars }} |{% endif %} 
-                    {{ project.languages[0] }}
-                </span>
-            </div>
-            {% endfor %}
+        {% for project in projects %}
+        <div class="project-item" onclick="showProject(this)" data-index="{{ forloop.index0 }}">
+          <span class="project-title">{{ project.name }}</span>
+          <span class="project-meta">
+            {% if project.stars > 0 %}★ {{ project.stars }} |{% endif %}
+            {{ project.languages[0] }}
+          </span>
+        </div>
+        {% endfor %}
         {% else %}
-            <div style="padding: 1.5rem">
-                <p>Loading projects...</p>
-                <small>Run <code>python scripts/audit_and_doc.py</code> to generate data.</small>
-            </div>
+        <div style="padding: 1.5rem">
+          <p>Loading projects...</p>
+          <small>Run <code>python scripts/audit_and_doc.py</code> to generate data.</small>
+        </div>
         {% endif %}
       </nav>
     </aside>
@@ -48,17 +53,22 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
-  
-  <script>
-    var projects = {{ site.data.projects | jsonify }};
-    
-    function showProject(index, element) {
-        // Highlight active item
-        document.querySelectorAll('.project-item').forEach(el => el.classList.remove('active'));
-        element.classList.add('active');
 
-        var p = projects[index];
-        var content = `
+  <script type="application/json" id="project-data-json">
+    {{ site.data.projects | jsonify }}
+  </script>
+
+  <script>
+    var projects = JSON.parse(document.getElementById('project-data-json').textContent);
+
+    function showProject(element) {
+      // Highlight active item
+      document.querySelectorAll('.project-item').forEach(el => el.classList.remove('active'));
+      element.classList.add('active');
+
+      var index = parseInt(element.getAttribute('data-index'));
+      var p = projects[index];
+      var content = `
             <article class="paper-modal">
                 <h1>${p.name}</h1>
                 <div class="meta-row">
@@ -70,11 +80,11 @@
                 </div>
             </article>
         `;
-        document.getElementById('project-canvas').innerHTML = content;
-        Prism.highlightAll();
-        
-        // Scroll to top of canvas
-        document.getElementById('project-canvas').scrollTop = 0;
+      document.getElementById('project-canvas').innerHTML = content;
+      Prism.highlightAll();
+
+      // Scroll to top of canvas
+      document.getElementById('project-canvas').scrollTop = 0;
     }
 
     // Auto-select first project if available
@@ -88,4 +98,5 @@
     */
   </script>
 </body>
+
 </html>
