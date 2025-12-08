@@ -6,8 +6,8 @@ favicon: images/favicon.ico
 version: 2
 
 # Theme Customization
-theme_color: "#0F172A"          # Tailwind Slate-900
-accent_color: "#4F46E5"         # Tailwind Indigo-600
+theme_color: "#FAFAFA"          # Academic Paper
+accent_color: "#0056b3"         # Academic Blue
 darkmode: false                  # true / false / never
 
 # Personal info
@@ -22,178 +22,11 @@ github_username: vaishnavak2001
 linkedin_username: vaishnav-ak
 instagram_username: vaishnav__ak
 
-# Additional icon links
-additional_links:
-  - title: My Portfolio
-    icon: fas fa-globe
-    url: https://vaishnavak2001.github.io
-
 # About Section
 about_profile_image: images/profile.jpg
-about_content: |
-  I’m Vaishnav AK, an Engineer on a mission to redefine the future of healthcare through AI, Data Science, and Biomedical Innovation.
-
-  With a core academic foundation in Applied Electronics and Instrumentation Engineering from KTU University, my passion lies in merging the physical world of medical devices with the digital intelligence of machine learning. I specialize in building AI-powered healthcare solutions, applying deep learning, predictive analytics, and biomedical signal processing to solve complex clinical problems.
-
-  My journey into Artificial Intelligence and Data Science began with curiosity—driven by a question: How can we use data and algorithms to improve early diagnosis, personalize treatment, and ultimately save lives? This curiosity quickly evolved into structured learning and hands-on experimentation.
-
-  To pursue this mission, I enrolled in a Certified Data Science Program (Sept 2023 – July 2024), which provided me with a rigorous foundation in Python, Pandas, NumPy, machine learning algorithms, data visualization, statistics, and model deployment. I didn’t stop there. Understanding the importance of deeper intelligence systems, I further advanced into an AI Expert Program (July 2024 – April 2025), where I focused on deep learning, CNNs, transfer learning, NLP, and AI for medical imaging and signals. During this time, I worked on multiple AI projects specifically targeted at healthcare challenges.
-
-  In parallel, I gained hands-on experience in clinical environments. As a Biomedical Instrumentation Engineer Trainee (since Nov 2024), I’ve worked with hospital departments on ECG machines, ventilators, defibrillators, patient monitors, and imaging systems. This dual expertise in hardware instrumentation and healthcare data analytics offers a rare and valuable end-to-end view of the healthcare ecosystem.
-
-  One of the most transformative parts of my journey was my internship as a Data Science and AI Consultant at Rubixe® (Oct 2023 – June 2024), an emerging tech company delivering smart AI solutions to global clients. At Rubixe, I worked on end-to-end data science projects: EDA, feature engineering, model development, evaluation, and deployment. I designed ML pipelines for real-world problems, including healthcare diagnostics and smart automation. My capstone project focused on predictive health diagnostics—extracting risk patterns from structured patient data. I also contributed to code reviews, client sessions, and deep learning research (TensorFlow, Keras, CV). This experience shaped my ability to turn AI theory into scalable systems.
-
-content:
-  - title: Projects
-    layout: list
-    content:
-      - layout: top-middle
-        title: Diabetic Retinopathy Detection
-        link: https://github.com/vaishnavak2001/diabetic-retinopathy-detection
-        additional_links:
-          - title: GitHub Repository
-            icon: fab fa-github
-            url: https://github.com/vaishnavak2001/diabetic-retinopathy-detection
-        quote: >
-          Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images.<br>
-                    <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>EfficientNetB3</mark>, <mark>Transfer Learning</mark>, <mark>ImageDataGenerator</mark>, <mark>Regularization</mark>, <mark>Data Augmentation</mark><br>
-        description: |
-          • Developed a deep learning-based image classification model to detect the severity of diabetic retinopathy using high-resolution retinal fundus images from the APTOS and EyePACS datasets.<br>
-          • Implemented EfficientNetB3 as the backbone architecture with custom dense layers, L1/L2 regularization, batch normalization, and dropout to mitigate overfitting.<br>
-          • Applied advanced data augmentation techniques, including rotation, zoom, shear, and ZCA whitening, to artificially expand dataset variability and improve generalization.<br>
-          • Achieved strong performance with ~99.7% training accuracy, ~86.3% validation accuracy, and ~81.9% test accuracy across cross-validated folds.<br>
-          • Compared and benchmarked performance across other pre-trained models like VGG16, ResNet50, and InceptionV3 to validate architectural choice.<br>
-          • Employed a two-phase training approach using transfer learning and fine-tuning strategies to adapt models on limited medical image data.<br>
-          • Implemented model evaluation metrics including confusion matrix, AUC, precision-recall, and class-wise F1-score to assess clinical reliability.<br>
-
-      - layout: top-middle
-        title: Pneumonia Detection via Chest X-rays
-        link: https://github.com/vaishnavak2001/pneumonia-detection
-        additional_links:
-          - title: GitHub Repository
-            icon: fab fa-github
-            url: https://github.com/vaishnavak2001/pneumonia-detection
-        quote: >
-          CNN-based classification of X-ray images to detect pneumonia in patients.<br>
-          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>Deep Learning</mark>, <mark>Transfer Learning</mark><br>
-        description: |
-          • Built a convolutional neural network (CNN)-based image classification system to identify pneumonia from grayscale chest X-ray images, leveraging the NIH Chest X-ray and Kaggle dataset.<br>
-          • Integrated and fine-tuned pre-trained models such as MobileNet, InceptionV3, VGG16, and DenseNet to assess diagnostic accuracy and computational efficiency.<br>
-          • MobileNet architecture achieved the highest overall test accuracy of 88.6%, balancing predictive performance with low inference latency for clinical deployment.<br>
-          • InceptionV3 and VGG16 demonstrated robust diagnostic capabilities with accuracy scores of 85.3% and 85.1% respectively; DenseNet yielded 79.8%, indicating sensitivity to overfitting.<br>
-          • Applied preprocessing steps including grayscale normalization, image resizing, and CLAHE (Contrast Limited Adaptive Histogram Equalization) to enhance contrast and reduce noise.<br>
-          • Implemented real-time image classification logic with softmax output and thresholding for binary disease classification (normal vs pneumonia).<br>
-          • Used key performance indicators such as ROC-AUC, confusion matrix, and recall to evaluate potential clinical use in resource-limited radiology units.<br>
-
-      - layout: top-middle
-        title: Skin Disorder Detection (ESD)
-        link: https://github.com/vaishnavak2001/skin-disorder-detection
-        additional_links:
-          - title: GitHub Repository
-            icon: fab fa-github
-            url: https://github.com/vaishnavak2001/skin-disorder-detection
-        quote: >
-          Classification of six types of Erythemato-Squamous Diseases using ML classifiers.<br>
-          <mark>Python</mark>, <mark>Machine Learning</mark>, <mark>Classification</mark>, <mark>Data Preprocessing</mark>, <mark>Feature Selection</mark>, <mark>EDA</mark>, <mark>Scikit-learn</mark>, <mark>XGBoost</mark>, <mark>Random Forest</mark>, <mark>SVM</mark>, <mark>Logistic Regression</mark><br>
-        description: |
-          • Utilized a dermatology dataset from the UCI Machine Learning Repository containing 366 samples and 35 features (clinical + histopathological attributes) for multiclass classification of Erythemato-Squamous Diseases (ESD).<br>
-          • Conducted robust data preprocessing including imputation of missing values in the ‘Age’ attribute, label encoding for categorical features, and outlier detection.<br>
-          • Applied feature selection by removing 13 highly correlated variables to reduce multicollinearity, overfitting risk, and improve model explainability.<br>
-          • Performed detailed EDA using seaborn correlation matrices, boxplots, and pairwise distribution graphs to interpret the underlying data structure.<br>
-          • Built five supervised classification models: Decision Tree, Random Forest, Support Vector Machine (SVM), XGBoost, and Logistic Regression.<br>
-          • Tuned hyperparameters using GridSearchCV and cross-validation; Random Forest outperformed others with ~93% accuracy, high recall, and robustness.<br>
-          • Enabled early diagnosis of skin conditions like psoriasis, seborrheic dermatitis, lichen planus, pityriasis rosea, chronic dermatitis, and lichen simplex using structured diagnostic inputs.<br>
-      - layout: top-middle
-        title: Face Detection and Gender Prediction
-        link: https://github.com/vaishnavak2001/face-gender-prediction
-        additional_links:
-          - title: GitHub Repository
-            icon: fab fa-github
-            url: https://github.com/vaishnavak2001/face-gender-prediction
-        quote: >
-          Real-time face and gender classification using MobileNet and OpenCV.<br>
-          <mark>Python</mark>, <mark>TensorFlow</mark>, <mark>Keras</mark>, <mark>OpenCV</mark>, <mark>InceptionV3</mark>, <mark>VGG16</mark>, <mark>MobileNet</mark>, <mark>DenseNet</mark><br>
-        description: |
-          • Developed a deep learning model to detect faces and predict gender from images using CNN-based architectures.<br>
-          • Evaluated and compared four pretrained models (InceptionV3, VGG16, MobileNet, DenseNet); fine-tuned InceptionV3 achieved the highest accuracy.<br>
-          • Implemented data preprocessing, augmentation, and model optimization techniques to improve performance.<br>
-          • Proposed future enhancements for real-time deployment through hyperparameter tuning and optimized preprocessing.<br>
-          • Deployed deep learning inference in real time using webcam for accurate face/gender recognition.<br>
-      - layout: top-middle
-        title: Handwritten Digit Recognition (MNIST)
-        link: https://github.com/vaishnavak2001/handwritten-digit-recognition
-        additional_links:
-          - title: GitHub Repository
-            icon: fab fa-github
-            url: https://github.com/vaishnavak2001/handwritten-digit-recognition
-        quote: >
-          Trained and tuned a deep neural net to classify digits with high accuracy.<br>
-          <mark>Python</mark>, <mark>Deep Learning</mark>, <mark>Neural Networks</mark>, <mark>TensorFlow</mark><br>  
-        description: |
-          
-          • Developed a neural network model to recognize handwritten digits from the MNIST dataset.<br>
-          
-          • Implemented and optimized a multi-layered neural network, achieving high accuracy in classification.<br>
-          
-          • Utilized techniques like regularization and data normalization to improve model performance and reduce overfitting.<br>
-          
-          • Gained hands-on experience with model evaluation, accuracy measurement, and debugging in python using libraries such as TensorFlow/Keras or PyTorch.<br>
-          
-          • Integrated dropout, normalization, and parameter tuning for MNIST dataset classification using Keras.<br>
-
-      - layout: top-middle
-        title: Auto Price Prediction
-        link: https://github.com/vaishnavak2001/auto-price-prediction
-        additional_links:
-          - title: GitHub Repository
-            icon: fab fa-github
-            url: https://github.com/vaishnavak2001/auto-price-prediction
-        quote: >
-          Predictive modeling for estimating car prices from structured data.<br>
-          <mark>Python</mark>, <mark>Regression</mark>, <mark>EDA</mark>, <mark>Feature Engineering</mark><br>   
-        description: |
-          
-          • Conducted a complete data analysis report to explore relationships between car features and prices, uncovering significant pricing trends
-          
-          • Build a predictive model using data science techniques to estimate car prices based on independent variables.
-          
-          • Employed feature engineering and model optimization to enhance prediction accuracy and interpretability.
-          
-          • Enabled management to make data-driven decisions for car design and business strategy by understanding pricing dynamics in a new market.
-          
-          • Applied regression models (XGBoost, Random Forest) with feature engineering to predict vehicle pricing.
-
-      - layout: top-middle
-        title: FIFA20 Player Clustering
-        link: https://github.com/vaishnavak2001/fifa20-clustering
-        additional_links:
-          - title: GitHub Repository
-            icon: fab fa-github
-            url: https://github.com/vaishnavak2001/fifa20-clustering
-        quote: >
-          Grouping football players by attributes using unsupervised learning.
-        description: |
-          <mark>Python</mark>, <mark>Clustering</mark> , <mark>Unsupervised Learning</mark>, <mark>K-Means</mark>, <mark>Hierarchical Clustering</mark>
-          
-          • Analyzed the FIFA20 dataset to cluster soccer players based on attributes using K-Means and Hierarchical Clustering, achieving a silhouette score of 0.74.
-          
-          • Developed three player clusters: Defenders/Central Midfielders, Attackers/Central Midfielders, and Goalkeepers.
-          
-          • Analyzed age vs. overall rating trends and salary distributions among offensive players.
-          
-          • Performed data preprocessing to handle missing values and reduce redundancy.
-          
-          • Implemented K-Means and Hierarchical clustering to extract skill-based groupings for player roles.  
-
-# Footer
-footer_show_references: true
 
 # Build settings
-remote_theme: sproogen/resume-theme
-
-sass:
-  sass_dir: _sass
-  style: compressed
+# remote_theme: sproogen/resume-theme # REMOVED for custom academic layout
 
 plugins:
   - jekyll-seo-tag
