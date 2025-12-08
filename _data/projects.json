@@ -1,0 +1,301 @@
+[
+  {
+    "name": "skin-disorder-detection",
+    "description": "This project focuses on the classification of Erythemato-Squamous Diseases (ESD) using supervised machine learning algorithms. The goal is to assist dermatologists in accurately diagnosing six common skin conditions by leveraging clinical and histopathological data.",
+    "url": "https://github.com/vaishnavak2001/skin-disorder-detection",
+    "stars": 1,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# skin-disorder-detection\n\n## Abstract\nThis project focuses on the classification of Erythemato-Squamous Diseases (ESD) using supervised machine learning algorithms. The goal is to assist dermatologists in accurately diagnosing six common skin conditions by leveraging clinical and histopathological data.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/skin-disorder-detection\ncd skin-disorder-detection\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-05T08:26:05Z"
+  },
+  {
+    "name": "vaishnavak2001.github.io",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/vaishnavak2001.github.io",
+    "stars": 1,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# vaishnavak2001.github.io\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/vaishnavak2001.github.io\ncd vaishnavak2001.github.io\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-05T08:26:01Z"
+  },
+  {
+    "name": "Welltrack-ai",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/Welltrack-ai",
+    "stars": 1,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# Welltrack-ai\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/Welltrack-ai\ncd Welltrack-ai\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-05T08:25:42Z"
+  },
+  {
+    "name": "restaurant-rag-agent",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/restaurant-rag-agent",
+    "stars": 1,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# restaurant-rag-agent\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/restaurant-rag-agent\ncd restaurant-rag-agent\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-05T08:25:41Z"
+  },
+  {
+    "name": "career_agent",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/career_agent",
+    "stars": 1,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# career_agent\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/career_agent\ncd career_agent\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-05T08:25:31Z"
+  },
+  {
+    "name": "IABAC_CDS_Project_2_INX_Future_Emp_Data_V1.6",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/IABAC_CDS_Project_2_INX_Future_Emp_Data_V1.6",
+    "stars": 1,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# IABAC_CDS_Project_2_INX_Future_Emp_Data_V1.6\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/IABAC_CDS_Project_2_INX_Future_Emp_Data_V1.6\ncd IABAC_CDS_Project_2_INX_Future_Emp_Data_V1.6\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-05T08:25:16Z"
+  },
+  {
+    "name": "capstone-project-the-The-AI-Website-Creator-5dgai",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/capstone-project-the-The-AI-Website-Creator-5dgai",
+    "stars": 1,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# capstone-project-the-The-AI-Website-Creator-5dgai\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/capstone-project-the-The-AI-Website-Creator-5dgai\ncd capstone-project-the-The-AI-Website-Creator-5dgai\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-05T08:25:02Z"
+  },
+  {
+    "name": "ecg-classification-cnn-lstm",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/ecg-classification-cnn-lstm",
+    "stars": 1,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# ecg-classification-cnn-lstm\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/ecg-classification-cnn-lstm\ncd ecg-classification-cnn-lstm\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-05T08:24:57Z"
+  },
+  {
+    "name": "Data_science",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/Data_science",
+    "stars": 1,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# Data_science\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/Data_science\ncd Data_science\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-05T08:24:51Z"
+  },
+  {
+    "name": "ControlGym-mass-spring-damper",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/ControlGym-mass-spring-damper",
+    "stars": 1,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# ControlGym-mass-spring-damper\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/ControlGym-mass-spring-damper\ncd ControlGym-mass-spring-damper\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-05T08:24:47Z"
+  },
+  {
+    "name": "Pneumonia-chest-X-Ray-classification",
+    "description": "In this project, various pre-trained Convolutional Neural Networks (CNNs) were evaluated to detect pneumonia effectively. The models tested include VGG16, MobileNet, DenseNet, and Inception.",
+    "url": "https://github.com/vaishnavak2001/Pneumonia-chest-X-Ray-classification",
+    "stars": 1,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# Pneumonia-chest-X-Ray-classification\n\n## Abstract\nIn this project, various pre-trained Convolutional Neural Networks (CNNs) were evaluated to detect pneumonia effectively. The models tested include VGG16, MobileNet, DenseNet, and Inception.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/Pneumonia-chest-X-Ray-classification\ncd Pneumonia-chest-X-Ray-classification\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-09-16T22:56:06Z"
+  },
+  {
+    "name": "Diabetic-Retinopathy-Detection",
+    "description": "In this diabetic retinopathy classification project, various deep learning models\u2014including EfficientNet, VGG16,DenseNet,  ResNet50, and MobileNetV2\u2014were trained to classify retinal fundus images into three clinically significant categories: No DR, Mild DR, and Severe DR",
+    "url": "https://github.com/vaishnavak2001/Diabetic-Retinopathy-Detection",
+    "stars": 1,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# Diabetic-Retinopathy-Detection\n\n## Abstract\nIn this diabetic retinopathy classification project, various deep learning models\u2014including EfficientNet, VGG16,DenseNet,  ResNet50, and MobileNetV2\u2014were trained to classify retinal fundus images into three clinically significant categories: No DR, Mild DR, and Severe DR\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/Diabetic-Retinopathy-Detection\ncd Diabetic-Retinopathy-Detection\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-09-16T22:52:02Z"
+  },
+  {
+    "name": "Admission_Prediction_-Linear_Regression-",
+    "description": "Predicting graduate admission chances using linear regression with GRE, TOEFL, University Rating, SOP, LOR, CGPA, and Research. Explores data preprocessing, EDA, feature selection, regularization, polynomial features, and cross-validation to improve model accuracy. Polynomial features showed the best performance.",
+    "url": "https://github.com/vaishnavak2001/Admission_Prediction_-Linear_Regression-",
+    "stars": 0,
+    "forks": 0,
+    "languages": [
+      "Jupyter Notebook"
+    ],
+    "has_good_readme": true,
+    "documentation": "# Admission_Prediction_-Linear_Regression-\nPredicting graduate admission chances using linear regression with GRE, TOEFL, University Rating, SOP, LOR, CGPA, and Research. Explores data preprocessing, EDA, feature selection, regularization, polynomial features, and cross-validation to improve model accuracy. Polynomial features showed the best performance.\n",
+    "updated_at": "2025-12-05T08:25:56Z"
+  },
+  {
+    "name": "Bike-Rental-Prediction",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/Bike-Rental-Prediction",
+    "stars": 0,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# Bike-Rental-Prediction\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/Bike-Rental-Prediction\ncd Bike-Rental-Prediction\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-01T20:44:02Z"
+  },
+  {
+    "name": "COMP1-TITANIC-",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/COMP1-TITANIC-",
+    "stars": 0,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# COMP1-TITANIC-\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/COMP1-TITANIC-\ncd COMP1-TITANIC-\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-01T20:41:54Z"
+  },
+  {
+    "name": "PRCP_1002_Handwritten_Digits_Recognition",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/PRCP_1002_Handwritten_Digits_Recognition",
+    "stars": 0,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# PRCP_1002_Handwritten_Digits_Recognition\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/PRCP_1002_Handwritten_Digits_Recognition\ncd PRCP_1002_Handwritten_Digits_Recognition\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-01T20:40:02Z"
+  },
+  {
+    "name": "fifa_cluster",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/fifa_cluster",
+    "stars": 0,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# fifa_cluster\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/fifa_cluster\ncd fifa_cluster\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-01T20:38:45Z"
+  },
+  {
+    "name": "Python",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/Python",
+    "stars": 0,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# Python\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/Python\ncd Python\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-01T20:25:05Z"
+  },
+  {
+    "name": "Car_Price_Prediction",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/Car_Price_Prediction",
+    "stars": 0,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# Car_Price_Prediction\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/Car_Price_Prediction\ncd Car_Price_Prediction\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-01T20:21:40Z"
+  },
+  {
+    "name": "capstone-project-the-agentops-guardian-5dgai",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/capstone-project-the-agentops-guardian-5dgai",
+    "stars": 0,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# capstone-project-the-agentops-guardian-5dgai\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/capstone-project-the-agentops-guardian-5dgai\ncd capstone-project-the-agentops-guardian-5dgai\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-01T20:12:00Z"
+  },
+  {
+    "name": "TrafSignDetc",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/TrafSignDetc",
+    "stars": 0,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# TrafSignDetc\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/TrafSignDetc\ncd TrafSignDetc\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-01T20:07:37Z"
+  },
+  {
+    "name": "CATS-DOGS",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/CATS-DOGS",
+    "stars": 0,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# CATS-DOGS\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/CATS-DOGS\ncd CATS-DOGS\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-01T20:05:40Z"
+  },
+  {
+    "name": "GenderDetc_complete_using_colab",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/GenderDetc_complete_using_colab",
+    "stars": 0,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# GenderDetc_complete_using_colab\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/GenderDetc_complete_using_colab\ncd GenderDetc_complete_using_colab\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-12-01T20:03:26Z"
+  },
+  {
+    "name": "dronegym-rl-quadcopter-attitude",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/dronegym-rl-quadcopter-attitude",
+    "stars": 0,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# dronegym-rl-quadcopter-attitude\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/dronegym-rl-quadcopter-attitude\ncd dronegym-rl-quadcopter-attitude\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-11-30T21:02:50Z"
+  },
+  {
+    "name": "Autonomous-Job-Application-Agent",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/Autonomous-Job-Application-Agent",
+    "stars": 0,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# Autonomous-Job-Application-Agent\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/Autonomous-Job-Application-Agent\ncd Autonomous-Job-Application-Agent\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-11-21T21:55:18Z"
+  },
+  {
+    "name": "anti-gravity-test1",
+    "description": null,
+    "url": "https://github.com/vaishnavak2001/anti-gravity-test1",
+    "stars": 0,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# anti-gravity-test1\n\n## Abstract\nNo description provided.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/anti-gravity-test1\ncd anti-gravity-test1\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-11-21T21:46:26Z"
+  },
+  {
+    "name": "Advertising_Sales_-_Linear_Regression_-",
+    "description": "This project aims to build a machine learning model to predict total sales based on advertising spending across different channels: TV, Radio, and Newspaper. The goal is to understand the impact of advertising budgets on sales revenue and identify the most effective advertising channels.",
+    "url": "https://github.com/vaishnavak2001/Advertising_Sales_-_Linear_Regression_-",
+    "stars": 0,
+    "forks": 0,
+    "languages": [],
+    "has_good_readme": false,
+    "documentation": "# Advertising_Sales_-_Linear_Regression_-\n\n## Abstract\nThis project aims to build a machine learning model to predict total sales based on advertising spending across different channels: TV, Radio, and Newspaper. The goal is to understand the impact of advertising budgets on sales revenue and identify the most effective advertising channels.\n\n## Technical Architecture\n**Stack:** \n\nThis project utilizes standard technologies.\n\n## Installation & Usage\n```bash\ngit clone https://github.com/vaishnavak2001/Advertising_Sales_-_Linear_Regression_-\ncd Advertising_Sales_-_Linear_Regression_-\n# See source code for specific build instructions\n```\n",
+    "updated_at": "2025-09-16T22:41:36Z"
+  }
+]

@@ -1,0 +1,148 @@
+:root {
+  --bg-color: #f9f9f9;
+  --sidebar-bg: #eaeaea;
+  --text-color: #2c2c2c;
+  --accent-color: #8b0000; /* Dark Red for Academic feel */
+  --border-color: #d0d0d0;
+  --font-serif: 'Merriweather', 'Times New Roman', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-serif);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.academic-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar (Master View) */
+.academic-sidebar {
+  width: 350px;
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.academic-sidebar header {
+  padding: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  background: #fff;
+}
+
+.academic-sidebar header h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.academic-sidebar header p {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.5rem;
+  font-family: var(--font-sans);
+}
+
+.project-list {
+  flex: 1;
+}
+
+.project-item {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.project-item:hover {
+  background-color: #fff;
+}
+
+.project-item.active {
+  background-color: #fff;
+  border-left: 4px solid var(--accent-color);
+}
+
+.project-title {
+  display: block;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.project-meta {
+  display: block;
+  font-size: 0.75rem;
+  color: #555;
+  font-family: var(--font-sans);
+}
+
+/* Canvas (Detail View) */
+.academic-canvas {
+  flex: 1;
+  padding: 4rem;
+  overflow-y: auto;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+}
+
+.paper-modal {
+  width: 100%;
+  max-width: 800px;
+  background: #fff;
+  padding: 3rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
+  min-height: 800px;
+}
+
+.paper-modal h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+  border-bottom: 2px solid var(--text-color);
+  padding-bottom: 0.5rem;
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.git-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.markdown-body {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.markdown-body pre {
+  background: #fdf6e3; /* Solarized Light background */
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.empty-state {
+  align-self: center;
+  color: #888;
+  font-style: italic;
+}

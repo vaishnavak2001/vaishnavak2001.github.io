@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.name }} - Research Portfolio</title>
+  <link rel="stylesheet" href="{{ '/assets/css/academic.css' | relative_url }}">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Prism -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-solarizedlight.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="academic-container">
+    <aside class="academic-sidebar">
+      <header>
+        <h1>{{ site.name }}</h1>
+        <p>{{ site.title }}</p>
+      </header>
+      <nav class="project-list" id="project-list">
+        {% assign projects = site.data.projects %}
+        {% if projects %}
+            {% for project in projects %}
+            <div class="project-item" onclick="showProject({{ forloop.index0 }}, this)">
+                <span class="project-title">{{ project.name }}</span>
+                <span class="project-meta">
+                    {% if project.stars > 0 %}★ {{ project.stars }} |{% endif %} 
+                    {{ project.languages[0] }}
+                </span>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div style="padding: 1.5rem">
+                <p>Loading projects...</p>
+                <small>Run <code>python scripts/audit_and_doc.py</code> to generate data.</small>
+            </div>
+        {% endif %}
+      </nav>
+    </aside>
+    <main class="academic-canvas" id="project-canvas">
+      <div class="empty-state">Select a project to view "World-Class" documentation.</div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  
+  <script>
+    var projects = {{ site.data.projects | jsonify }};
+    
+    function showProject(index, element) {
+        // Highlight active item
+        document.querySelectorAll('.project-item').forEach(el => el.classList.remove('active'));
+        element.classList.add('active');
+
+        var p = projects[index];
+        var content = `
+            <article class="paper-modal">
+                <h1>${p.name}</h1>
+                <div class="meta-row">
+                    <span>${(p.languages || []).join(', ')}</span>
+                    <a href="${p.url}" target="_blank" class="git-link">View on GitHub →</a>
+                </div>
+                <div class="markdown-body">
+                    ${marked.parse(p.documentation || '')}
+                </div>
+            </article>
+        `;
+        document.getElementById('project-canvas').innerHTML = content;
+        Prism.highlightAll();
+        
+        // Scroll to top of canvas
+        document.getElementById('project-canvas').scrollTop = 0;
+    }
+
+    // Auto-select first project if available
+    /*
+    window.onload = function() {
+        var items = document.querySelectorAll('.project-item');
+        if(items.length > 0) {
+            items[0].click();
+        }
+    }
+    */
+  </script>
+</body>
+</html>
