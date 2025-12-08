@@ -5,10 +5,28 @@
     --link-color: #0056b3;
     --link-hover: #003d82;
     --border-color: #e0e0e0;
+<<<<<<< Updated upstream
     --font-serif: 'Lora', serif;
     --font-sans: 'Inter', sans-serif;
     --spacing-unit: 1.5rem;
     --max-width: 800px;
+=======
+    --accent-color: #4F46E5;
+
+    /* Typography */
+    --font-serif: 'Merriweather', serif;
+    --font-sans: 'Inter', sans-serif;
+
+    /* Spacing (Golden Ratio-ish) */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.618rem;
+    --spacing-lg: 2.618rem;
+    --spacing-xl: 4.236rem;
+
+    --max-width: 960px;
+    --radius: 8px;
+>>>>>>> Stashed changes
 }
 
 * {
@@ -19,13 +37,19 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-serif);
+<<<<<<< Updated upstream
     font-size: 18px;
     line-height: 1.6;
+=======
+    font-size: 17px;
+    line-height: 1.7;
+>>>>>>> Stashed changes
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
 }
 
+<<<<<<< Updated upstream
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-sans);
     font-weight: 600;
@@ -37,11 +61,48 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-size: 2.5rem; letter-spacing: -0.02em; }
 h2 { font-size: 1.75rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
 h3 { font-size: 1.25rem; }
+=======
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: var(--spacing-xs);
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-top: var(--spacing-md);
+}
+>>>>>>> Stashed changes
 
 a {
     color: var(--link-color);
     text-decoration: none;
+<<<<<<< Updated upstream
     transition: color 0.2s ease;
+=======
+    transition: all 0.2s ease;
+    font-weight: 500;
+>>>>>>> Stashed changes
 }
 
 a:hover {
@@ -52,18 +113,28 @@ a:hover {
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
+<<<<<<< Updated upstream
     padding: 2rem;
+=======
+    padding: var(--spacing-lg) var(--spacing-md);
+>>>>>>> Stashed changes
 }
 
 /* Header */
 header {
+<<<<<<< Updated upstream
     margin-bottom: 3rem;
     padding-bottom: 2rem;
+=======
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+>>>>>>> Stashed changes
     border-bottom: 1px solid var(--border-color);
     text-align: center;
 }
 
 .site-title {
+<<<<<<< Updated upstream
     font-size: 2.5rem;
     font-weight: 700;
     margin: 0;
@@ -91,11 +162,44 @@ header {
 
 .social-links a:hover {
     color: var(--link-color);
+=======
+    margin: 0;
+    color: var(--text-color);
+}
+
+.site-tagline {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-top: var(--spacing-sm);
+    font-family: var(--font-sans);
+    font-weight: 300;
+}
+
+.social-links {
+    margin-top: var(--spacing-md);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+}
+
+.social-links a {
+    margin: 0 var(--spacing-sm);
+    color: var(--text-light);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+    transform: translateY(-2px);
+>>>>>>> Stashed changes
 }
 
 /* Profile Section */
 .profile-section {
     display: flex;
+<<<<<<< Updated upstream
     gap: 2rem;
     align-items: flex-start;
     margin-bottom: 3rem;
@@ -108,6 +212,20 @@ header {
     object-fit: cover;
     border: 3px solid white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+=======
+    gap: var(--spacing-lg);
+    align-items: flex-start;
+    margin-bottom: var(--spacing-xl);
+}
+
+.profile-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+>>>>>>> Stashed changes
     flex-shrink: 0;
 }
 
@@ -115,6 +233,7 @@ header {
     flex: 1;
 }
 
+<<<<<<< Updated upstream
 /* Project Lists */
 .project-list {
     list-style: none;
@@ -141,10 +260,166 @@ header {
     font-size: 0.9rem;
     color: var(--text-light);
     margin-bottom: 0.5rem;
+=======
+/* Featured Grid (Asymmetrical) */
+.featured-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.featured-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1.618fr 1fr;
+    /* Golden Ratio Split */
+    gap: var(--spacing-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    border-color: var(--accent-color);
+}
+
+.featured-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-visual {
+    background: #1e1e1e;
+    border-radius: 6px;
+    padding: 1rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: #a9b7c6;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.tech-stack-raw mark {
+    background: #eef2ff;
+    color: #4f46e5;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+/* Filter Bar */
+.section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.section-header-row h2 {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-light);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--text-color);
+    color: white;
+    border-color: var(--text-color);
+}
+
+/* Repo List */
+.project-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.project-item {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: var(--spacing-md);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-item:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.project-title {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.project-meta {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-xs);
+>>>>>>> Stashed changes
     font-family: var(--font-sans);
 }
 
 .project-description {
+<<<<<<< Updated upstream
     margin: 0;
     font-size: 1rem;
 }
@@ -154,10 +429,16 @@ header {
     font-size: 0.85rem;
     font-family: var(--font-sans);
     color: var(--text-light);
+=======
+    font-size: 0.95rem;
+    flex: 1;
+    margin-bottom: var(--spacing-sm);
+>>>>>>> Stashed changes
 }
 
 .tech-tag {
     display: inline-block;
+<<<<<<< Updated upstream
     background: #eee;
     padding: 2px 8px;
     border-radius: 4px;
@@ -186,11 +467,158 @@ footer {
 
 /* Responsive */
 @media (max-width: 600px) {
+=======
+    background: #f3f4f6;
+    color: #374151;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.view-details-btn {
+    align-self: flex-start;
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+    color: var(--accent-color);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    font-weight: 600;
+}
+
+.view-details-btn:hover {
+    text-decoration: underline;
+}
+
+/* Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: flex-end;
+    /* Slide from right */
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    padding: var(--spacing-lg);
+    overflow-y: auto;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+    z-index: 10;
+}
+
+.close-btn:hover {
+    color: var(--text-color);
+}
+
+/* Markdown Styles in Modal */
+.markdown-body {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3em;
+}
+
+.markdown-body code {
+    background-color: #f6f8fa;
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    font-family: 'Fira Code', monospace;
+    font-size: 85%;
+}
+
+.markdown-body pre {
+    background-color: #1e1e1e !important;
+    /* Force dark theme background */
+    padding: 16px;
+    border-radius: 6px;
+    overflow: auto;
+}
+
+.markdown-body pre code {
+    background: none;
+    padding: 0;
+    color: #e6e6e6;
+}
+
+.markdown-body img {
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .featured-card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-visual {
+        display: none;
+        /* Hide terminal on mobile to save space */
+    }
+
+>>>>>>> Stashed changes
     .profile-section {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
+<<<<<<< Updated upstream
     
     h1 { font-size: 2rem; }
 }
+=======
+
+    .modal-content {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+}
+>>>>>>> Stashed changes

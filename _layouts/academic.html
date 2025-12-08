@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site.title }} | {{ site.name }}</title>
+<<<<<<< Updated upstream
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -94,3 +99,147 @@
 <script src="{{ '/assets/js/repo-fetcher.js' | relative_url }}"></script>
 </body>
 </html>
+=======
+
+    <!-- Google Fonts: Inter (Headers) & Merriweather (Body - Charter alternative) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/academic.css' | relative_url }}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Highlight.js Theme (GitHub Dark Dimmed for contrast) -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
+
+    <!-- Libraries (Marked, DOMPurify, Highlight.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.9/purify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    {% seo %}
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1 class="site-title">{{ site.name }}</h1>
+            <div class="site-tagline">{{ site.title }}</div>
+            <div class="social-links">
+                <a href="mailto:{{ site.email }}"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://github.com/{{ site.github_username }}" target="_blank"><i class="fab fa-github"></i>
+                    GitHub</a>
+                <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank"><i
+                        class="fab fa-linkedin"></i> LinkedIn</a>
+                {% if site.instagram_username %}
+                <a href="https://instagram.com/{{ site.instagram_username }}" target="_blank"><i
+                        class="fab fa-instagram"></i> Instagram</a>
+                {% endif %}
+                <a href="{{ site.resume | relative_url }}" target="_blank"><i class="fas fa-file-alt"></i> CV/Resume</a>
+            </div>
+        </header>
+
+        <main>
+            <!-- About Section -->
+            <section class="profile-section">
+                {% if site.about_profile_image %}
+                <img src="{{ site.about_profile_image | relative_url }}" alt="{{ site.name }}" class="profile-image">
+                {% endif %}
+                <div class="profile-bio">
+                    <h2>About Me</h2>
+                    {{ content }}
+                </div>
+            </section>
+
+            <!-- Selected Projects (Pinned) - Asymmetrical Layout -->
+            <section id="selected-projects">
+                <h2>Featured Work</h2>
+                <div class="featured-grid">
+                    {% for project in site.data.projects %}
+                    <div class="featured-card">
+                        <div class="featured-content">
+                            <h3 class="project-title">
+                                <a href="{{ project.link }}" target="_blank">{{ project.title }}</a>
+                            </h3>
+                            <div class="project-meta">
+                                {% if project.additional_links %}
+                                {% for link in project.additional_links %}
+                                <a href="{{ link.url }}" target="_blank" class="meta-link"><i
+                                        class="{{ link.icon }}"></i> {{ link.title }}</a>
+                                {% endfor %}
+                                {% endif %}
+                            </div>
+                            <div class="project-description">
+                                {{ project.description | markdownify }}
+                            </div>
+                            {% if project.quote %}
+                            <div class="tech-stack-container">
+                                <!-- We will parse the quote to extract tags if possible, or just display as is -->
+                                <div class="tech-stack-raw">{{ project.quote }}</div>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <!-- Right side could be an image or preview in future, for now it's a decorative element or terminal-like view -->
+                        <div class="featured-visual">
+                            <div class="terminal-header">
+                                <span class="dot red"></span><span class="dot yellow"></span><span
+                                    class="dot green"></span>
+                            </div>
+                            <div class="terminal-body">
+                                <code>$ init {{ project.title | slugify }}</code><br>
+                                <code>> Loading modules...</code><br>
+                                <code>> [Success] Ready.</code>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- Other Repositories (Fetched via JS) -->
+            <section id="other-projects">
+                <div class="section-header-row">
+                    <h2>Laboratory & Experiments</h2>
+                    <div class="filter-bar">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="ai">AI / ML</button>
+                        <button class="filter-btn" data-filter="web">Web Dev</button>
+                        <button class="filter-btn" data-filter="research">Research</button>
+                    </div>
+                </div>
+
+                <div id="loading-repos">Initializing data stream...</div>
+                <ul id="repo-list" class="project-list">
+                    <!-- JS will populate this -->
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.name }}. Designed with <i class="fas fa-heart"></i> &
+                Science.</p>
+        </footer>
+    </div>
+
+    <!-- Documentation Modal -->
+    <div id="doc-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <div id="modal-body" class="markdown-body">
+                <!-- Content injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ '/assets/js/repo-fetcher.js' | relative_url }}"></script>
+</body>
+
+</html>
+>>>>>>> Stashed changes
