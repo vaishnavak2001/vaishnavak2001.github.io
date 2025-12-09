@@ -420,6 +420,55 @@
                 .on("mouseover", (event, d) => highlightConnections(d, true))
                 .on("mouseout", (event, d) => highlightConnections(d, false))
             );
+
+            node.append("title").text(d => d.id);
+
+            const labels = svg.append("g")
+                .selectAll("text")
+                .data(projects.filter(d => {
+                    if (d.group === 1) return true; // Show ALL projects
+                    const majorTech = ['CNN-LSTM', 'VGG16', 'ResNet', 'Transfer Learning', 'Medical Imaging',
+                        'Reinforcement Learning', 'PPO', 'RAG', 'LLMs', 'Deep Learning',
+                        'Python', 'Signal Processing', 'Medical AI'
+                    ];
+                    return majorTech.includes(d.id);
+                }))
+                .join("text")
+                .text(d => d.id)
+                .attr("text-anchor", "middle")
+                .attr("dy", d => d.group === 1 ? -10 : 10)
+                .style("font-size", d => d.group === 1 ? "10px" : "9px")
+                .style("font-weight", d => d.group === 1 ? "700" : "600")
+                .style("fill", d => d.group === 1 ? "#002147" : "#008080")
+                .style("pointer-events", "none")
+                .style("text-shadow", "1px 1px 2px white, -1px -1px 2px white");
+
+            simulation.on("tick", () => {
+                link
+                    .attr("x1", d => d.source.x)
+                    .attr("y1", d => d.source.y)
+                    .attr("x2", d => d.target.x)
+                    .attr("y2", d => d.target.y);
+
+                node
+                    .attr("cx", d => d.x)
+                    .attr("cy", d => d.y);
+
+                labels
+                    .attr("x", d => d.x)
+                    .attr("y", d => d.y);
+            });
+
+            // 3. Search Filter
+            document.getElementById('archiveSearch').addEventListener('keyup', function () {
+                let filter = this.value.toLowerCase();
+                let rows = document.querySelectorAll('.archive-row');
+
+                rows.forEach(row => {
+                    let text = row.textContent.toLowerCase();
+                    row.style.display = text.includes(filter) ? '' : 'none';
+                });
+            });
         </script>
     </body>
 
