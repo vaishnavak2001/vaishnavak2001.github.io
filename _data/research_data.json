@@ -1,91 +1,109 @@
 [
   {
-    "id": "Car_Price_Prediction",
-    "title": "Car Price Prediction",
-    "github": "https://github.com/vaishnavak2001/Car_Price_Prediction",
-    "year": 2025,
-    "featured": true,
-    "abstract": "Predictive regression modeling for automotive pricing. Utilizes XGBoost and Random Forest on structured data with extensive Feature Engineering.",
+    "id": "ecg-classification-cnn-lstm",
+    "title": "ECG Arrhythmia Detection",
+    "abstract": "Engineered a hybrid CNN-LSTM model for the MIT-BIH dataset, implementing digital filtering and normalization for real-time anomaly detection.",
     "tags": [
-      "Regression",
-      "XGBoost",
-      "Predictive Analytics"
-    ],
-    "category": "Analytics"
-  },
-  {
-    "id": "fifa_cluster",
-    "title": "Fifa Cluster",
-    "github": "https://github.com/vaishnavak2001/fifa_cluster",
-    "year": 2025,
-    "featured": true,
-    "abstract": "Unsupervised learning analysis of player attributes using K-Means and Hierarchical Clustering. Successfully segmented players into tactical roles (Defenders vs Attackers) based on performance metrics.",
-    "tags": [
-      "Clustering",
-      "K-Means",
-      "Unsupervised Learning",
-      "Sports Analytics"
-    ],
-    "category": "Analytics"
-  },
-  {
-    "id": "GenderDetc_complete_using_colab",
-    "title": "Genderdetc Complete Using Colab",
-    "github": "https://github.com/vaishnavak2001/GenderDetc_complete_using_colab",
-    "year": 2025,
-    "featured": true,
-    "abstract": "Real-time biometric system predicting gender from facial feeds. Leverages MobileNet and InceptionV3 architectures optimized for low-latency inference using OpenCV.",
-    "tags": [
-      "Computer Vision",
-      "Biometrics",
-      "MobileNet",
+      "CNN-LSTM",
+      "Signal Processing",
+      "MIT-BIH",
       "Real-time"
     ],
-    "category": "Computer Vision"
+    "category": "Signal Processing",
+    "featured": true,
+    "year": 2025,
+    "github": "https://github.com/vaishnavak2001/ecg-classification-cnn-lstm"
   },
   {
     "id": "Pneumonia-chest-X-Ray-classification",
-    "title": "Pneumonia Chest X Ray Classification",
-    "github": "https://github.com/vaishnavak2001/Pneumonia-chest-X-Ray-classification",
-    "year": 2025,
-    "featured": true,
-    "abstract": "CNN-based classification system to identify pneumonia from grayscale chest X-rays (NIH dataset). Benchmarked MobileNet (88.6% acc), InceptionV3, and VGG16. Features real-time inference logic and CLAHE preprocessing for contrast enhancement.",
+    "title": "Pneumonia Detection",
+    "abstract": "Built diagnostic tools by fine-tuning pre-trained CNN architectures (VGG16, ResNet) using transfer learning, extensive data augmentation, and hyperparameter optimization for X-ray classification.",
     "tags": [
-      "CNN",
-      "MobileNet",
-      "InceptionV3",
+      "VGG16",
+      "ResNet",
+      "Transfer Learning",
       "Medical Imaging"
     ],
-    "category": "Medical AI"
+    "category": "Medical Imaging",
+    "featured": true,
+    "year": 2025,
+    "github": "https://github.com/vaishnavak2001/Pneumonia-chest-X-Ray-classification"
   },
   {
-    "id": "PRCP_1002_Handwritten_Digits_Recognition",
-    "title": "Prcp 1002 Handwritten Digits Recognition",
-    "github": "https://github.com/vaishnavak2001/PRCP_1002_Handwritten_Digits_Recognition",
-    "year": 2025,
-    "featured": true,
-    "abstract": "High-precision neural network for MNIST digit classification. Implements dropout regularization and data normalization to minimize overfitting.",
+    "id": "Diabetic-Retinopathy-Detection",
+    "title": "Diabetic Retinopathy Detection",
+    "abstract": "Built diagnostic tools by fine-tuning pre-trained CNN architectures (VGG16, ResNet) using transfer learning, extensive data augmentation, and hyperparameter optimization for fundus image classification.",
     "tags": [
-      "MNIST",
-      "Neural Networks",
-      "Deep Learning"
+      "VGG16",
+      "ResNet",
+      "Transfer Learning",
+      "Medical Imaging"
     ],
-    "category": "Computer Vision"
+    "category": "Medical Imaging",
+    "featured": true,
+    "year": 2025,
+    "github": "https://github.com/vaishnavak2001/Diabetic-Retinopathy-Detection"
   },
   {
-    "id": "skin-disorder-detection",
-    "title": "Skin Disorder Detection",
-    "github": "https://github.com/vaishnavak2001/skin-disorder-detection",
-    "year": 2025,
-    "featured": true,
-    "abstract": "Multiclass classification of Erythemato-Squamous Diseases (ESD) using clinical and histopathological attributes. Comparative analysis of Random Forest (93% acc), SVM, and XGBoost. Features robust preprocessing including imputation and outlier detection.",
+    "id": "ControlGym-mass-spring-damper",
+    "title": "Adaptive Control via Deep RL",
+    "abstract": "Investigated Deep RL (PPO, SAC) versus classical optimal control (LQR) in stochastic environments. Designed a hybrid RL-PD controller to accelerate learning and ensure safety, demonstrating RLs superior generalization to unseen disturbances.",
     "tags": [
+      "Deep RL",
+      "PPO",
+      "SAC",
+      "LQR",
+      "Control Systems"
+    ],
+    "category": "Control Systems",
+    "featured": true,
+    "year": 2025,
+    "github": "https://github.com/vaishnavak2001/ControlGym-mass-spring-damper"
+  },
+  {
+    "id": "EEG-Seizure-Detection",
+    "title": "EEG Seizure Detection",
+    "abstract": "Developed CNN-based models for time-series EEG signal analysis, utilizing feature extraction to identify pathological waveforms.",
+    "tags": [
+      "CNN",
+      "EEG",
+      "Time-Series",
+      "Feature Extraction"
+    ],
+    "category": "Signal Processing",
+    "featured": true,
+    "year": 2024,
+    "github": "https://github.com/vaishnavak2001"
+  },
+  {
+    "id": "PhysioNet-ECG-Digitization",
+    "title": "PhysioNet ECG Digitization System",
+    "abstract": "Developed an automated 'Computer Vision to Time-Series' pipeline to digitize historical paper ECG scans. Implemented a DL architecture using YOLOv8 for layout detection and Swin Transformers for signal extraction, featuring dynamic calibration and artifact removal.",
+    "tags": [
+      "YOLOv8",
+      "Swin Transformers",
+      "Computer Vision",
+      "Digitization"
+    ],
+    "category": "Signal Processing",
+    "featured": true,
+    "year": 2024,
+    "github": "https://github.com/vaishnavak2001"
+  },
+  {
+    "id": "Disease-Risk-Prediction",
+    "title": "Disease Risk Prediction",
+    "abstract": "Applied ensemble methods (XGBoost, Random Forest, SVM) with rigorous feature engineering on clinical datasets (Heart Disease, Breast Cancer), achieving model accuracy up to 93% through feature engineering.",
+    "tags": [
+      "XGBoost",
       "Random Forest",
       "SVM",
-      "XGBoost",
       "Clinical Data"
     ],
-    "category": "Medical AI"
+    "category": "Predictive Analytics",
+    "featured": true,
+    "year": 2024,
+    "github": "https://github.com/vaishnavak2001"
   },
   {
     "id": "Admission_Prediction_-Linear_Regression-",
@@ -95,8 +113,7 @@
     "featured": false,
     "abstract": "Predicting graduate admission chances using linear regression with GRE, TOEFL, University Rating, SOP, LOR, CGPA, and Research. Explores data preprocessing, EDA, feature selection, regularization, polynomial features, and cross-validation to improve model accuracy. Polynomial features showed the best performance.",
     "tags": [
-      "Jupyter Notebook",
-      "Data Science"
+      "Jupyter Notebook"
     ],
     "category": "Software Archive"
   },
@@ -108,8 +125,7 @@
     "featured": false,
     "abstract": "This project aims to build a machine learning model to predict total sales based on advertising spending across different channels: TV, Radio, and Newspaper. The goal is to understand the impact of advertising budgets on sales revenue and identify the most effective advertising channels.",
     "tags": [
-      "Jupyter Notebook",
-      "Neural Networks"
+      "Jupyter Notebook"
     ],
     "category": "Software Archive"
   },
@@ -130,9 +146,7 @@
     "year": 2025,
     "featured": false,
     "abstract": "Scientific software archive.",
-    "tags": [
-      "AI Agent"
-    ],
+    "tags": [],
     "category": "Software Archive"
   },
   {
@@ -155,8 +169,7 @@
     "featured": false,
     "abstract": "Scientific software archive.",
     "tags": [
-      "Jupyter Notebook",
-      "AI Agent"
+      "Jupyter Notebook"
     ],
     "category": "Software Archive"
   },
@@ -180,8 +193,19 @@
     "featured": false,
     "abstract": "Scientific software archive.",
     "tags": [
-      "Python",
-      "AI Agent"
+      "Python"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "Car_Price_Prediction",
+    "title": "Car Price Prediction",
+    "github": "https://github.com/vaishnavak2001/Car_Price_Prediction",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Jupyter Notebook"
     ],
     "category": "Software Archive"
   },
@@ -210,30 +234,6 @@
     "category": "Software Archive"
   },
   {
-    "id": "ControlGym-mass-spring-damper",
-    "title": "Controlgym Mass Spring Damper",
-    "github": "https://github.com/vaishnavak2001/ControlGym-mass-spring-damper",
-    "year": 2025,
-    "featured": false,
-    "abstract": "Scientific software archive.",
-    "tags": [
-      "Python"
-    ],
-    "category": "Software Archive"
-  },
-  {
-    "id": "Diabetic-Retinopathy-Detection",
-    "title": "Diabetic Retinopathy Detection",
-    "github": "https://github.com/vaishnavak2001/Diabetic-Retinopathy-Detection",
-    "year": 2025,
-    "featured": false,
-    "abstract": "In this diabetic retinopathy classification project, various deep learning models—including EfficientNet, VGG16,DenseNet,  ResNet50, and MobileNetV2—were trained to classify retinal fundus images into three clinically significant categories: No DR, Mild DR, and Severe DR",
-    "tags": [
-      "Jupyter Notebook"
-    ],
-    "category": "Software Archive"
-  },
-  {
     "id": "dronegym-rl-quadcopter-attitude",
     "title": "Dronegym Rl Quadcopter Attitude",
     "github": "https://github.com/vaishnavak2001/dronegym-rl-quadcopter-attitude",
@@ -244,17 +244,26 @@
     "category": "Software Archive"
   },
   {
-    "id": "ecg-classification-cnn-lstm",
-    "title": "Ecg Classification Cnn Lstm",
-    "github": "https://github.com/vaishnavak2001/ecg-classification-cnn-lstm",
+    "id": "fifa_cluster",
+    "title": "Fifa Cluster",
+    "github": "https://github.com/vaishnavak2001/fifa_cluster",
     "year": 2025,
     "featured": false,
     "abstract": "Scientific software archive.",
     "tags": [
-      "Jupyter Notebook",
-      "Neural Networks",
-      "CNN",
-      "LSTM"
+      "Jupyter Notebook"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "GenderDetc_complete_using_colab",
+    "title": "Genderdetc Complete Using Colab",
+    "github": "https://github.com/vaishnavak2001/GenderDetc_complete_using_colab",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Jupyter Notebook"
     ],
     "category": "Software Archive"
   },
@@ -266,8 +275,19 @@
     "featured": false,
     "abstract": "Scientific software archive.",
     "tags": [
-      "Jupyter Notebook",
-      "Data Science"
+      "Jupyter Notebook"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "PRCP_1002_Handwritten_Digits_Recognition",
+    "title": "Prcp 1002 Handwritten Digits Recognition",
+    "github": "https://github.com/vaishnavak2001/PRCP_1002_Handwritten_Digits_Recognition",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Jupyter Notebook"
     ],
     "category": "Software Archive"
   },
@@ -279,8 +299,19 @@
     "featured": false,
     "abstract": "Scientific software archive.",
     "tags": [
-      "Python",
-      "AI Agent"
+      "Python"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "skin-disorder-detection",
+    "title": "Skin Disorder Detection",
+    "github": "https://github.com/vaishnavak2001/skin-disorder-detection",
+    "year": 2025,
+    "featured": false,
+    "abstract": "This project focuses on the classification of Erythemato-Squamous Diseases (ESD) using supervised machine learning algorithms. The goal is to assist dermatologists in accurately diagnosing six common skin conditions by leveraging clinical and histopathological data.",
+    "tags": [
+      "HTML"
     ],
     "category": "Software Archive"
   },
@@ -316,8 +347,7 @@
     "featured": false,
     "abstract": "Scientific software archive.",
     "tags": [
-      "Jupyter Notebook",
-      "Data Science"
+      "Jupyter Notebook"
     ],
     "category": "Software Archive"
   },
@@ -329,8 +359,7 @@
     "featured": false,
     "abstract": "Scientific software archive.",
     "tags": [
-      "Jupyter Notebook",
-      "Python"
+      "Jupyter Notebook"
     ],
     "category": "Software Archive"
   }

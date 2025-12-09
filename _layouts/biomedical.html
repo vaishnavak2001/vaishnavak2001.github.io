@@ -61,8 +61,8 @@
             </div>
         </div>
         <div class="hero-image-container">
-            <!-- If profile.jpg exists it will show, else fallback/alt text -->
-            <img src="{{ '/assets/images/profile.jpg' | relative_url }}"
+            <!-- User requested path: images/profile.jpg -->
+            <img src="{{ '/images/profile.jpg' | relative_url }}"
                 onerror="this.src='https://ui-avatars.com/api/?name=Vaishnav+AK&background=002147&color=fff&size=512'"
                 alt="Vaishnav AK" class="hero-img">
         </div>
@@ -142,10 +142,10 @@
         new Chart(ctx, {
             type: 'radar',
             data: {
-                labels: ['Biomedical Eng', 'Deep Learning', 'Data Science', 'Clinical Systems', 'Control Science', 'Research'],
+                labels: ['Biomedical Eng', 'Deep Learning', 'Data Science', 'Signal Processing', 'Control Science', 'Research'],
                 datasets: [{
                     label: 'Proficiency',
-                    data: [90, 85, 88, 75, 80, 85],
+                    data: [90, 85, 88, 85, 80, 85],
                     fill: true,
                     backgroundColor: 'rgba(0, 128, 128, 0.2)',
                     borderColor: 'rgba(0, 128, 128, 1)',
@@ -173,15 +173,31 @@
         { id: "{{ project.title }}", group: 1 },
         {% endfor %}
         // Tech nodes
-        { id: "Python", group: 2 }, { id: "Deep Learning", group: 2 }, { id: "Biomedical", group: 2 }
+        { id: "Python", group: 2 },
+        { id: "Deep Learning", group: 2 },
+        { id: "Biomedical", group: 2 },
+        { id: "Signal Processing", group: 2 },
+        { id: "Reinforcement Learning", group: 2 },
+        { id: "Computer Vision", group: 2 }
         ];
 
         const links = [
+            // Connect first 10 projects to generic nodes for density
             {% for project in site.data.research_data limit: 10 %}
         { source: "{{ project.title }}", target: "Python" },
         {% endfor %}
+
+        // Connect featured projects to specific domains
         {% for project in featured %}
+        {% if project.category == 'Signal Processing' %}
+        { source: "{{ project.title }}", target: "Signal Processing" },
+        {% elsif project.category == 'Control Systems' %}
+        { source: "{{ project.title }}", target: "Reinforcement Learning" },
+        {% elsif project.category == 'Medical Imaging' %}
         { source: "{{ project.title }}", target: "Deep Learning" },
+        {% else %}
+        { source: "{{ project.title }}", target: "Data Science" },
+        {% endif %}
         {% endfor %}
         ];
 
