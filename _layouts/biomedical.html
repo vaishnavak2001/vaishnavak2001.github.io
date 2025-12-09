@@ -381,18 +381,25 @@
 
             node.append("title").text(d => d.id);
 
-            // Only show labels for tech nodes (group 2) to reduce clutter
             const labels = svg.append("g")
                 .selectAll("text")
-                .data(projects.filter(d => d.group === 2))
+                .data(projects.filter(d => {
+                    if (d.group === 1) return true; // Show ALL projects
+                    const majorTech = ['CNN-LSTM', 'VGG16', 'ResNet', 'Transfer Learning', 'Medical Imaging',
+                        'Reinforcement Learning', 'PPO', 'RAG', 'LLMs', 'Deep Learning',
+                        'Python', 'Signal Processing', 'Medical AI'
+                    ];
+                    return majorTech.includes(d.id);
+                }))
                 .join("text")
                 .text(d => d.id)
                 .attr("text-anchor", "middle")
-                .attr("dy", "0.35em")
-                .style("font-size", "12px")
-                .style("font-weight", "600")
-                .style("fill", "#002147")
-                .style("pointer-events", "none");
+                .attr("dy", d => d.group === 1 ? -10 : 10)
+                .style("font-size", d => d.group === 1 ? "10px" : "9px")
+                .style("font-weight", d => d.group === 1 ? "700" : "600")
+                .style("fill", d => d.group === 1 ? "#002147" : "#008080")
+                .style("pointer-events", "none")
+                .style("text-shadow", "1px 1px 2px white, -1px -1px 2px white");
 
             simulation.on("tick", () => {
                 link
