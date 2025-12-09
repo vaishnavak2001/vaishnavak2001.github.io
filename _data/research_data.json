@@ -227,7 +227,7 @@
     "github": "https://github.com/vaishnavak2001/Diabetic-Retinopathy-Detection",
     "year": 2025,
     "featured": false,
-    "abstract": "In this diabetic retinopathy classification project, various deep learning models\u2014including EfficientNet, VGG16,DenseNet,  ResNet50, and MobileNetV2\u2014were trained to classify retinal fundus images into three clinically significant categories: No DR, Mild DR, and Severe DR",
+    "abstract": "In this diabetic retinopathy classification project, various deep learning models—including EfficientNet, VGG16,DenseNet,  ResNet50, and MobileNetV2—were trained to classify retinal fundus images into three clinically significant categories: No DR, Mild DR, and Severe DR",
     "tags": [
       "Jupyter Notebook"
     ],
