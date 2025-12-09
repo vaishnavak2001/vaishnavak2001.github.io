@@ -78,7 +78,12 @@
         <!-- D3 Network -->
         <div class="viz-box" style="position:relative; overflow:hidden;">
             <h3 style="text-align:center; color:var(--navy-deep); margin-bottom:1rem;">Tech Ecosystem</h3>
-            <div id="d3-graph" style="width:100%; height:600px;"></div>
+            <div id="d3-graph"
+                style="width:100%; height:600px; border:1px solid #eee; border-radius:8px; position:relative;">
+                <button onclick="resetZoom()"
+                    style="position:absolute; top:10px; right:10px; z-index:10; padding:5px 10px; background:white; border:1px solid #ccc; border-radius:4px; cursor:pointer;">Reset
+                    Zoom</button>
+            </div>
         </div>
     </section>
 
@@ -363,70 +368,58 @@
                 .join("circle")
                 .attr("r", d => d.group === 1 ? 6 : 4)
                 .attr("fill", d => d.group === 1 ? "#002147" : "#008080")
-                .call(d3.drag()
-                    .on("start", (event, d) => {
-                        if (!event.active) simulation.alphaTarget(0.3).restart();
-                        d.fx = d.x;
-                        d.fy = d.y;
-                    })
-                    .on("drag", (event, d) => {
-                        d.fx = event.x;
-                        d.fy = event.y;
-                    })
-                    .on("end", (event, d) => {
-                        if (!event.active) simulation.alphaTarget(0);
-                        d.fx = null;
-                        d.fy = null;
-                    }));
-
-            node.append("title").text(d => d.id);
-
-            const labels = svg.append("g")
-                .selectAll("text")
-                .data(projects.filter(d => {
-                    if (d.group === 1) return true; // Show ALL projects
-                    const majorTech = ['CNN-LSTM', 'VGG16', 'ResNet', 'Transfer Learning', 'Medical Imaging',
-                        'Reinforcement Learning', 'PPO', 'RAG', 'LLMs', 'Deep Learning',
-                        'Python', 'Signal Processing', 'Medical AI'
-                    ];
-                    return majorTech.includes(d.id);
-                }))
-                .join("text")
-                .text(d => d.id)
-                .attr("text-anchor", "middle")
-                .attr("dy", d => d.group === 1 ? -10 : 10)
-                .style("font-size", d => d.group === 1 ? "10px" : "9px")
-                .style("font-weight", d => d.group === 1 ? "700" : "600")
-                .style("fill", d => d.group === 1 ? "#002147" : "#008080")
-                .style("pointer-events", "none")
-                .style("text-shadow", "1px 1px 2px white, -1px -1px 2px white");
-
-            simulation.on("tick", () => {
-                link
-                    .attr("x1", d => d.source.x)
-                    .attr("y1", d => d.source.y)
-                    .attr("x2", d => d.target.x)
-                    .attr("y2", d => d.target.y);
-
-                node
-                    .attr("cx", d => d.x)
-                    .attr("cy", d => d.y);
-
-                labels
-                    .attr("x", d => d.x)
-                    .attr("y", d => d.y);
-            });
-
-            // 3. Search Filter
-            document.getElementById('archiveSearch').addEventListener('keyup', function () {
-                let filter = this.value.toLowerCase();
-                let rows = document.querySelectorAll('.archive-row');
-
-                rows.forEach(row => {
-                    let text = row.textContent.toLowerCase();
-                    row.style.display = text.includes(filter) ? '' : 'none';
+            // 4. Zoom & Interactivity
+            const zoom = d3.zoom()
+                .scaleExtent([0.1, 4])
+                .on("zoom", (event) => {
+                    svg.selectAll("g").attr("transform", event.transform);
                 });
-            });
+
+            svg.call(zoom);
+
+            function resetZoom() {
+                svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
+            }
+
+            // Highlight Connections Logic
+            function highlightConnections(d, isHover) {
+                const opacity = isHover ? 0.1 : 1;
+                const connectedIds = new Set();
+
+                if (isHover) {
+                    connectedIds.add(d.id);
+                    links.forEach(l => {
+                        if (l.source.id === d.id) connectedIds.add(l.target.id);
+                        if (l.target.id === d.id) connectedIds.add(l.source.id);
+                    });
+                }
+
+                node.style('opacity', o => isHover ? (connectedIds.has(o.id) ? 1 : 0.1) : 0.9);
+                labels.style('opacity', o => isHover ? (connectedIds.has(o.id) ? 1 : 0.1) : 1);
+                link.style('opacity', l => isHover ? (connectedIds.has(l.source.id) && connectedIds.has(l.target.id) ? 1 : 0.1) : 0.4);
+            }
+
+            // Update Drag Behavior to use highlightConnections
+            node.call(d3.drag()
+                .on("start", (event, d) => {
+                    if (!event.active) simulation.alphaTarget(0.3).restart();
+                    d.fx = d.x;
+                    d.fy = d.y;
+                    highlightConnections(d, true);
+                })
+                .on("drag", (event, d) => {
+                    d.fx = event.x;
+                    d.fy = event.y;
+                })
+                .on("end", (event, d) => {
+                    if (!event.active) simulation.alphaTarget(0);
+                    d.fx = null;
+                    d.fy = null;
+                    highlightConnections(d, false);
+                })
+                .on("mouseover", (event, d) => highlightConnections(d, true))
+                .on("mouseout", (event, d) => highlightConnections(d, false))
+            );
         </script>
     </body>
 
