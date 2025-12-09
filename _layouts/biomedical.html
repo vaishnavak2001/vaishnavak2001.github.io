@@ -55,7 +55,7 @@
                 pipelines, offering a rare end-to-end view of the healthcare ecosystem.
             </p>
             <div class="cta-buttons">
-                <a href="#" class="btn">View Research</a>
+                <a href="#featured-research" class="btn">View Research</a>
                 <a href="{{ site.resume | relative_url }}" class="btn btn-outline" style="margin-left:1rem;">Download
                     CV</a>
             </div>
@@ -200,17 +200,6 @@
             <!-- D3 Network -->
             <div class="viz-box" style="position:relative; overflow:hidden;">
                 <h3 style="text-align:center; color:var(--navy-deep); margin-bottom:1rem;">Tech Ecosystem</h3>
-                <div id="d3-graph" style="width:100%; height:300px;"></div>
-            </div>
-        </section>
-
-        <!-- Featured Research -->
-        <h2 class="section-title">Featured Research</h2>
-        <section class="publications-grid">
-            {% assign featured = site.data.research_data | where: "featured", true %}
-            {% for project in featured %}
-            <div class="journal-card" onclick="window.location.href='{{ project.github }}'">
-                <div class="journal-meta">{{ project.category }} • {{ project.year }}</div>
                 <div class="journal-title">{{ project.title }}</div>
                 <div class="journal-abstract">{{ project.abstract }}</div>
                 <div style="font-size:0.85rem; color:var(--teal-accent);">
