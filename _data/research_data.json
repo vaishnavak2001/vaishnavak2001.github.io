@@ -46,19 +46,89 @@
   },
   {
     "id": "ControlGym-mass-spring-damper",
-    "title": "Adaptive Control via Deep RL",
-    "abstract": "Investigated Deep RL (PPO, SAC) versus classical optimal control (LQR) in stochastic environments. Designed a hybrid RL-PD controller to accelerate learning and ensure safety, demonstrating RLs superior generalization to unseen disturbances.",
+    "title": "ControlGym: Mass-Spring-Damper",
+    "abstract": "Reinforcement Learning environment for classical control problems. Investigated Deep RL (PPO, SAC) versus classical optimal control (LQR) in stochastic environments, demonstrating RL's robustness.",
     "tags": [
-      "Deep RL",
-      "PPO",
-      "SAC",
-      "LQR",
-      "Control Systems"
+      "Reinforcement Learning",
+      "Control Theory",
+      "OpenAI Gym",
+      "PPO"
     ],
     "category": "Control Systems",
     "featured": true,
     "year": 2025,
     "github": "https://github.com/vaishnavak2001/ControlGym-mass-spring-damper"
+  },
+  {
+    "id": "Welltrack-ai",
+    "title": "WellTrack AI",
+    "abstract": "Comprehensive health monitoring system using AI agents to track and predict wellness metrics. Integrates predictive modeling with a user-friendly interface.",
+    "tags": [
+      "Generative AI",
+      "Health Tech",
+      "Python"
+    ],
+    "category": "Generative AI",
+    "featured": true,
+    "year": 2025,
+    "github": "https://github.com/vaishnavak2001/Welltrack-ai"
+  },
+  {
+    "id": "restaurant-rag-agent",
+    "title": "Restaurant RAG Agent",
+    "abstract": "Retrieval-Augmented Generation (RAG) agent designed for restaurant recommendation and query handling. Utilizes vector databases to provide context-aware responses.",
+    "tags": [
+      "RAG",
+      "LLMs",
+      "LangChain",
+      "Vector DB"
+    ],
+    "category": "Generative AI",
+    "featured": true,
+    "year": 2025,
+    "github": "https://github.com/vaishnavak2001/restaurant-rag-agent"
+  },
+  {
+    "id": "capstone-project-the-agentops-guardian-5dgai",
+    "title": "AgentOps Guardian",
+    "abstract": "Capstone project focusing on operationalizing AI agents. Implements monitoring, safety guardrails, and performance tracking for autonomous agent systems.",
+    "tags": [
+      "AgentOps",
+      "AI Safety",
+      "Autonomous Agents"
+    ],
+    "category": "Generative AI",
+    "featured": true,
+    "year": 2025,
+    "github": "https://github.com/vaishnavak2001/capstone-project-the-agentops-guardian-5dgai"
+  },
+  {
+    "id": "career_agent",
+    "title": "Autonomous Career Agent",
+    "abstract": "AI-driven career counselor agent that aggregates job market data and matches user profiles with opportunities using natural language processing.",
+    "tags": [
+      "NLP",
+      "AI Agents",
+      "Career Tech"
+    ],
+    "category": "Generative AI",
+    "featured": true,
+    "year": 2025,
+    "github": "https://github.com/vaishnavak2001/career_agent"
+  },
+  {
+    "id": "skin-disorder-detection",
+    "title": "Skin Disorder Detection",
+    "abstract": "Multiclass classification of Erythemato-Squamous Diseases (ESD) using clinical and histopathological attributes. Comparative analysis of Random Forest (93% acc), SVM, and XGBoost.",
+    "tags": [
+      "Dermatology",
+      "Random Forest",
+      "Medical AI"
+    ],
+    "category": "Medical Imaging",
+    "featured": true,
+    "year": 2025,
+    "github": "https://github.com/vaishnavak2001/skin-disorder-detection"
   },
   {
     "id": "EEG-Seizure-Detection",
@@ -86,21 +156,6 @@
       "Digitization"
     ],
     "category": "Signal Processing",
-    "featured": true,
-    "year": 2024,
-    "github": "https://github.com/vaishnavak2001"
-  },
-  {
-    "id": "Disease-Risk-Prediction",
-    "title": "Disease Risk Prediction",
-    "abstract": "Applied ensemble methods (XGBoost, Random Forest, SVM) with rigorous feature engineering on clinical datasets (Heart Disease, Breast Cancer), achieving model accuracy up to 93% through feature engineering.",
-    "tags": [
-      "XGBoost",
-      "Random Forest",
-      "SVM",
-      "Clinical Data"
-    ],
-    "category": "Predictive Analytics",
     "featured": true,
     "year": 2024,
     "github": "https://github.com/vaishnavak2001"
@@ -162,18 +217,6 @@
     "category": "Software Archive"
   },
   {
-    "id": "capstone-project-the-agentops-guardian-5dgai",
-    "title": "Capstone Project The Agentops Guardian 5Dgai",
-    "github": "https://github.com/vaishnavak2001/capstone-project-the-agentops-guardian-5dgai",
-    "year": 2025,
-    "featured": false,
-    "abstract": "Scientific software archive.",
-    "tags": [
-      "Jupyter Notebook"
-    ],
-    "category": "Software Archive"
-  },
-  {
     "id": "capstone-project-the-The-AI-Website-Creator-5dgai",
     "title": "Capstone Project The The Ai Website Creator 5Dgai",
     "github": "https://github.com/vaishnavak2001/capstone-project-the-The-AI-Website-Creator-5dgai",
@@ -182,18 +225,6 @@
     "abstract": "Scientific software archive.",
     "tags": [
       "Jupyter Notebook"
-    ],
-    "category": "Software Archive"
-  },
-  {
-    "id": "career_agent",
-    "title": "Career Agent",
-    "github": "https://github.com/vaishnavak2001/career_agent",
-    "year": 2025,
-    "featured": false,
-    "abstract": "Scientific software archive.",
-    "tags": [
-      "Python"
     ],
     "category": "Software Archive"
   },
@@ -292,30 +323,6 @@
     "category": "Software Archive"
   },
   {
-    "id": "restaurant-rag-agent",
-    "title": "Restaurant Rag Agent",
-    "github": "https://github.com/vaishnavak2001/restaurant-rag-agent",
-    "year": 2025,
-    "featured": false,
-    "abstract": "Scientific software archive.",
-    "tags": [
-      "Python"
-    ],
-    "category": "Software Archive"
-  },
-  {
-    "id": "skin-disorder-detection",
-    "title": "Skin Disorder Detection",
-    "github": "https://github.com/vaishnavak2001/skin-disorder-detection",
-    "year": 2025,
-    "featured": false,
-    "abstract": "This project focuses on the classification of Erythemato-Squamous Diseases (ESD) using supervised machine learning algorithms. The goal is to assist dermatologists in accurately diagnosing six common skin conditions by leveraging clinical and histopathological data.",
-    "tags": [
-      "HTML"
-    ],
-    "category": "Software Archive"
-  },
-  {
     "id": "TrafSignDetc",
     "title": "Trafsigndetc",
     "github": "https://github.com/vaishnavak2001/TrafSignDetc",
@@ -324,18 +331,6 @@
     "abstract": "Scientific software archive.",
     "tags": [
       "Jupyter Notebook"
-    ],
-    "category": "Software Archive"
-  },
-  {
-    "id": "Welltrack-ai",
-    "title": "Welltrack Ai",
-    "github": "https://github.com/vaishnavak2001/Welltrack-ai",
-    "year": 2025,
-    "featured": false,
-    "abstract": "Scientific software archive.",
-    "tags": [
-      "Python"
     ],
     "category": "Software Archive"
   },
