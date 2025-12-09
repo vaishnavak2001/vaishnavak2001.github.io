@@ -51,23 +51,42 @@ FEATURED_PROJECTS = {
     
     # Group 3: Control Systems & Predictive Analytics
     "ControlGym-mass-spring-damper": {
-        "title": "Adaptive Control via Deep RL",
-        "abstract": "Investigated Deep RL (PPO, SAC) versus classical optimal control (LQR) in stochastic environments. Designed a hybrid RL-PD controller to accelerate learning and ensure safety, demonstrating RL’s superior generalization to unseen disturbances.",
-        "tags": ["Deep RL", "PPO", "SAC", "LQR", "Control Systems"],
+        "title": "ControlGym: Mass-Spring-Damper",
+        "abstract": "Reinforcement Learning environment for classical control problems. Investigated Deep RL (PPO, SAC) versus classical optimal control (LQR) in stochastic environments, demonstrating RL's robustness.",
+        "tags": ["Reinforcement Learning", "Control Theory", "OpenAI Gym", "PPO"],
         "category": "Control Systems"
     },
-    "Disease-Risk-Prediction": { # Mapping to skin-disorder or creating virtual if needed. 
-        # User explicitly mentioned Heart Disease/Breast Cancer. 
-        # I'll map this to 'skin-disorder' as a placeholder REPO but use the NEW Title/Desc? 
-        # No, 'skin-disorder' is specifically ESD. 
-        # I will check if 'Heart-Disease' repo exists dynamically in the loop. 
-        # For now, I'll create a virtual entry to be safe.
-        "title": "Disease Risk Prediction",
-        "abstract": "Applied ensemble methods (XGBoost, Random Forest, SVM) with rigorous feature engineering on clinical datasets (Heart Disease, Breast Cancer), achieving model accuracy up to 93% through feature engineering.",
-        "tags": ["XGBoost", "Random Forest", "SVM", "Clinical Data"],
-        "category": "Predictive Analytics",
-        "virtual": True,
-        "url": "https://github.com/vaishnavak2001"
+    
+    # Group 4: Generative AI & Agents (New Requests)
+    "Welltrack-ai": {
+        "title": "WellTrack AI",
+        "abstract": "Comprehensive health monitoring system using AI agents to track and predict wellness metrics. Integrates predictive modeling with a user-friendly interface.",
+        "tags": ["Generative AI", "Health Tech", "Python"],
+        "category": "Generative AI"
+    },
+    "restaurant-rag-agent": {
+        "title": "Restaurant RAG Agent",
+        "abstract": "Retrieval-Augmented Generation (RAG) agent designed for restaurant recommendation and query handling. Utilizes vector databases to provide context-aware responses.",
+        "tags": ["RAG", "LLMs", "LangChain", "Vector DB"],
+        "category": "Generative AI"
+    },
+    "capstone-project-the-agentops-guardian-5dgai": {
+        "title": "AgentOps Guardian",
+        "abstract": "Capstone project focusing on operationalizing AI agents. Implements monitoring, safety guardrails, and performance tracking for autonomous agent systems.",
+        "tags": ["AgentOps", "AI Safety", "Autonomous Agents"],
+        "category": "Generative AI"
+    },
+    "career_agent": {
+        "title": "Autonomous Career Agent",
+        "abstract": "AI-driven career counselor agent that aggregates job market data and matches user profiles with opportunities using natural language processing.",
+        "tags": ["NLP", "AI Agents", "Career Tech"],
+        "category": "Generative AI"
+    },
+     "skin-disorder-detection": {
+        "title": "Skin Disorder Detection",
+        "abstract": "Multiclass classification of Erythemato-Squamous Diseases (ESD) using clinical and histopathological attributes. Comparative analysis of Random Forest (93% acc), SVM, and XGBoost.",
+        "tags": ["Dermatology", "Random Forest", "Medical AI"],
+        "category": "Medical Imaging"
     }
 }
 

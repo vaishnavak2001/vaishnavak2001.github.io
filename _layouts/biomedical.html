@@ -133,127 +133,292 @@
         <p style="font-size:0.8rem; margin-top:0.5rem; opacity:0.5;">MIT Licensed Content • Hosted on GitHub Pages</p>
     </footer>
 
-    <!-- Scripts -->
-    <script>
-        lucide.createIcons();
+    <!DOCTYPE html>
+    <html lang="en">
 
-        // 1. Radar Chart
-        const ctx = document.getElementById('skillsRadar').getContext('2d');
-        new Chart(ctx, {
-            type: 'radar',
-            data: {
-                labels: ['Biomedical Eng', 'Deep Learning', 'Data Science', 'Signal Processing', 'Control Science', 'Research'],
-                datasets: [{
-                    label: 'Proficiency',
-                    data: [90, 85, 88, 85, 80, 85],
-                    fill: true,
-                    backgroundColor: 'rgba(0, 128, 128, 0.2)',
-                    borderColor: 'rgba(0, 128, 128, 1)',
-                    pointBackgroundColor: '#002147',
-                    pointBorderColor: '#fff'
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    r: {
-                        angleLines: { color: 'rgba(0,0,0,0.1)' },
-                        grid: { color: 'rgba(0,0,0,0.05)' },
-                        ticks: { display: false }
-                    }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vaishnav AK | Biomedical AI Researcher</title>
+        <meta name="description"
+            content="Research portfolio of Vaishnav AK - Specializing in Biomedical AI, Deep Learning, and Clinical Data Science.">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Fira+Code&display=swap"
+            rel="stylesheet">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="{{ '/assets/css/biomedical.css' | relative_url }}">
+
+        <!-- Favicon (DNA Helix/Caduceus Abstract) -->
+        <link rel="icon" type="image/svg+xml"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23008080'%3E%3Cpath d='M30,10 C30,10 70,30 70,50 S30,90 30,90 M70,10 C70,10 30,30 30,50 S70,90 70,90' stroke='white' stroke-width='5' /%3E%3Ccircle cx='50' cy='50' r='45' stroke='%23002147' stroke-width='5' fill='none'/%3E%3C/svg%3E">
+
+        <!-- Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://unpkg.com/lucide@latest"></script>
+    </head>
+
+    <body>
+
+        <!-- Global Nav -->
+        <nav class="navbar">
+            <a href="/" class="nav-brand">VAISHNAV AK <span style="color:var(--teal-accent); font-weight:400;">|
+                    BIOMEDICAL
+                    AI</span></a>
+            <div>
+                <a href="https://github.com/vaishnavak2001" target="_blank"
+                    style="color:var(--navy-deep); margin-left:1rem;"><i data-lucide="github"></i></a>
+                <a href="mailto:vaishnavak001@gmail.com" style="color:var(--navy-deep); margin-left:1rem;"><i
+                        data-lucide="mail"></i></a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bio">
+                <h1>Redefining Healthcare<br><span style="color:var(--teal-accent)">Through Intelligence</span></h1>
+                <p>
+                    I’m an Engineer on a mission to redefine the future of healthcare through AI, Data Science, and
+                    Biomedical Innovation.
+                    With a core academic foundation in Applied Electronics and Instrumentation Engineering, my passion
+                    lies
+                    in merging the physical world of medical devices with the digital intelligence of machine learning.
+                    <br><br>
+                    My experience ranges from hardware instrumentation (ECG, Ventilators) to advanced Deep Learning
+                    pipelines, offering a rare end-to-end view of the healthcare ecosystem.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn">View Research</a>
+                    <a href="{{ site.resume | relative_url }}" class="btn btn-outline"
+                        style="margin-left:1rem;">Download
+                        CV</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <!-- User requested path: images/profile.jpg -->
+                <img src="{{ '/images/profile.jpg' | relative_url }}"
+                    onerror="this.src='https://ui-avatars.com/api/?name=Vaishnav+AK&background=002147&color=fff&size=512'"
+                    alt="Vaishnav AK" class="hero-img">
+            </div>
+        </section>
+
+        <!-- Visualizations -->
+        <section class="viz-container">
+            <!-- Skills Radar -->
+            <div class="viz-box">
+                <h3 style="text-align:center; color:var(--navy-deep); margin-bottom:1rem;">Research Expertise</h3>
+                <canvas id="skillsRadar"></canvas>
+            </div>
+            <!-- D3 Network -->
+            <div class="viz-box" style="position:relative; overflow:hidden;">
+                <h3 style="text-align:center; color:var(--navy-deep); margin-bottom:1rem;">Tech Ecosystem</h3>
+                <div id="d3-graph" style="width:100%; height:300px;"></div>
+            </div>
+        </section>
+
+        <!-- Featured Research -->
+        <h2 class="section-title">Featured Research</h2>
+        <section class="publications-grid">
+            {% assign featured = site.data.research_data | where: "featured", true %}
+            {% for project in featured %}
+            <div class="journal-card" onclick="window.location.href='{{ project.github }}'">
+                <div class="journal-meta">{{ project.category }} • {{ project.year }}</div>
+                <div class="journal-title">{{ project.title }}</div>
+                <div class="journal-abstract">{{ project.abstract }}</div>
+                <div style="font-size:0.85rem; color:var(--teal-accent);">
+                    {% for tag in project.tags limit:3 %}#{{ tag }} {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+
+        <!-- Software Archive -->
+        <h2 class="section-title">Scientific Software Archive</h2>
+        <div class="archive-container">
+            <input type="text" id="archiveSearch" placeholder="Filter by keyword (e.g., Python, CNN)..."
+                style="width:100%; padding:1rem; margin-bottom:1rem; border:1px solid #ccc; font-family:var(--font-heading);">
+
+            <table class="archive-table">
+                <thead>
+                    <tr>
+                        <th>Project</th>
+                        <th>Research Area</th>
+                        <th>Tech Stack</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody id="archiveBody">
+                    {% assign all_projects = site.data.research_data %}
+                    {% for project in all_projects %}
+                    <tr class="archive-row">
+                        <td style="font-weight:600; color:var(--navy-deep);">{{ project.title }}</td>
+                        <td>{{ project.category }}</td>
+                        <td style="color:var(--text-muted); font-size:0.85rem;">{{ project.tags | join: ", " }}</td>
+                        <td><a href="{{ project.github }}" target="_blank"
+                                style="color:var(--teal-accent); text-decoration:none;">Code &nearr;</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <footer style="text-align:center; padding:3rem; background:var(--navy-deep); color:white; margin-top:4rem;">
+            <p style="opacity:0.8; font-size:0.9rem;">&copy; 2024 Vaishnav AK. Engineered for Biomedical Innovation.</p>
+            <p style="font-size:0.8rem; margin-top:0.5rem; opacity:0.5;">MIT Licensed Content • Hosted on GitHub Pages
+            </p>
+        </footer>
+
+        <!-- Scripts -->
+        <script>
+            lucide.createIcons();
+
+            // 1. Radar Chart
+            const ctx = document.getElementById('skillsRadar').getContext('2d');
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['Biomedical Eng', 'Deep Learning', 'Data Science', 'Signal Processing', 'Control Science', 'Research'],
+                    datasets: [{
+                        label: 'Proficiency',
+                        data: [90, 85, 88, 85, 95, 90],
+                        fill: true,
+                        backgroundColor: 'rgba(0, 128, 128, 0.2)',
+                        borderColor: 'rgba(0, 128, 128, 1)',
+                        pointBackgroundColor: '#002147',
+                        pointBorderColor: '#fff'
+                    }]
                 },
-                plugins: { legend: { display: false } }
-            }
-        });
-
-        // 2. D3 Force Graph (Simple Node-Link)
-        // Extracting data from Jekyll to JS
-        const projects = [
-            {% for project in site.data.research_data %}
-        { id: "{{ project.title }}", group: 1 },
-        {% endfor %}
-        // Tech nodes
-        { id: "Python", group: 2 },
-        { id: "Deep Learning", group: 2 },
-        { id: "Biomedical", group: 2 },
-        { id: "Signal Processing", group: 2 },
-        { id: "Reinforcement Learning", group: 2 },
-        { id: "Computer Vision", group: 2 }
-        ];
-
-        const links = [
-            // Connect first 10 projects to generic nodes for density
-            {% for project in site.data.research_data limit: 10 %}
-        { source: "{{ project.title }}", target: "Python" },
-        {% endfor %}
-
-        // Connect featured projects to specific domains
-        {% for project in featured %}
-        {% if project.category == 'Signal Processing' %}
-        { source: "{{ project.title }}", target: "Signal Processing" },
-        {% elsif project.category == 'Control Systems' %}
-        { source: "{{ project.title }}", target: "Reinforcement Learning" },
-        {% elsif project.category == 'Medical Imaging' %}
-        { source: "{{ project.title }}", target: "Deep Learning" },
-        {% else %}
-        { source: "{{ project.title }}", target: "Data Science" },
-        {% endif %}
-        {% endfor %}
-        ];
-
-        const width = document.getElementById('d3-graph').clientWidth;
-        const height = 300;
-
-        const svg = d3.select("#d3-graph").append("svg")
-            .attr("width", width)
-            .attr("height", height);
-
-        const simulation = d3.forceSimulation(projects)
-            .force("link", d3.forceLink(links).id(d => d.id).distance(50))
-            .force("charge", d3.forceManyBody().strength(-100))
-            .force("center", d3.forceCenter(width / 2, height / 2));
-
-        const link = svg.append("g")
-            .attr("stroke", "#999")
-            .attr("stroke-opacity", 0.6)
-            .selectAll("line")
-            .data(links)
-            .join("line");
-
-        const node = svg.append("g")
-            .attr("stroke", "#fff")
-            .attr("stroke-width", 1.5)
-            .selectAll("circle")
-            .data(projects)
-            .join("circle")
-            .attr("r", 5)
-            .attr("fill", d => d.group === 1 ? "#002147" : "#008080");
-
-        node.append("title").text(d => d.id);
-
-        simulation.on("tick", () => {
-            link
-                .attr("x1", d => d.source.x)
-                .attr("y1", d => d.source.y)
-                .attr("x2", d => d.target.x)
-                .attr("y2", d => d.target.y);
-
-            node
-                .attr("cx", d => d.x)
-                .attr("cy", d => d.y);
-        });
-
-        // 3. Search Filter
-        document.getElementById('archiveSearch').addEventListener('keyup', function () {
-            let filter = this.value.toLowerCase();
-            let rows = document.querySelectorAll('.archive-row');
-
-            rows.forEach(row => {
-                let text = row.textContent.toLowerCase();
-                row.style.display = text.includes(filter) ? '' : 'none';
+                options: {
+                    responsive: true,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(0,0,0,0.1)' },
+                            grid: { color: 'rgba(0,0,0,0.05)' },
+                            ticks: { display: false }
+                        }
+                    },
+                    plugins: { legend: { display: false } }
+                }
             });
-        });
-    </script>
-</body>
 
-</html>
+            // 2. D3 Force Graph (Dynamic Tech Ecosystem)
+            const projects = [
+                {% for project in site.data.research_data %}
+            { id: "{{ project.title }}", group: 1, type: 'project' },
+            {% endfor %}
+        ];
+
+            // Extract and dedupe tags using a temporary JS Set
+            const rawTags = [
+                {% for project in site.data.research_data %}
+            {% for tag in project.tags %}
+            "{{ tag }}",
+                {% endfor %}
+            {% endfor %}
+        ];
+            const uniqueTags = [...new Set(rawTags)];
+
+            // Add Tech Nodes
+            uniqueTags.forEach(tag => {
+                if (tag) projects.push({ id: tag, group: 2, type: 'tech' });
+            });
+
+            // Create Links
+            const links = [];
+            {% for project in site.data.research_data %}
+            {% for tag in project.tags %}
+            links.push({ source: "{{ project.title }}", target: "{{ tag }}" });
+            {% endfor %}
+            {% endfor %}
+
+            const width = document.getElementById('d3-graph').clientWidth;
+            const height = 400;
+
+            const svg = d3.select("#d3-graph").html("").append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            const simulation = d3.forceSimulation(projects)
+                .force("link", d3.forceLink(links).id(d => d.id).distance(70))
+                .force("charge", d3.forceManyBody().strength(-150))
+                .force("center", d3.forceCenter(width / 2, height / 2))
+                .force("collide", d3.forceCollide(20));
+
+            const link = svg.append("g")
+                .attr("stroke", "#999")
+                .attr("stroke-opacity", 0.4)
+                .selectAll("line")
+                .data(links)
+                .join("line");
+
+            const node = svg.append("g")
+                .attr("stroke", "#fff")
+                .attr("stroke-width", 1.5)
+                .selectAll("circle")
+                .data(projects)
+                .join("circle")
+                .attr("r", d => d.group === 1 ? 6 : 4)
+                .attr("fill", d => d.group === 1 ? "#002147" : "#008080")
+                .call(d3.drag()
+                    .on("start", (event, d) => {
+                        if (!event.active) simulation.alphaTarget(0.3).restart();
+                        d.fx = d.x;
+                        d.fy = d.y;
+                    })
+                    .on("drag", (event, d) => {
+                        d.fx = event.x;
+                        d.fy = event.y;
+                    })
+                    .on("end", (event, d) => {
+                        if (!event.active) simulation.alphaTarget(0);
+                        d.fx = null;
+                        d.fy = null;
+                    }));
+
+            node.append("title").text(d => d.id);
+
+            const labels = svg.append("g")
+                .selectAll("text")
+                .data(projects)
+                .join("text")
+                .attr("dx", 8)
+                .attr("dy", ".35em")
+                .text(d => d.id)
+                .style("font-size", "10px")
+                .style("fill", "#333")
+                .style("pointer-events", "none");
+
+            simulation.on("tick", () => {
+                link
+                    .attr("x1", d => d.source.x)
+                    .attr("y1", d => d.source.y)
+                    .attr("x2", d => d.target.x)
+                    .attr("y2", d => d.target.y);
+
+                node
+                    .attr("cx", d => d.x)
+                    .attr("cy", d => d.y);
+
+                labels
+                    .attr("x", d => d.x)
+                    .attr("y", d => d.y);
+            });
+
+            // 3. Search Filter
+            document.getElementById('archiveSearch').addEventListener('keyup', function () {
+                let filter = this.value.toLowerCase();
+                let rows = document.querySelectorAll('.archive-row');
+
+                rows.forEach(row => {
+                    let text = row.textContent.toLowerCase();
+                    row.style.display = text.includes(filter) ? '' : 'none';
+                });
+            });
+        </script>
+    </body>
+
+    </html>
