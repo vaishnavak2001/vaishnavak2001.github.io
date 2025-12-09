@@ -284,24 +284,49 @@
                     labels: ['Biomedical Eng', 'Deep Learning', 'Data Science', 'Signal Processing', 'Control Science', 'Research'],
                     datasets: [{
                         label: 'Proficiency',
-                        data: [90, 85, 88, 85, 95, 90],
+                        data: [90, 95, 92, 88, 95, 85],
                         fill: true,
                         backgroundColor: 'rgba(0, 128, 128, 0.2)',
                         borderColor: 'rgba(0, 128, 128, 1)',
+                        borderWidth: 3,
                         pointBackgroundColor: '#002147',
-                        pointBorderColor: '#fff'
+                        pointBorderColor: '#fff',
+                        pointRadius: 5,
+                        pointHoverRadius: 7
                     }]
                 },
                 options: {
                     responsive: true,
+                    maintainAspectRatio: true,
                     scales: {
                         r: {
+                            min: 0,
+                            max: 100,
+                            ticks: {
+                                stepSize: 20,
+                                display: true,
+                                backdropColor: 'transparent',
+                                color: '#666',
+                                font: { size: 10 }
+                            },
                             angleLines: { color: 'rgba(0,0,0,0.1)' },
-                            grid: { color: 'rgba(0,0,0,0.05)' },
-                            ticks: { display: false }
+                            grid: { color: 'rgba(0,0,0,0.1)' },
+                            pointLabels: {
+                                color: '#002147',
+                                font: { size: 12, weight: 'bold' }
+                            }
                         }
                     },
-                    plugins: { legend: { display: false } }
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return context.label + ': ' + context.parsed.r + '%';
+                                }
+                            }
+                        }
+                    }
                 }
             });
 
@@ -361,13 +386,24 @@
                 .selectAll("circle")
                 .data(projects)
                 .join("circle")
-                .attr("r", d => d.group === 1 ? 6 : 4)
-                .attr("fill", d => d.group === 1 ? "#002147" : "#008080")
+                .attr("r", d => {
+                    // Featured projects get larger nodes
+                    if (d.type === 'project') return 8;
+                    return 6;
+                })
+                .attr("fill", d => {
+                    // Color code by type: projects (navy), tech (teal)
+                    if (d.type === 'project') return "#002147";
+                    return "#008080";
+                })
+                .style("opacity", 0.9)
                 .call(d3.drag()
                     .on("start", (event, d) => {
                         if (!event.active) simulation.alphaTarget(0.3).restart();
                         d.fx = d.x;
                         d.fy = d.y;
+                        // Highlight connected nodes on hover
+                        highlightConnections(d, true);
                     })
                     .on("drag", (event, d) => {
                         d.fx = event.x;
@@ -377,22 +413,48 @@
                         if (!event.active) simulation.alphaTarget(0);
                         d.fx = null;
                         d.fy = null;
+                        highlightConnections(d, false);
                     }));
 
             node.append("title").text(d => d.id);
 
-            // Only show labels for tech nodes (group 2) to reduce clutter
+            // Show ALL nodes' labels (both projects and tech)
             const labels = svg.append("g")
                 .selectAll("text")
-                .data(projects.filter(d => d.group === 2))
+                .data(projects)
                 .join("text")
                 .text(d => d.id)
                 .attr("text-anchor", "middle")
-                .attr("dy", "0.35em")
-                .style("font-size", "12px")
-                .style("font-weight", "600")
-                .style("fill", "#002147")
-                .style("pointer-events", "none");
+                .attr("dy", d => d.type === 'project' ? -12 : 12)
+                .style("font-size", d => d.type === 'project' ? "11px" : "10px")
+                .style("font-weight", d => d.type === 'project' ? "700" : "600")
+                .style("fill", d => d.type === 'project' ? "#002147" : "#008080")
+                .style("pointer-events", "none")
+                .style("text-shadow", "0 0 3px white, 0 0 3px white");
+
+            // Highlight function
+            function highlightConnections(d, highlight) {
+                const connectedNodes = new Set();
+                links.forEach(l => {
+                    if (l.source.id === d.id) connectedNodes.add(l.target.id);
+                    if (l.target.id === d.id) connectedNodes.add(l.source.id);
+                });
+
+                node.style("opacity", n => {
+                    if (!highlight) return 0.9;
+                    return n.id === d.id || connectedNodes.has(n.id) ? 1 : 0.3;
+                });
+
+                link.style("opacity", l => {
+                    if (!highlight) return 0.4;
+                    return l.source.id === d.id || l.target.id === d.id ? 0.8 : 0.1;
+                });
+
+                labels.style("opacity", n => {
+                    if (!highlight) return 1;
+                    return n.id === d.id || connectedNodes.has(n.id) ? 1 : 0.3;
+                });
+            }
 
             simulation.on("tick", () => {
                 link
