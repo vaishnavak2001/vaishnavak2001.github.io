@@ -83,7 +83,7 @@
     </section>
 
     <!-- Featured Research -->
-    <h2 class="section-title">Featured Research</h2>
+    <h2 id="featured-research" class="section-title">Featured Research</h2>
     <section class="publications-grid">
         {% assign featured = site.data.research_data | where: "featured", true %}
         {% for project in featured %}
@@ -186,22 +186,6 @@
                     Biomedical Innovation.
                     With a core academic foundation in Applied Electronics and Instrumentation Engineering, my passion
                     lies
-                    in merging the physical world of medical devices with the digital intelligence of machine learning.
-                    <br><br>
-                    My experience ranges from hardware instrumentation (ECG, Ventilators) to advanced Deep Learning
-                    pipelines, offering a rare end-to-end view of the healthcare ecosystem.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn">View Research</a>
-                    <a href="{{ site.resume | relative_url }}" class="btn btn-outline"
-                        style="margin-left:1rem;">Download
-                        CV</a>
-                </div>
-            </div>
-            <div class="hero-image-container">
-                <!-- User requested path: images/profile.jpg -->
-                <img src="{{ '/images/profile.jpg' | relative_url }}"
-                    onerror="this.src='https://ui-avatars.com/api/?name=Vaishnav+AK&background=002147&color=fff&size=512'"
                     alt="Vaishnav AK" class="hero-img">
             </div>
         </section>
@@ -418,19 +402,39 @@
 
             node.append("title").text(d => d.id);
 
-            // Show ALL nodes' labels (both projects and tech)
+            // Create a lookup for featured projects
+            const featuredProjectIds = [
+                {% for project in site.data.research_data %}
+            {% if project.featured %}
+            "{{ project.title }}",
+                {% endif %}
+            {% endfor %}
+            ];
+
+            // Show labels ONLY for featured projects + key tech tags
             const labels = svg.append("g")
                 .selectAll("text")
-                .data(projects)
+                .data(projects.filter(d => {
+                    // Show featured projects
+                    if (d.type === 'project' && featuredProjectIds.includes(d.id)) return true;
+                    // Show important tech tags (limit to major ones)
+                    if (d.type === 'tech') {
+                        const majorTech = ['CNN-LSTM', 'VGG16', 'ResNet', 'Transfer Learning', 'Medical Imaging',
+                            'Reinforcement Learning', 'PPO', 'RAG', 'LLMs', 'AgentOps', 'NLP',
+                            'Random Forest', 'Deep Learning', 'Python', 'Signal Processing'];
+                        return majorTech.includes(d.id);
+                    }
+                    return false;
+                }))
                 .join("text")
                 .text(d => d.id)
                 .attr("text-anchor", "middle")
                 .attr("dy", d => d.type === 'project' ? -12 : 12)
-                .style("font-size", d => d.type === 'project' ? "11px" : "10px")
+                .style("font-size", d => d.type === 'project' ? "10px" : "9px")
                 .style("font-weight", d => d.type === 'project' ? "700" : "600")
                 .style("fill", d => d.type === 'project' ? "#002147" : "#008080")
                 .style("pointer-events", "none")
-                .style("text-shadow", "0 0 3px white, 0 0 3px white");
+                .style("text-shadow", "1px 1px 2px white, -1px -1px 2px white");
 
             // Highlight function
             function highlightConnections(d, highlight) {
