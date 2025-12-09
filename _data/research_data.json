@@ -1,0 +1,85 @@
+[
+    {
+        "title": "Diabetic Retinopathy Detection",
+        "abstract": "Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images. Utilizes EfficientNetB3 backbone with custom dense layers, L1/L2 regularization, and extensive data augmentation (ZCA whitening). Achieved ~99.7% training accuracy on APTOS/EyePACS datasets.",
+        "tags": [
+            "Medical AI",
+            "Computer Vision",
+            "Deep Learning"
+        ],
+        "github": "https://github.com/vaishnavak2001/Diabetic-Retinopathy-Detection",
+        "category": "medical",
+        "impact": "high"
+    },
+    {
+        "title": "Pneumonia Detection via Chest X-rays",
+        "abstract": "CNN-based classification system to identify pneumonia from grayscale chest X-rays (NIH dataset). Benchmarked MobileNet (88.6% acc), InceptionV3, and VGG16. Features real-time inference logic and CLAHE preprocessing for contrast enhancement.",
+        "tags": [
+            "Medical AI",
+            "Computer Vision",
+            "Deep Learning"
+        ],
+        "github": "https://github.com/vaishnavak2001/Pneumonia-chest-X-Ray-classification",
+        "category": "medical",
+        "impact": "high"
+    },
+    {
+        "title": "Skin Disorder Detection (ESD)",
+        "abstract": "Multiclass classification of Erythemato-Squamous Diseases (ESD) using clinical and histopathological attributes. Comparative analysis of Random Forest (93% acc), SVM, and XGBoost. Features robust preprocessing including imputation and outlier detection.",
+        "tags": [
+            "Medical AI",
+            "Machine Learning",
+            "Clinical Data"
+        ],
+        "github": "https://github.com/vaishnavak2001/skin-disorder-detection",
+        "category": "medical",
+        "impact": "high"
+    },
+    {
+        "title": "Face Detection and Gender Prediction",
+        "abstract": "Real-time biometric system predicting gender from facial feeds. Leverages MobileNet and InceptionV3 architectures optimized for low-latency inference using OpenCV.",
+        "tags": [
+            "Computer Vision",
+            "Deep Learning",
+            "Biometrics"
+        ],
+        "github": "https://github.com/vaishnavak2001/face-gender-prediction",
+        "category": "computer-vision",
+        "impact": "medium"
+    },
+    {
+        "title": "Handwritten Digit Recognition (MNIST)",
+        "abstract": "High-precision neural network for MNIST digit classification. Implements dropout regularization and data normalization to minimize overfitting.",
+        "tags": [
+            "Deep Learning",
+            "Computer Vision"
+        ],
+        "github": "https://github.com/vaishnavak2001/handwritten-digit-recognition",
+        "category": "computer-vision",
+        "impact": "medium"
+    },
+    {
+        "title": "Auto Price Prediction",
+        "abstract": "Predictive regression modeling for automotive pricing. Utilizes XGBoost and Random Forest on structured data with extensive Feature Engineering.",
+        "tags": [
+            "Predictive Analytics",
+            "Machine Learning",
+            "Regression"
+        ],
+        "github": "https://github.com/vaishnavak2001/Car_Price_Prediction",
+        "category": "analytics",
+        "impact": "medium"
+    },
+    {
+        "title": "FIFA20 Player Clustering",
+        "abstract": "Unsupervised learning analysis of player attributes using K-Means and Hierarchical Clustering. Successfully segmented players into tactical roles (Defenders vs Attackers) based on performance metrics.",
+        "tags": [
+            "Unsupervised Learning",
+            "Data Science",
+            "Sports Analytics"
+        ],
+        "github": "https://github.com/vaishnavak2001/fifa_cluster",
+        "category": "analytics",
+        "impact": "low"
+    }
+]

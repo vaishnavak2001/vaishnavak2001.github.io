@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaishnav AK | Data Scientist & Biomedical Engineer</title>
+    <meta name="description"
+        content="Vaishnav AK - Biomedical AI Researcher Portfolio. Specializing in Diabetic Retinopathy and Pneumonia Detection using Deep Learning.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ '/assets/css/biomedical.css' | relative_url }}">
+
+    <!-- Chart.js for Skills Radar -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Hero Section / Personal Statement -->
+    <section class="hero-section">
+        <h1 class="hero-title">Vaishnav AK</h1>
+        <p class="hero-subtitle">Data Scientist & Biomedical Engineer</p>
+
+        <div class="hero-bio">
+            <p>I'm an Engineer on a mission to redefine the future of healthcare through AI, Data Science, and
+                Biomedical Innovation.</p>
+
+            <p>With a core academic foundation in Applied Electronics and Instrumentation Engineering from KTU
+                University, my passion lies in merging the physical world of medical devices with the digital
+                intelligence of machine learning. I specialize in building AI-powered healthcare solutions, applying
+                deep learning, predictive analytics, and biomedical signal processing to solve complex clinical
+                problems.</p>
+
+            <p>My journey into Artificial Intelligence began with curiosity—driven by a question: How can we use data
+                and algorithms to improve early diagnosis, personalize treatment, and ultimately save lives? Through
+                structured learning in Data Science (Sept 2023 – July 2024) and AI (July 2024 – April 2025), I've
+                developed expertise in Python, deep learning, CNNs, transfer learning, NLP, and AI for medical imaging.
+            </p>
+
+            <p>As a Biomedical Instrumentation Engineer Trainee (since Nov 2024), I've gained hands-on experience with
+                ECG machines, ventilators, defibrillators, and imaging systems. This dual expertise in hardware
+                instrumentation and healthcare data analytics offers a rare and valuable end-to-end view of the
+                healthcare ecosystem.</p>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="{{ site.resume | relative_url }}" class="btn btn-primary" download>Download CV</a>
+            <a href="#publications" class="btn btn-secondary">View Publications</a>
+        </div>
+    </section>
+
+    <!-- Skills Radar Chart -->
+    <section class="skills-viz-section">
+        <h2 class="section-header" style="font-size: 1.75rem;">Expertise Distribution</h2>
+        <canvas id="skills-radar"></canvas>
+    </section>
+
+    <!-- Publications Grid -->
+    <section class="publications-section" id="publications">
+        <h2 class="section-header">Research Publications</h2>
+
+        <div class="publications-grid">
+            {% assign research_projects = site.data.research_data %}
+            {% if research_projects %}
+            {% for project in research_projects %}
+            <div class="publication-card" onclick="openModal({{ forloop.index0 }})">
+                <h3 class="pub-title">{{ project.title }}</h3>
+                <p class="pub-abstract">{{ project.abstract | truncate: 180 }}</p>
+
+                <div class="pub-tags">
+                    {% for tag in project.tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+
+                <a href="#" class="view-analysis-btn" onclick="event.preventDefault();">
+                    View Analysis →
+                </a>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>Loading research data...</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Modal (Slide-Over) -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div>
+    <div class="modal-content" id="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title" id="modal-title"></h2>
+            <button class="modal-close" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+    </div>
+
+    <script>
+        // Research Data
+        var researchData = {{ site.data.research_data | jsonify }};
+
+        // Skills Radar Chart
+        const ctx = document.getElementById('skills-radar');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: [
+                    'Biomedical Engineering',
+                    'Deep Learning',
+                    'Data Science',
+                    'Medical Imaging',
+                    'Clinical Systems',
+                    'AI Research'
+                ],
+                datasets: [{
+                    label: 'Expertise Level',
+                    data: [85, 90, 88, 92, 75, 85],
+                    fill: true,
+                    backgroundColor: 'rgba(0, 191, 165, 0.2)',
+                    borderColor: '#00BFA5',
+                    pointBackgroundColor: '#002D62',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#00BFA5',
+                    pointRadius: 5,
+                    pointHoverRadius: 7
+                }]
+            },
+            options: {
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                },
+                scales: {
+                    r: {
+                        angleLines: {
+                            display: true,
+                            color: '#e2e8f0'
+                        },
+                        grid: {
+                            color: '#e2e8f0'
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 13,
+                                family: 'Inter'
+                            },
+                            color: '#1a1a1a'
+                        },
+                        ticks: {
+                            display: false,
+                            stepSize: 20,
+                            max: 100
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Modal Functions
+        function openModal(index) {
+            var project = researchData[index];
+
+            document.getElementById('modal-title').textContent = project.title;
+
+            var body = `
+        <div class="modal-section">
+          <h3>Abstract</h3>
+          <p>${project.abstract}</p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>Technical Architecture</h3>
+          <p>This implementation leverages state-of-the-art approaches in ${project.tags.join(', ')}. The system architecture emphasizes robust preprocessing, model optimization, and rigorous validation protocols to ensure clinical-grade accuracy.</p>
+        </div>
+        
+        <div class="modal-section">
+          <h3>Citation (BibTeX)</h3>
+          <div class="citation-box">@article{${project.title.toLowerCase().replace(/\s+/g, '_')},
+  author = {Vaishnav AK},
+  title = {${project.title}},
+  year = {2024},
+  url = {${project.github}}
+}</div>
+        </div>
+        
+        <div class="modal-section">
+          <a href="${project.github}" target="_blank" class="btn btn-primary">View on GitHub</a>
+        </div>
+      `;
+
+            document.getElementById('modal-body').innerHTML = body;
+            document.getElementById('modal-overlay').classList.add('active');
+            setTimeout(() => {
+                document.getElementById('modal-content').classList.add('active');
+            }, 10);
+        }
+
+        function closeModal() {
+            document.getElementById('modal-content').classList.remove('active');
+            setTimeout(() => {
+                document.getElementById('modal-overlay').classList.remove('active');
+            }, 300);
+        }
+    </script>
+</body>
+
+</html>

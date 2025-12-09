@@ -1,0 +1,333 @@
+:root {
+    /* Swiss Medical Journal Color Palette */
+    --oxford-blue: #002D62;
+    --clinical-white: #F0F4F8;
+    --medical-teal: #00BFA5;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a5568;
+    --border-light: #e2e8f0;
+
+    /* Typography */
+    --font-header: 'Inter', -apple-system, sans-serif;
+    --font-body: 'Merriweather', 'Charter', Georgia, serif;
+    --font-mono: 'Fira Code', 'Courier New', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    background-color: var(--clinical-white);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Hero Section */
+.hero-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+    text-align: center;
+}
+
+.hero-title {
+    font-family: var(--font-header);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--oxford-blue);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-family: var(--font-header);
+    font-size: 1.25rem;
+    color: var(--medical-teal);
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.hero-bio {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 3rem;
+    color: var(--text-secondary);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    font-family: var(--font-header);
+    padding: 0.875rem 2rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--oxford-blue);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #00447a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 45, 98, 0.2);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--oxford-blue);
+    border: 2px solid var(--oxford-blue);
+}
+
+.btn-secondary:hover {
+    background-color: var(--oxford-blue);
+    color: white;
+}
+
+/* Publications Grid */
+.publications-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.section-header {
+    font-family: var(--font-header);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--oxford-blue);
+    margin-bottom: 3rem;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+
+.publications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+/* Publication Card (Journal Style) */
+.publication-card {
+    background: white;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.publication-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 45, 98, 0.12);
+    transform: translateY(-4px);
+    border-color: var(--medical-teal);
+}
+
+.pub-title {
+    font-family: var(--font-header);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--oxford-blue);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.pub-abstract {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.pub-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tag {
+    font-family: var(--font-header);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.375rem 0.75rem;
+    background-color: rgba(0, 191, 165, 0.1);
+    color: var(--oxford-blue);
+    border-radius: 20px;
+    border: 1px solid rgba(0, 191, 165, 0.3);
+}
+
+.view-analysis-btn {
+    font-family: var(--font-header);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--medical-teal);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s ease;
+}
+
+.view-analysis-btn:hover {
+    gap: 0.75rem;
+}
+
+/* Skills Radar Chart */
+.skills-viz-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#skills-radar {
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+/* Modal (Slide-Over) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: block;
+}
+
+.modal-content {
+    position: fixed;
+    right: -600px;
+    top: 0;
+    bottom: 0;
+    width: 600px;
+    max-width: 90vw;
+    background: white;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    transition: right 0.4s ease;
+    z-index: 1001;
+}
+
+.modal-content.active {
+    right: 0;
+}
+
+.modal-header {
+    padding: 2rem;
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+}
+
+.modal-title {
+    font-family: var(--font-header);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--oxford-blue);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-section {
+    margin-bottom: 2rem;
+}
+
+.modal-section h3 {
+    font-family: var(--font-header);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--oxford-blue);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.modal-section p {
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.citation-box {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    background-color: #f7fafc;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 1rem;
+    overflow-x: auto;
+    white-space: pre;
+    color: #2d3748;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .publications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 100%;
+    }
+}
