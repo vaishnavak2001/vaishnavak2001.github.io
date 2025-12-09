@@ -1,305 +1,103 @@
 [
   {
-    "title": "Skin Disorder Detection",
-    "abstract": "This research implements deep learning methodologies for pattern recognition. This project focuses on the classification of Erythemato-Squamous Diseases (ESD) using supervised machine learning algorithms. The goal is to assist dermatologists in accurately diagnosing six common skin conditions by leveraging clinical and histopathological data.. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Medical AI",
-      "Computer Vision"
-    ],
-    "github": "https://github.com/vaishnavak2001/skin-disorder-detection",
-    "category": "medical",
-    "impact": "high",
-    "stars": 1
-  },
-  {
-    "title": "Pneumonia Chest X Ray Classification",
-    "abstract": "This research implements deep learning methodologies for pattern recognition. In this project, various pre-trained Convolutional Neural Networks (CNNs) were evaluated to detect pneumonia effectively. The models tested include VGG16, MobileNet, DenseNet, and Inception.. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Medical AI",
-      "Computer Vision"
-    ],
-    "github": "https://github.com/vaishnavak2001/Pneumonia-chest-X-Ray-classification",
-    "category": "medical",
-    "impact": "high",
-    "stars": 1
-  },
-  {
+    "id": "diabetic-retinopathy-detection",
     "title": "Diabetic Retinopathy Detection",
-    "abstract": "This research implements deep learning methodologies for pattern recognition. In this diabetic retinopathy classification project, various deep learning models\u2014including EfficientNet, VGG16,DenseNet,  ResNet50, and MobileNetV2\u2014were trained to classify retinal fundus images into three clinically significant categories: No DR, Mild DR, and Severe DR. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
+    "abstract": "Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images. Utilizes EfficientNetB3 backbone with custom dense layers, L1/L2 regularization, and extensive data augmentation (ZCA whitening). Achieved ~99.7% training accuracy on APTOS/EyePACS datasets.",
     "tags": [
-      "Medical AI",
-      "Computer Vision"
+      "EfficientNetB3",
+      "Medical Imaging",
+      "Deep Learning"
     ],
-    "github": "https://github.com/vaishnavak2001/Diabetic-Retinopathy-Detection",
-    "category": "medical",
-    "impact": "high",
-    "stars": 1
+    "category": "Medical AI",
+    "github": "https://github.com/vaishnavak2001/diabetic-retinopathy-detection",
+    "featured": true,
+    "year": 2024
   },
   {
-    "title": "Ecg Classification Cnn Lstm",
-    "abstract": "This project addresses challenges in machine learning and predictive analytics. Implementation focused on ecg classification cnn lstm. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
+    "id": "pneumonia-detection",
+    "title": "Pneumonia Detection via Chest X-rays",
+    "abstract": "CNN-based classification system to identify pneumonia from grayscale chest X-rays (NIH dataset). Benchmarked MobileNet (88.6% acc), InceptionV3, and VGG16. Features real-time inference logic and CLAHE preprocessing for contrast enhancement.",
     "tags": [
-      "Medical AI",
-      "Computer Vision"
+      "CNN",
+      "MobileNet",
+      "InceptionV3",
+      "Medical Imaging"
     ],
-    "github": "https://github.com/vaishnavak2001/ecg-classification-cnn-lstm",
-    "category": "medical",
-    "impact": "high",
-    "stars": 1
+    "category": "Medical AI",
+    "github": "https://github.com/vaishnavak2001/Pneumonia-chest-X-Ray-classification",
+    "featured": true,
+    "year": 2024
   },
   {
-    "title": "Vaishnavak2001.Github.Io",
-    "abstract": "Implementation focused on vaishnavak2001.github.io. Implementation built on Python's robust scientific computing stack, demonstrating practical applications in software engineering and computational problem-solving.",
+    "id": "skin-disorder-detection",
+    "title": "Skin Disorder Detection (ESD)",
+    "abstract": "Multiclass classification of Erythemato-Squamous Diseases (ESD) using clinical and histopathological attributes. Comparative analysis of Random Forest (93% acc), SVM, and XGBoost. Features robust preprocessing including imputation and outlier detection.",
     "tags": [
-      "Data Science"
+      "Random Forest",
+      "SVM",
+      "XGBoost",
+      "Clinical Data"
     ],
-    "github": "https://github.com/vaishnavak2001/vaishnavak2001.github.io",
-    "category": "ai-systems",
-    "impact": "medium",
-    "stars": 1
+    "category": "Medical AI",
+    "github": "https://github.com/vaishnavak2001/skin-disorder-detection",
+    "featured": true,
+    "year": 2024
   },
   {
-    "title": "Welltrack Ai",
-    "abstract": "Implementation focused on Welltrack ai. Implementation utilizing state-of-the-art machine learning frameworks, demonstrating practical applications in software engineering and computational problem-solving.",
+    "id": "face-gender-prediction",
+    "title": "Real-time Face & Gender Prediction",
+    "abstract": "Real-time biometric system predicting gender from facial feeds. Leverages MobileNet and InceptionV3 architectures optimized for low-latency inference using OpenCV.",
     "tags": [
-      "Machine Learning",
-      "Web Applications"
+      "Computer Vision",
+      "Biometrics",
+      "MobileNet",
+      "Real-time"
     ],
-    "github": "https://github.com/vaishnavak2001/Welltrack-ai",
-    "category": "ai-systems",
-    "impact": "medium",
-    "stars": 1
+    "category": "Computer Vision",
+    "github": "https://github.com/vaishnavak2001/face-gender-prediction",
+    "featured": true,
+    "year": 2024
   },
   {
-    "title": "Capstone Project The The Ai Website Creator 5Dgai",
-    "abstract": "This system implements modern web architecture patterns. Implementation focused on capstone project the The AI Website Creator 5dgai. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
+    "id": "handwritten-digit-recognition",
+    "title": "High-Precision Digit Recognition",
+    "abstract": "High-precision neural network for MNIST digit classification. Implements dropout regularization and data normalization to minimize overfitting.",
     "tags": [
-      "Data Science"
+      "MNIST",
+      "Neural Networks",
+      "Deep Learning"
     ],
-    "github": "https://github.com/vaishnavak2001/capstone-project-the-The-AI-Website-Creator-5dgai",
-    "category": "ai-systems",
-    "impact": "medium",
-    "stars": 1
+    "category": "Computer Vision",
+    "github": "https://github.com/vaishnavak2001/handwritten-digit-recognition",
+    "featured": true,
+    "year": 2023
   },
   {
-    "title": "Restaurant Rag Agent",
-    "abstract": "This project explores reinforcement learning and autonomous systems. Implementation focused on restaurant rag agent. Implementation leveraging modern JavaScript ecosystem technologies, demonstrating practical applications in software engineering and computational problem-solving.",
+    "id": "auto-price-prediction",
+    "title": "Auto Price Prediction",
+    "abstract": "Predictive regression modeling for automotive pricing. Utilizes XGBoost and Random Forest on structured data with extensive Feature Engineering.",
     "tags": [
-      "Control Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/restaurant-rag-agent",
-    "category": "ai-systems",
-    "impact": "medium",
-    "stars": 1
-  },
-  {
-    "title": "Career Agent",
-    "abstract": "This project explores reinforcement learning and autonomous systems. Implementation focused on career agent. Implementation leveraging modern JavaScript ecosystem technologies, demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Control Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/career_agent",
-    "category": "analytics",
-    "impact": "medium",
-    "stars": 1
-  },
-  {
-    "title": "Controlgym Mass Spring Damper",
-    "abstract": "This project explores reinforcement learning and autonomous systems. Implementation focused on ControlGym mass spring damper. Implementation built on Python's robust scientific computing stack, demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Web Applications",
-      "Control Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/ControlGym-mass-spring-damper",
-    "category": "control-systems",
-    "impact": "medium",
-    "stars": 1
-  },
-  {
-    "title": "Fifa Cluster",
-    "abstract": "This research implements deep learning methodologies for pattern recognition. Implementation focused on fifa cluster. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Data Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/fifa_cluster",
-    "category": "analytics",
-    "impact": "medium",
-    "stars": 0
-  },
-  {
-    "title": "Car Price Prediction",
-    "abstract": "This research implements deep learning methodologies for pattern recognition. Implementation focused on Car Price Prediction. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
+      "Regression",
+      "XGBoost",
       "Predictive Analytics"
     ],
+    "category": "Analytics",
     "github": "https://github.com/vaishnavak2001/Car_Price_Prediction",
-    "category": "analytics",
-    "impact": "medium",
-    "stars": 0
+    "featured": true,
+    "year": 2023
   },
   {
-    "title": "Prcp 1002 Handwritten Digits Recognition",
-    "abstract": "Implementation focused on PRCP 1002 Handwritten Digits Recognition. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
+    "id": "fifa20-clustering",
+    "title": "FIFA 20 Player Clustering",
+    "abstract": "Unsupervised learning analysis of player attributes using K-Means and Hierarchical Clustering. Successfully segmented players into tactical roles based on performance metrics.",
     "tags": [
-      "Computer Vision"
+      "Clustering",
+      "K-Means",
+      "Unsupervised Learning"
     ],
-    "github": "https://github.com/vaishnavak2001/PRCP_1002_Handwritten_Digits_Recognition",
-    "category": "computer-vision",
-    "impact": "medium",
-    "stars": 0
-  },
-  {
-    "title": "Genderdetc Complete Using Colab",
-    "abstract": "Implementation focused on GenderDetc complete using colab. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Data Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/GenderDetc_complete_using_colab",
-    "category": "computer-vision",
-    "impact": "medium",
-    "stars": 0
-  },
-  {
-    "title": "Dronegym Rl Quadcopter Attitude",
-    "abstract": "This project explores reinforcement learning and autonomous systems. Implementation focused on dronegym rl quadcopter attitude. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Control Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/dronegym-rl-quadcopter-attitude",
-    "category": "control-systems",
-    "impact": "medium",
-    "stars": 0
-  },
-  {
-    "title": "Comp1 Titanic ",
-    "abstract": "Implementation focused on COMP1 TITANIC . Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Data Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/COMP1-TITANIC-",
-    "category": "analytics",
-    "impact": "medium",
-    "stars": 0
-  },
-  {
-    "title": "Capstone Project The Agentops Guardian 5Dgai",
-    "abstract": "This project explores reinforcement learning and autonomous systems. Implementation focused on capstone project the agentops guardian 5dgai. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Control Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/capstone-project-the-agentops-guardian-5dgai",
-    "category": "ai-systems",
-    "impact": "medium",
-    "stars": 0
-  },
-  {
-    "title": "Bike Rental Prediction",
-    "abstract": "This project addresses challenges in machine learning and predictive analytics. Implementation focused on Bike Rental Prediction. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Predictive Analytics"
-    ],
-    "github": "https://github.com/vaishnavak2001/Bike-Rental-Prediction",
-    "category": "analytics",
-    "impact": "medium",
-    "stars": 0
-  },
-  {
-    "title": "Autonomous Job Application Agent",
-    "abstract": "This project explores reinforcement learning and autonomous systems. Implementation focused on Autonomous Job Application Agent. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Control Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/Autonomous-Job-Application-Agent",
-    "category": "ai-systems",
-    "impact": "medium",
-    "stars": 0
-  },
-  {
-    "title": "Admission Prediction  Linear Regression ",
-    "abstract": "This project addresses challenges in machine learning and predictive analytics. Predicting graduate admission chances using linear regression with GRE, TOEFL, University Rating, SOP, LOR, CGPA, and Research. Explores data preprocessing, EDA, feature selection, regularization, polynomial features, and cross-validation to improve model accuracy. Polynomial features showed the best performance.. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Predictive Analytics"
-    ],
-    "github": "https://github.com/vaishnavak2001/Admission_Prediction_-Linear_Regression-",
-    "category": "analytics",
-    "impact": "medium",
-    "stars": 0
-  },
-  {
-    "title": "Iabac Cds Project 2 Inx Future Emp Data V1.6",
-    "abstract": "This analytical framework focuses on data-driven insights. Implementation focused on IABAC CDS Project 2 INX Future Emp Data V1.6. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Data Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/IABAC_CDS_Project_2_INX_Future_Emp_Data_V1.6",
-    "category": "general",
-    "impact": "low",
-    "stars": 1
-  },
-  {
-    "title": "Data Science",
-    "abstract": "This analytical framework focuses on data-driven insights. Implementation focused on Data science. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Data Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/Data_science",
-    "category": "general",
-    "impact": "low",
-    "stars": 1
-  },
-  {
-    "title": "Trafsigndetc",
-    "abstract": "Implementation focused on TrafSignDetc. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Data Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/TrafSignDetc",
-    "category": "general",
-    "impact": "low",
-    "stars": 0
-  },
-  {
-    "title": "Cats Dogs",
-    "abstract": "Implementation focused on CATS DOGS. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Data Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/CATS-DOGS",
-    "category": "general",
-    "impact": "low",
-    "stars": 0
-  },
-  {
-    "title": "Anti Gravity Test1",
-    "abstract": "Implementation focused on anti gravity test1. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Data Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/anti-gravity-test1",
-    "category": "general",
-    "impact": "low",
-    "stars": 0
-  },
-  {
-    "title": "Python",
-    "abstract": "Implementation focused on Python. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Data Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/Python",
-    "category": "general",
-    "impact": "low",
-    "stars": 0
-  },
-  {
-    "title": "Advertising Sales   Linear Regression  ",
-    "abstract": "This project aims to build a machine learning model to predict total sales based on advertising spending across different channels: TV, Radio, and Newspaper. The goal is to understand the impact of advertising budgets on sales revenue and identify the most effective advertising channels.. Implementation , demonstrating practical applications in software engineering and computational problem-solving.",
-    "tags": [
-      "Data Science"
-    ],
-    "github": "https://github.com/vaishnavak2001/Advertising_Sales_-_Linear_Regression_-",
-    "category": "general",
-    "impact": "low",
-    "stars": 0
+    "category": "Analytics",
+    "github": "https://github.com/vaishnavak2001/fifa_cluster",
+    "featured": true,
+    "year": 2023
   }
 ]

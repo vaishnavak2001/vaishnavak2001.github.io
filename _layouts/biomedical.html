@@ -4,217 +4,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaishnav AK | Data Scientist & Biomedical Engineer</title>
+    <title>Vaishnav AK | Biomedical AI Researcher</title>
     <meta name="description"
-        content="Vaishnav AK - Biomedical AI Researcher Portfolio. Specializing in Diabetic Retinopathy and Pneumonia Detection using Deep Learning.">
+        content="Research portfolio of Vaishnav AK - Specializing in Biomedical AI, Deep Learning, and Clinical Data Science.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Fira+Code&display=swap"
         rel="stylesheet">
 
-    <!-- Styles -->
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ '/assets/css/biomedical.css' | relative_url }}">
 
-    <!-- Chart.js for Skills Radar -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
-    <!-- Hero Section / Personal Statement -->
-    <section class="hero-section">
-        <h1 class="hero-title">Vaishnav AK</h1>
-        <p class="hero-subtitle">Data Scientist & Biomedical Engineer</p>
+    <!-- Global Nav -->
+    <nav class="navbar">
+        <a href="/" class="nav-brand">VAISHNAV AK <span style="color:var(--teal-accent); font-weight:400;">| BIOMEDICAL
+                AI</span></a>
+        <div>
+            <a href="https://github.com/vaishnavak2001" target="_blank"
+                style="color:var(--navy-deep); margin-left:1rem;"><i data-lucide="github"></i></a>
+            <a href="mailto:vaishnavak001@gmail.com" style="color:var(--navy-deep); margin-left:1rem;"><i
+                    data-lucide="mail"></i></a>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="hero-bio">
-            <p>I'm an Engineer on a mission to redefine the future of healthcare through AI, Data Science, and
-                Biomedical Innovation.</p>
-
-            <p>With a core academic foundation in Applied Electronics and Instrumentation Engineering from KTU
-                University, my passion lies in merging the physical world of medical devices with the digital
-                intelligence of machine learning. I specialize in building AI-powered healthcare solutions, applying
-                deep learning, predictive analytics, and biomedical signal processing to solve complex clinical
-                problems.</p>
-
-            <p>My journey into Artificial Intelligence began with curiosity—driven by a question: How can we use data
-                and algorithms to improve early diagnosis, personalize treatment, and ultimately save lives? Through
-                structured learning in Data Science (Sept 2023 – July 2024) and AI (July 2024 – April 2025), I've
-                developed expertise in Python, deep learning, CNNs, transfer learning, NLP, and AI for medical imaging.
+            <h1>Redefining Healthcare<br><span style="color:var(--teal-accent)">Through Intelligence</span></h1>
+            <p>
+                I’m an Engineer on a mission to redefine the future of healthcare through AI, Data Science, and
+                Biomedical Innovation.
+                With a core academic foundation in Applied Electronics and Instrumentation Engineering, my passion lies
+                in merging the physical world of medical devices with the digital intelligence of machine learning.
+                <br><br>
+                My experience ranges from hardware instrumentation (ECG, Ventilators) to advanced Deep Learning
+                pipelines, offering a rare end-to-end view of the healthcare ecosystem.
             </p>
-
-            <p>As a Biomedical Instrumentation Engineer Trainee (since Nov 2024), I've gained hands-on experience with
-                ECG machines, ventilators, defibrillators, and imaging systems. This dual expertise in hardware
-                instrumentation and healthcare data analytics offers a rare and valuable end-to-end view of the
-                healthcare ecosystem.</p>
-        </div>
-
-        <div class="cta-buttons">
-            <a href="{{ site.resume | relative_url }}" class="btn btn-primary" download>Download CV</a>
-            <a href="#publications" class="btn btn-secondary">View Publications</a>
-        </div>
-    </section>
-
-    <!-- Skills Radar Chart -->
-    <section class="skills-viz-section">
-        <h2 class="section-header" style="font-size: 1.75rem;">Expertise Distribution</h2>
-        <canvas id="skills-radar"></canvas>
-    </section>
-
-    <!-- Publications Grid -->
-    <section class="publications-section" id="publications">
-        <h2 class="section-header">Research Publications</h2>
-
-        <div class="publications-grid">
-            {% assign research_projects = site.data.research_data %}
-            {% if research_projects %}
-            {% for project in research_projects %}
-            <div class="publication-card" onclick="openModal({{ forloop.index0 }})">
-                <h3 class="pub-title">{{ project.title }}</h3>
-                <p class="pub-abstract">{{ project.abstract | truncate: 180 }}</p>
-
-                <div class="pub-tags">
-                    {% for tag in project.tags %}
-                    <span class="tag">{{ tag }}</span>
-                    {% endfor %}
-                </div>
-
-                <a href="#" class="view-analysis-btn" onclick="event.preventDefault();">
-                    View Analysis →
-                </a>
+            <div class="cta-buttons">
+                <a href="#" class="btn">View Research</a>
+                <a href="{{ site.resume | relative_url }}" class="btn btn-outline" style="margin-left:1rem;">Download
+                    CV</a>
             </div>
-            {% endfor %}
-            {% else %}
-            <p>Loading research data...</p>
-            {% endif %}
+        </div>
+        <div class="hero-image-container">
+            <!-- If profile.jpg exists it will show, else fallback/alt text -->
+            <img src="{{ '/assets/images/profile.jpg' | relative_url }}"
+                onerror="this.src='https://ui-avatars.com/api/?name=Vaishnav+AK&background=002147&color=fff&size=512'"
+                alt="Vaishnav AK" class="hero-img">
         </div>
     </section>
 
-    <!-- Modal (Slide-Over) -->
-    <div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div>
-    <div class="modal-content" id="modal-content">
-        <div class="modal-header">
-            <h2 class="modal-title" id="modal-title"></h2>
-            <button class="modal-close" onclick="closeModal()">×</button>
+    <!-- Visualizations -->
+    <section class="viz-container">
+        <!-- Skills Radar -->
+        <div class="viz-box">
+            <h3 style="text-align:center; color:var(--navy-deep); margin-bottom:1rem;">Research Expertise</h3>
+            <canvas id="skillsRadar"></canvas>
         </div>
-        <div class="modal-body" id="modal-body"></div>
+        <!-- D3 Network -->
+        <div class="viz-box" style="position:relative; overflow:hidden;">
+            <h3 style="text-align:center; color:var(--navy-deep); margin-bottom:1rem;">Tech Ecosystem</h3>
+            <div id="d3-graph" style="width:100%; height:300px;"></div>
+        </div>
+    </section>
+
+    <!-- Featured Research -->
+    <h2 class="section-title">Featured Research</h2>
+    <section class="publications-grid">
+        {% assign featured = site.data.research_data | where: "featured", true %}
+        {% for project in featured %}
+        <div class="journal-card" onclick="window.location.href='{{ project.github }}'">
+            <div class="journal-meta">{{ project.category }} • {{ project.year }}</div>
+            <div class="journal-title">{{ project.title }}</div>
+            <div class="journal-abstract">{{ project.abstract }}</div>
+            <div style="font-size:0.85rem; color:var(--teal-accent);">
+                {% for tag in project.tags limit:3 %}#{{ tag }} {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+
+    <!-- Software Archive -->
+    <h2 class="section-title">Scientific Software Archive</h2>
+    <div class="archive-container">
+        <input type="text" id="archiveSearch" placeholder="Filter by keyword (e.g., Python, CNN)..."
+            style="width:100%; padding:1rem; margin-bottom:1rem; border:1px solid #ccc; font-family:var(--font-heading);">
+
+        <table class="archive-table">
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th>Research Area</th>
+                    <th>Tech Stack</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody id="archiveBody">
+                {% assign all_projects = site.data.research_data %}
+                {% for project in all_projects %}
+                <tr class="archive-row">
+                    <td style="font-weight:600; color:var(--navy-deep);">{{ project.title }}</td>
+                    <td>{{ project.category }}</td>
+                    <td style="color:var(--text-muted); font-size:0.85rem;">{{ project.tags | join: ", " }}</td>
+                    <td><a href="{{ project.github }}" target="_blank"
+                            style="color:var(--teal-accent); text-decoration:none;">Code &nearr;</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 
-    <script>
-        // Research Data
-        var researchData = {{ site.data.research_data | jsonify }};
+    <footer style="text-align:center; padding:3rem; background:var(--navy-deep); color:white; margin-top:4rem;">
+        <p style="opacity:0.8; font-size:0.9rem;">&copy; 2024 Vaishnav AK. Engineered for Biomedical Innovation.</p>
+        <p style="font-size:0.8rem; margin-top:0.5rem; opacity:0.5;">MIT Licensed Content • Hosted on GitHub Pages</p>
+    </footer>
 
-        // Skills Radar Chart
-        const ctx = document.getElementById('skills-radar');
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // 1. Radar Chart
+        const ctx = document.getElementById('skillsRadar').getContext('2d');
         new Chart(ctx, {
             type: 'radar',
             data: {
-                labels: [
-                    'Biomedical Engineering',
-                    'Deep Learning',
-                    'Data Science',
-                    'Medical Imaging',
-                    'Clinical Systems',
-                    'AI Research'
-                ],
+                labels: ['Biomedical Eng', 'Deep Learning', 'Data Science', 'Clinical Systems', 'Control Science', 'Research'],
                 datasets: [{
-                    label: 'Expertise Level',
-                    data: [85, 90, 88, 92, 75, 85],
+                    label: 'Proficiency',
+                    data: [90, 85, 88, 75, 80, 85],
                     fill: true,
-                    backgroundColor: 'rgba(0, 191, 165, 0.2)',
-                    borderColor: '#00BFA5',
-                    pointBackgroundColor: '#002D62',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: '#00BFA5',
-                    pointRadius: 5,
-                    pointHoverRadius: 7
+                    backgroundColor: 'rgba(0, 128, 128, 0.2)',
+                    borderColor: 'rgba(0, 128, 128, 1)',
+                    pointBackgroundColor: '#002147',
+                    pointBorderColor: '#fff'
                 }]
             },
             options: {
-                elements: {
-                    line: {
-                        borderWidth: 3
-                    }
-                },
+                responsive: true,
                 scales: {
                     r: {
-                        angleLines: {
-                            display: true,
-                            color: '#e2e8f0'
-                        },
-                        grid: {
-                            color: '#e2e8f0'
-                        },
-                        pointLabels: {
-                            font: {
-                                size: 13,
-                                family: 'Inter'
-                            },
-                            color: '#1a1a1a'
-                        },
-                        ticks: {
-                            display: false,
-                            stepSize: 20,
-                            max: 100
-                        }
+                        angleLines: { color: 'rgba(0,0,0,0.1)' },
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        ticks: { display: false }
                     }
                 },
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                }
+                plugins: { legend: { display: false } }
             }
         });
 
-        // Modal Functions
-        function openModal(index) {
-            var project = researchData[index];
+        // 2. D3 Force Graph (Simple Node-Link)
+        // Extracting data from Jekyll to JS
+        const projects = [
+            {% for project in site.data.research_data %}
+        { id: "{{ project.title }}", group: 1 },
+        {% endfor %}
+        // Tech nodes
+        { id: "Python", group: 2 }, { id: "Deep Learning", group: 2 }, { id: "Biomedical", group: 2 }
+        ];
 
-            document.getElementById('modal-title').textContent = project.title;
+        const links = [
+            {% for project in site.data.research_data limit: 10 %}
+        { source: "{{ project.title }}", target: "Python" },
+        {% endfor %}
+        {% for project in featured %}
+        { source: "{{ project.title }}", target: "Deep Learning" },
+        {% endfor %}
+        ];
 
-            var body = `
-        <div class="modal-section">
-          <h3>Abstract</h3>
-          <p>${project.abstract}</p>
-        </div>
-        
-        <div class="modal-section">
-          <h3>Technical Architecture</h3>
-          <p>This implementation leverages state-of-the-art approaches in ${project.tags.join(', ')}. The system architecture emphasizes robust preprocessing, model optimization, and rigorous validation protocols to ensure clinical-grade accuracy.</p>
-        </div>
-        
-        <div class="modal-section">
-          <h3>Citation (BibTeX)</h3>
-          <div class="citation-box">@article{${project.title.toLowerCase().replace(/\s+/g, '_')},
-  author = {Vaishnav AK},
-  title = {${project.title}},
-  year = {2024},
-  url = {${project.github}}
-}</div>
-        </div>
-        
-        <div class="modal-section">
-          <a href="${project.github}" target="_blank" class="btn btn-primary">View on GitHub</a>
-        </div>
-      `;
+        const width = document.getElementById('d3-graph').clientWidth;
+        const height = 300;
 
-            document.getElementById('modal-body').innerHTML = body;
-            document.getElementById('modal-overlay').classList.add('active');
-            setTimeout(() => {
-                document.getElementById('modal-content').classList.add('active');
-            }, 10);
-        }
+        const svg = d3.select("#d3-graph").append("svg")
+            .attr("width", width)
+            .attr("height", height);
 
-        function closeModal() {
-            document.getElementById('modal-content').classList.remove('active');
-            setTimeout(() => {
-                document.getElementById('modal-overlay').classList.remove('active');
-            }, 300);
-        }
+        const simulation = d3.forceSimulation(projects)
+            .force("link", d3.forceLink(links).id(d => d.id).distance(50))
+            .force("charge", d3.forceManyBody().strength(-100))
+            .force("center", d3.forceCenter(width / 2, height / 2));
+
+        const link = svg.append("g")
+            .attr("stroke", "#999")
+            .attr("stroke-opacity", 0.6)
+            .selectAll("line")
+            .data(links)
+            .join("line");
+
+        const node = svg.append("g")
+            .attr("stroke", "#fff")
+            .attr("stroke-width", 1.5)
+            .selectAll("circle")
+            .data(projects)
+            .join("circle")
+            .attr("r", 5)
+            .attr("fill", d => d.group === 1 ? "#002147" : "#008080");
+
+        node.append("title").text(d => d.id);
+
+        simulation.on("tick", () => {
+            link
+                .attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
+
+            node
+                .attr("cx", d => d.x)
+                .attr("cy", d => d.y);
+        });
+
+        // 3. Search Filter
+        document.getElementById('archiveSearch').addEventListener('keyup', function () {
+            let filter = this.value.toLowerCase();
+            let rows = document.querySelectorAll('.archive-row');
+
+            rows.forEach(row => {
+                let text = row.textContent.toLowerCase();
+                row.style.display = text.includes(filter) ? '' : 'none';
+            });
+        });
     </script>
 </body>
 
