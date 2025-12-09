@@ -172,41 +172,86 @@ def synthesize_abstract(repo, readme_content, languages, frameworks):
     return abstract
 
 def synthesize_technical_architecture(languages, frameworks, architecture_notes, repo_name):
-    """Generate detailed technical architecture description"""
-    if not languages:
-        return "Technical architecture to be documented. Core implementation uses standard software engineering patterns."
-    
-    # Start with primary language
-    primary_lang = languages[0] if languages else "General"
+    """Generate detailed technical architecture description - NEVER returns empty"""
     
     arch_parts = []
     
-    # Language and paradigm
+    # Always start with language and paradigm
     if 'Python' in languages:
-        arch_parts.append(f"**Backend/Core:** Python-based implementation emphasizing scientific computing and data processing capabilities.")
+        arch_parts.append(f"**Backend/Core:** Python-based implementation emphasizing scientific computing and data processing capabilities. Utilizes object-oriented design patterns for modularity and maintainability.")
     elif 'JavaScript' in languages or 'TypeScript' in languages:
-        arch_parts.append(f"**Frontend/Runtime:** JavaScript/TypeScript enabling dynamic client-side interactions and modern web capabilities.")
+        lang = 'TypeScript' if 'TypeScript' in languages else 'JavaScript'
+        arch_parts.append(f"**Frontend/Runtime:** {lang} enabling dynamic client-side interactions and asynchronous processing. Event-driven architecture for responsive user experience.")
     elif 'Jupyter Notebook' in languages:
-        arch_parts.append(f"**Research Environment:** Interactive computational notebooks for exploratory analysis and visualization.")
+        arch_parts.append(f"**Research Environment:** Interactive computational notebooks for exploratory data analysis and algorithm prototyping. Combines code execution with visualization and documentation.")
+    elif 'Java' in languages:
+        arch_parts.append(f"**Enterprise Architecture:** Java-based implementation following object-oriented principles and design patterns for scalable, maintainable code.")
+    elif 'C++' in languages or 'C' in languages:
+        arch_parts.append(f"**Systems Programming:** Low-level implementation for performance-critical operations. Memory-efficient architecture with direct hardware interaction.")
+    elif languages:
+        # Fallback for any other language
+        arch_parts.append(f"**Core Implementation:** {languages[0]}-based architecture following industry-standard software engineering practices.")
     
     # Frameworks
     if frameworks:
         fw_str = ", ".join(frameworks)
-        arch_parts.append(f"**Framework Stack:** {fw_str} providing structured development patterns and accelerated implementation.")
+        if 'TensorFlow' in fw_str or 'PyTorch' in fw_str or 'Keras' in fw_str:
+            arch_parts.append(f"**ML Pipeline:** {fw_str} for neural network construction, training, and inference. Implements gradient descent optimization with backpropagation.")
+        elif 'Flask' in frameworks or 'Django' in frameworks:
+            arch_parts.append(f"**Web Framework:** {fw_str} providing MVC/MVT architectural pattern for clean separation of concerns. RESTful API design for client-server communication.")
+        elif 'React' in frameworks or 'Next.js' in frameworks:
+            arch_parts.append(f"**UI Framework:** {fw_str} for component-based architecture with virtual DOM for efficient rendering. State management and reactive data flow.")
+        elif 'Streamlit' in frameworks:
+            arch_parts.append(f"**Interactive Framework:** {fw_str} enabling rapid prototyping of data applications with automatic UI generation from Python scripts.")
+        else:
+            arch_parts.append(f"**Framework Stack:** {fw_str} providing structured development patterns and reusable components.")
     
     # Architecture patterns from notes
     if architecture_notes:
-        arch_parts.append(f"**Architecture Patterns:** {' '.join(architecture_notes)}")
+        patterns_str = " ".join(architecture_notes)
+        if len(patterns_str) >100:
+            arch_parts.append(f"**Design Patterns:** {patterns_str}")
+        else:
+            # Merge with framework info or add as standalone if significant
+            if not frameworks:
+                arch_parts.append(f"**Architecture Patterns:** {patterns_str}")
     
-    # Infer patterns from repo name
+    # Infer patterns from repo name - always add domain context
     name_lower = repo_name.lower()
-    if 'api' in name_lower or 'server' in name_lower:
-        arch_parts.append("**Design Pattern:** RESTful service architecture with modular endpoint design.")
-    if 'agent' in name_lower:
-        arch_parts.append("**Agent Architecture:** Autonomous decision-making system with state management and policy execution.")
+    domain_added = False
     
-    if not arch_parts:
-        return f"**Core Stack:** {primary_lang}. Implementation follows industry-standard software development practices with modular architecture for maintainability and scalability."
+    if any(term in name_lower for term in ['detection', 'classification', 'prediction', 'recognition']):
+        arch_parts.append("**ML Architecture:** Supervised learning pipeline with feature extraction, model training, and inference stages. Implements validation strategies for generalization.")
+        domain_added = True
+    elif any(term in name_lower for term in ['api', 'server', 'backend']):
+        if not any('RESTful' in p for p in arch_parts):
+            arch_parts.append("**Service Architecture:** RESTful API design with endpoint routing, request validation, and JSON response formatting. Implements authentication and error handling middleware.")
+            domain_added = True
+    elif any(term in name_lower for term in ['agent', 'rl', 'reinforcement']):
+        arch_parts.append("**Agent Architecture:** Reinforcement learning system with environment interaction, state representation, policy network, and reward optimization. Implements exploration-exploitation strategies.")
+        domain_added = True
+    elif any(term in name_lower for term in ['web', 'site', 'portfolio']):
+        if not any('component' in p.lower() for p in arch_parts):
+            arch_parts.append("**Web Architecture:** Client-side rendering with modular component design. Implements responsive layouts and progressive enhancement.")
+            domain_added = True
+    elif any(term in name_lower for term in ['data', 'analysis', 'cluster', 'eda']):
+        arch_parts.append("**Data Pipeline:** ETL (Extract, Transform, Load) architecture for data ingestion and processing. Statistical analysis and visualization components for insights generation.")
+        domain_added = True
+    
+    # Fallback: if still minimal content, add generic but technical description
+    if not arch_parts or len('\n\n'.join(arch_parts)) < 100:
+        if 'Python' in languages or 'Jupyter Notebook' in languages:
+            arch_parts.append("**Software Architecture:** Modular design with clear separation between data processing, business logic, and presentation layers. Implements error handling, logging, and configuration management.")
+        elif 'JavaScript' in languages:
+            arch_parts.append("**Application Architecture:** Asynchronous event-driven design with promise-based control flow. Modular component structure for code reusability and testing.")
+        else:
+            arch_parts.append("**System Design:** Implements core software engineering principles including modularity, abstraction, and encapsulation. Structured for scalability and maintainability.")
+    
+    # Always add a deployment/execution note
+    if 'Docker' in str(architecture_notes):
+        arch_parts.append("**Deployment:** Containerized architecture using Docker for consistent execution across environments. Enables microservices deployment and horizontal scaling.")
+    elif not any('deployment' in p.lower() or 'execution' in p.lower() for p in arch_parts):
+        arch_parts.append("**Execution Environment:** Standard runtime with dependency management and configuration handling. Supports both development and production deployment scenarios.")
     
     return "\n\n".join(arch_parts)
 
