@@ -1,51 +1,39 @@
 [
   {
-    "id": "diabetic-retinopathy-detection",
-    "title": "Diabetic Retinopathy Detection",
-    "abstract": "Deep learning pipeline using transfer learning to detect diabetic retinopathy from retina images. Utilizes EfficientNetB3 backbone with custom dense layers, L1/L2 regularization, and extensive data augmentation (ZCA whitening). Achieved ~99.7% training accuracy on APTOS/EyePACS datasets.",
-    "tags": [
-      "EfficientNetB3",
-      "Medical Imaging",
-      "Deep Learning"
-    ],
-    "category": "Medical AI",
-    "github": "https://github.com/vaishnavak2001/diabetic-retinopathy-detection",
+    "id": "Car_Price_Prediction",
+    "title": "Car Price Prediction",
+    "github": "https://github.com/vaishnavak2001/Car_Price_Prediction",
+    "year": 2025,
     "featured": true,
-    "year": 2024
-  },
-  {
-    "id": "pneumonia-detection",
-    "title": "Pneumonia Detection via Chest X-rays",
-    "abstract": "CNN-based classification system to identify pneumonia from grayscale chest X-rays (NIH dataset). Benchmarked MobileNet (88.6% acc), InceptionV3, and VGG16. Features real-time inference logic and CLAHE preprocessing for contrast enhancement.",
+    "abstract": "Predictive regression modeling for automotive pricing. Utilizes XGBoost and Random Forest on structured data with extensive Feature Engineering.",
     "tags": [
-      "CNN",
-      "MobileNet",
-      "InceptionV3",
-      "Medical Imaging"
-    ],
-    "category": "Medical AI",
-    "github": "https://github.com/vaishnavak2001/Pneumonia-chest-X-Ray-classification",
-    "featured": true,
-    "year": 2024
-  },
-  {
-    "id": "skin-disorder-detection",
-    "title": "Skin Disorder Detection (ESD)",
-    "abstract": "Multiclass classification of Erythemato-Squamous Diseases (ESD) using clinical and histopathological attributes. Comparative analysis of Random Forest (93% acc), SVM, and XGBoost. Features robust preprocessing including imputation and outlier detection.",
-    "tags": [
-      "Random Forest",
-      "SVM",
+      "Regression",
       "XGBoost",
-      "Clinical Data"
+      "Predictive Analytics"
     ],
-    "category": "Medical AI",
-    "github": "https://github.com/vaishnavak2001/skin-disorder-detection",
-    "featured": true,
-    "year": 2024
+    "category": "Analytics"
   },
   {
-    "id": "face-gender-prediction",
-    "title": "Real-time Face & Gender Prediction",
+    "id": "fifa_cluster",
+    "title": "Fifa Cluster",
+    "github": "https://github.com/vaishnavak2001/fifa_cluster",
+    "year": 2025,
+    "featured": true,
+    "abstract": "Unsupervised learning analysis of player attributes using K-Means and Hierarchical Clustering. Successfully segmented players into tactical roles (Defenders vs Attackers) based on performance metrics.",
+    "tags": [
+      "Clustering",
+      "K-Means",
+      "Unsupervised Learning",
+      "Sports Analytics"
+    ],
+    "category": "Analytics"
+  },
+  {
+    "id": "GenderDetc_complete_using_colab",
+    "title": "Genderdetc Complete Using Colab",
+    "github": "https://github.com/vaishnavak2001/GenderDetc_complete_using_colab",
+    "year": 2025,
+    "featured": true,
     "abstract": "Real-time biometric system predicting gender from facial feeds. Leverages MobileNet and InceptionV3 architectures optimized for low-latency inference using OpenCV.",
     "tags": [
       "Computer Vision",
@@ -53,51 +41,297 @@
       "MobileNet",
       "Real-time"
     ],
-    "category": "Computer Vision",
-    "github": "https://github.com/vaishnavak2001/face-gender-prediction",
-    "featured": true,
-    "year": 2024
+    "category": "Computer Vision"
   },
   {
-    "id": "handwritten-digit-recognition",
-    "title": "High-Precision Digit Recognition",
+    "id": "Pneumonia-chest-X-Ray-classification",
+    "title": "Pneumonia Chest X Ray Classification",
+    "github": "https://github.com/vaishnavak2001/Pneumonia-chest-X-Ray-classification",
+    "year": 2025,
+    "featured": true,
+    "abstract": "CNN-based classification system to identify pneumonia from grayscale chest X-rays (NIH dataset). Benchmarked MobileNet (88.6% acc), InceptionV3, and VGG16. Features real-time inference logic and CLAHE preprocessing for contrast enhancement.",
+    "tags": [
+      "CNN",
+      "MobileNet",
+      "InceptionV3",
+      "Medical Imaging"
+    ],
+    "category": "Medical AI"
+  },
+  {
+    "id": "PRCP_1002_Handwritten_Digits_Recognition",
+    "title": "Prcp 1002 Handwritten Digits Recognition",
+    "github": "https://github.com/vaishnavak2001/PRCP_1002_Handwritten_Digits_Recognition",
+    "year": 2025,
+    "featured": true,
     "abstract": "High-precision neural network for MNIST digit classification. Implements dropout regularization and data normalization to minimize overfitting.",
     "tags": [
       "MNIST",
       "Neural Networks",
       "Deep Learning"
     ],
-    "category": "Computer Vision",
-    "github": "https://github.com/vaishnavak2001/handwritten-digit-recognition",
-    "featured": true,
-    "year": 2023
+    "category": "Computer Vision"
   },
   {
-    "id": "auto-price-prediction",
-    "title": "Auto Price Prediction",
-    "abstract": "Predictive regression modeling for automotive pricing. Utilizes XGBoost and Random Forest on structured data with extensive Feature Engineering.",
+    "id": "skin-disorder-detection",
+    "title": "Skin Disorder Detection",
+    "github": "https://github.com/vaishnavak2001/skin-disorder-detection",
+    "year": 2025,
+    "featured": true,
+    "abstract": "Multiclass classification of Erythemato-Squamous Diseases (ESD) using clinical and histopathological attributes. Comparative analysis of Random Forest (93% acc), SVM, and XGBoost. Features robust preprocessing including imputation and outlier detection.",
     "tags": [
-      "Regression",
+      "Random Forest",
+      "SVM",
       "XGBoost",
-      "Predictive Analytics"
+      "Clinical Data"
     ],
-    "category": "Analytics",
-    "github": "https://github.com/vaishnavak2001/Car_Price_Prediction",
-    "featured": true,
-    "year": 2023
+    "category": "Medical AI"
   },
   {
-    "id": "fifa20-clustering",
-    "title": "FIFA 20 Player Clustering",
-    "abstract": "Unsupervised learning analysis of player attributes using K-Means and Hierarchical Clustering. Successfully segmented players into tactical roles based on performance metrics.",
+    "id": "Admission_Prediction_-Linear_Regression-",
+    "title": "Admission Prediction  Linear Regression ",
+    "github": "https://github.com/vaishnavak2001/Admission_Prediction_-Linear_Regression-",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Predicting graduate admission chances using linear regression with GRE, TOEFL, University Rating, SOP, LOR, CGPA, and Research. Explores data preprocessing, EDA, feature selection, regularization, polynomial features, and cross-validation to improve model accuracy. Polynomial features showed the best performance.",
     "tags": [
-      "Clustering",
-      "K-Means",
-      "Unsupervised Learning"
+      "Jupyter Notebook",
+      "Data Science"
     ],
-    "category": "Analytics",
-    "github": "https://github.com/vaishnavak2001/fifa_cluster",
-    "featured": true,
-    "year": 2023
+    "category": "Software Archive"
+  },
+  {
+    "id": "Advertising_Sales_-_Linear_Regression_-",
+    "title": "Advertising Sales   Linear Regression  ",
+    "github": "https://github.com/vaishnavak2001/Advertising_Sales_-_Linear_Regression_-",
+    "year": 2025,
+    "featured": false,
+    "abstract": "This project aims to build a machine learning model to predict total sales based on advertising spending across different channels: TV, Radio, and Newspaper. The goal is to understand the impact of advertising budgets on sales revenue and identify the most effective advertising channels.",
+    "tags": [
+      "Jupyter Notebook",
+      "Neural Networks"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "anti-gravity-test1",
+    "title": "Anti Gravity Test1",
+    "github": "https://github.com/vaishnavak2001/anti-gravity-test1",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [],
+    "category": "Software Archive"
+  },
+  {
+    "id": "Autonomous-Job-Application-Agent",
+    "title": "Autonomous Job Application Agent",
+    "github": "https://github.com/vaishnavak2001/Autonomous-Job-Application-Agent",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "AI Agent"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "Bike-Rental-Prediction",
+    "title": "Bike Rental Prediction",
+    "github": "https://github.com/vaishnavak2001/Bike-Rental-Prediction",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Jupyter Notebook"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "capstone-project-the-agentops-guardian-5dgai",
+    "title": "Capstone Project The Agentops Guardian 5Dgai",
+    "github": "https://github.com/vaishnavak2001/capstone-project-the-agentops-guardian-5dgai",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Jupyter Notebook",
+      "AI Agent"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "capstone-project-the-The-AI-Website-Creator-5dgai",
+    "title": "Capstone Project The The Ai Website Creator 5Dgai",
+    "github": "https://github.com/vaishnavak2001/capstone-project-the-The-AI-Website-Creator-5dgai",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Jupyter Notebook"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "career_agent",
+    "title": "Career Agent",
+    "github": "https://github.com/vaishnavak2001/career_agent",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Python",
+      "AI Agent"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "CATS-DOGS",
+    "title": "Cats Dogs",
+    "github": "https://github.com/vaishnavak2001/CATS-DOGS",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Jupyter Notebook"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "COMP1-TITANIC-",
+    "title": "Comp1 Titanic ",
+    "github": "https://github.com/vaishnavak2001/COMP1-TITANIC-",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Jupyter Notebook"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "ControlGym-mass-spring-damper",
+    "title": "Controlgym Mass Spring Damper",
+    "github": "https://github.com/vaishnavak2001/ControlGym-mass-spring-damper",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Python"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "Diabetic-Retinopathy-Detection",
+    "title": "Diabetic Retinopathy Detection",
+    "github": "https://github.com/vaishnavak2001/Diabetic-Retinopathy-Detection",
+    "year": 2025,
+    "featured": false,
+    "abstract": "In this diabetic retinopathy classification project, various deep learning models\u2014including EfficientNet, VGG16,DenseNet,  ResNet50, and MobileNetV2\u2014were trained to classify retinal fundus images into three clinically significant categories: No DR, Mild DR, and Severe DR",
+    "tags": [
+      "Jupyter Notebook"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "dronegym-rl-quadcopter-attitude",
+    "title": "Dronegym Rl Quadcopter Attitude",
+    "github": "https://github.com/vaishnavak2001/dronegym-rl-quadcopter-attitude",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [],
+    "category": "Software Archive"
+  },
+  {
+    "id": "ecg-classification-cnn-lstm",
+    "title": "Ecg Classification Cnn Lstm",
+    "github": "https://github.com/vaishnavak2001/ecg-classification-cnn-lstm",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Jupyter Notebook",
+      "Neural Networks",
+      "CNN",
+      "LSTM"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "IABAC_CDS_Project_2_INX_Future_Emp_Data_V1.6",
+    "title": "Iabac Cds Project 2 Inx Future Emp Data V1.6",
+    "github": "https://github.com/vaishnavak2001/IABAC_CDS_Project_2_INX_Future_Emp_Data_V1.6",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Jupyter Notebook",
+      "Data Science"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "restaurant-rag-agent",
+    "title": "Restaurant Rag Agent",
+    "github": "https://github.com/vaishnavak2001/restaurant-rag-agent",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Python",
+      "AI Agent"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "TrafSignDetc",
+    "title": "Trafsigndetc",
+    "github": "https://github.com/vaishnavak2001/TrafSignDetc",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Jupyter Notebook"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "Welltrack-ai",
+    "title": "Welltrack Ai",
+    "github": "https://github.com/vaishnavak2001/Welltrack-ai",
+    "year": 2025,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Python"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "Data_science",
+    "title": "Data Science",
+    "github": "https://github.com/vaishnavak2001/Data_science",
+    "year": 2024,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Jupyter Notebook",
+      "Data Science"
+    ],
+    "category": "Software Archive"
+  },
+  {
+    "id": "Python",
+    "title": "Python",
+    "github": "https://github.com/vaishnavak2001/Python",
+    "year": 2024,
+    "featured": false,
+    "abstract": "Scientific software archive.",
+    "tags": [
+      "Jupyter Notebook",
+      "Python"
+    ],
+    "category": "Software Archive"
   }
 ]
