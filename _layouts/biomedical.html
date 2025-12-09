@@ -78,7 +78,7 @@
         <!-- D3 Network -->
         <div class="viz-box" style="position:relative; overflow:hidden;">
             <h3 style="text-align:center; color:var(--navy-deep); margin-bottom:1rem;">Tech Ecosystem</h3>
-            <div id="d3-graph" style="width:100%; height:300px;"></div>
+            <div id="d3-graph" style="width:100%; height:600px;"></div>
         </div>
     </section>
 
@@ -336,17 +336,17 @@
             {% endfor %}
 
             const width = document.getElementById('d3-graph').clientWidth;
-            const height = 400;
+            const height = 600;
 
             const svg = d3.select("#d3-graph").html("").append("svg")
                 .attr("width", width)
                 .attr("height", height);
 
             const simulation = d3.forceSimulation(projects)
-                .force("link", d3.forceLink(links).id(d => d.id).distance(70))
-                .force("charge", d3.forceManyBody().strength(-150))
+                .force("link", d3.forceLink(links).id(d => d.id).distance(100))
+                .force("charge", d3.forceManyBody().strength(-250))
                 .force("center", d3.forceCenter(width / 2, height / 2))
-                .force("collide", d3.forceCollide(20));
+                .force("collide", d3.forceCollide(30));
 
             const link = svg.append("g")
                 .attr("stroke", "#999")
@@ -381,15 +381,17 @@
 
             node.append("title").text(d => d.id);
 
+            // Only show labels for tech nodes (group 2) to reduce clutter
             const labels = svg.append("g")
                 .selectAll("text")
-                .data(projects)
+                .data(projects.filter(d => d.group === 2))
                 .join("text")
-                .attr("dx", 8)
-                .attr("dy", ".35em")
                 .text(d => d.id)
-                .style("font-size", "10px")
-                .style("fill", "#333")
+                .attr("text-anchor", "middle")
+                .attr("dy", "0.35em")
+                .style("font-size", "12px")
+                .style("font-weight", "600")
+                .style("fill", "#002147")
                 .style("pointer-events", "none");
 
             simulation.on("tick", () => {
