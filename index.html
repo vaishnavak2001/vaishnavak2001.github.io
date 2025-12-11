@@ -19,7 +19,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{{ '/assets/css/biomedical.css' | relative_url }}">
 
-    <!-- Favicon (DNA Helix/Caduceus Abstract) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23008080'%3E%3Cpath d='M30,10 C30,10 70,30 70,50 S30,90 30,90 M70,10 C70,10 30,30 30,50 S70,90 70,90' stroke='white' stroke-width='5' /%3E%3Ccircle cx='50' cy='50' r='45' stroke='%23002147' stroke-width='5' fill='none'/%3E%3C/svg%3E">
 
@@ -74,7 +74,6 @@
             </div>
         </div>
         <div class="hero-image-container">
-            <!-- User requested path: images/profile.jpg -->
             <img src="{{ '/images/profile.jpg' | relative_url }}"
                 onerror="this.src='https://ui-avatars.com/api/?name=Vaishnav+AK&background=002147&color=fff&size=512'"
                 alt="Vaishnav AK" class="hero-img">
@@ -189,40 +188,68 @@
         }
 
         // 2. D3 Force Graph (Dynamic Tech Ecosystem)
-        const projects = [
-            {% for project in site.data.research_data %}
-        { id: { { project.title | jsonify } }, group: 1, type: 'project' },
-        {% endfor %}
-    ];
+        // HARDCODED DATA to Bypass Liquid Syntax Errors
+        const rawData = [
+            { "title": "ECG Arrhythmia Detection", "tags": ["CNN-LSTM", "Signal Processing", "MIT-BIH", "Real-time"] },
+            { "title": "Pneumonia Detection", "tags": ["VGG16", "ResNet", "Transfer Learning", "Medical Imaging"] },
+            { "title": "Diabetic Retinopathy Detection", "tags": ["VGG16", "ResNet", "Transfer Learning", "Medical Imaging"] },
+            { "title": "ControlGym: Mass-Spring-Damper", "tags": ["Reinforcement Learning", "Control Theory", "OpenAI Gym", "PPO"] },
+            { "title": "WellTrack AI", "tags": ["Generative AI", "Health Tech", "Python"] },
+            { "title": "Restaurant RAG Agent", "tags": ["RAG", "LLMs", "LangChain", "Vector DB"] },
+            { "title": "AgentOps Guardian", "tags": ["AgentOps", "AI Safety", "Autonomous Agents"] },
+            { "title": "Autonomous Career Agent", "tags": ["NLP", "AI Agents", "Career Tech"] },
+            { "title": "Skin Disorder Detection", "tags": ["Dermatology", "Random Forest", "Medical AI"] },
+            { "title": "EEG Seizure Detection", "tags": ["CNN", "EEG", "Time-Series", "Feature Extraction"] },
+            { "title": "PhysioNet ECG Digitization System", "tags": ["YOLOv8", "Swin Transformers", "Computer Vision", "Digitization"] },
+            { "title": "Admission Prediction  Linear Regression ", "tags": ["Jupyter Notebook"] },
+            { "title": "Advertising Sales   Linear Regression  ", "tags": ["Jupyter Notebook"] },
+            { "title": "Anti Gravity Test1", "tags": [] },
+            { "title": "Autonomous Job Application Agent", "tags": [] },
+            { "title": "Bike Rental Prediction", "tags": ["Jupyter Notebook"] },
+            { "title": "Capstone Project The The Ai Website Creator 5Dgai", "tags": ["Jupyter Notebook"] },
+            { "title": "Car Price Prediction", "tags": ["Jupyter Notebook"] },
+            { "title": "Cats Dogs", "tags": ["Jupyter Notebook"] },
+            { "title": "Comp1 Titanic ", "tags": ["Jupyter Notebook"] },
+            { "title": "Dronegym Rl Quadcopter Attitude", "tags": [] },
+            { "title": "Fifa Cluster", "tags": ["Jupyter Notebook"] },
+            { "title": "Genderdetc Complete Using Colab", "tags": ["Jupyter Notebook"] },
+            { "title": "Iabac Cds Project 2 Inx Future Emp Data V1.6", "tags": ["Jupyter Notebook"] },
+            { "title": "Prcp 1002 Handwritten Digits Recognition", "tags": ["Jupyter Notebook"] },
+            { "title": "Trafsigndetc", "tags": ["Jupyter Notebook"] },
+            { "title": "Data Science", "tags": ["Jupyter Notebook"] },
+            { "title": "Python", "tags": ["Jupyter Notebook"] }
+        ];
 
-        // Extract and dedupe tags using a temporary JS Set
-        const rawTags = [
-            {% for project in site.data.research_data %}
-        {% for tag in project.tags %}
-        { { tag | jsonify } },
-        {% endfor %}
-        {% endfor %}
-    ];
-        const uniqueTags = [...new Set(rawTags)];
+        // Process Data for D3
+        const projects = rawData.map(p => ({
+            id: p.title,
+            group: 1,
+            type: 'project'
+        }));
 
-        // Add Tech Nodes
-        uniqueTags.forEach(tag => {
-            if (tag) projects.push({ id: tag, group: 2, type: 'tech' });
+        const uniqueTags = new Set();
+        rawData.forEach(p => {
+            if (p.tags) p.tags.forEach(t => uniqueTags.add(t));
         });
 
-        // Create Links
+        uniqueTags.forEach(tag => {
+            projects.push({ id: tag, group: 2, type: 'tech' });
+        });
+
         const links = [];
-        {% for project in site.data.research_data %}
-        {% for tag in project.tags %}
-        links.push({ source: {{ project.title | jsonify }}, target: {{ tag | jsonify }} });
-        {% endfor %}
-        {% endfor %}
+        rawData.forEach(p => {
+            if (p.tags) {
+                p.tags.forEach(t => {
+                    links.push({ source: p.title, target: t });
+                });
+            }
+        });
 
         const container = document.getElementById('d3-graph');
-        const width = container.clientWidth || 800;
-        const height = 600;
+        let width = container.clientWidth || 800;
+        let height = 600;
 
-        // Remove existing SVG if any (but keep the button)
+        // Remove existing SVG if any
         d3.select("#d3-graph svg").remove();
 
         const svg = d3.select("#d3-graph").append("svg")
@@ -233,11 +260,11 @@
             }))
             .append("g");
 
-        console.log("D3 Graph Loaded - Projects:", projects.length, "Version: Fixed-v3");
+        console.log("D3 Graph Loaded - Projects:", projects.length, "Version: Hardcoded-v4");
 
         const simulation = d3.forceSimulation(projects)
             .force("link", d3.forceLink(links).id(d => d.id).distance(100))
-            .force("charge", d3.forceManyBody().strength(-250))
+            .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
             .force("collide", d3.forceCollide(30));
 
@@ -257,8 +284,9 @@
             .selectAll("circle")
             .data(projects)
             .join("circle")
-            .attr("r", d => d.group === 1 ? 6 : 4)
-            .attr("fill", d => d.group === 1 ? "#002147" : "#008080");
+            .attr("r", d => d.group === 1 ? 8 : 5)
+            .attr("fill", d => d.group === 1 ? "#002147" : "#008080")
+            .style("cursor", "grab");
 
         function resetZoom() {
             d3.select("#d3-graph svg").transition().duration(750)
@@ -267,7 +295,6 @@
 
         // Highlight Connections Logic
         function highlightConnections(d, isHover) {
-            const opacity = isHover ? 0.1 : 1;
             const connectedIds = new Set();
 
             if (isHover) {
@@ -290,6 +317,7 @@
                 d.fx = d.x;
                 d.fy = d.y;
                 highlightConnections(d, true);
+                d3.select(this).style("cursor", "grabbing");
             })
             .on("drag", (event, d) => {
                 d.fx = event.x;
@@ -300,6 +328,7 @@
                 d.fx = null;
                 d.fy = null;
                 highlightConnections(d, false);
+                d3.select(this).style("cursor", "grab");
             })
             .on("mouseover", (event, d) => highlightConnections(d, true))
             .on("mouseout", (event, d) => highlightConnections(d, false))
@@ -311,21 +340,22 @@
             .selectAll("text")
             .data(projects.filter(d => {
                 if (d.group === 1) return true; // Show ALL projects
+                // Show tech labels if they are major ones, or just show all to satisfy "Key technology tags"
                 const majorTech = ['CNN-LSTM', 'VGG16', 'ResNet', 'Transfer Learning', 'Medical Imaging',
                     'Reinforcement Learning', 'PPO', 'RAG', 'LLMs', 'Deep Learning',
-                    'Python', 'Signal Processing', 'Medical AI'
+                    'Python', 'Signal Processing', 'Medical AI', 'Computer Vision'
                 ];
                 return majorTech.includes(d.id);
             }))
             .join("text")
             .text(d => d.id)
             .attr("text-anchor", "middle")
-            .attr("dy", d => d.group === 1 ? -10 : 10)
-            .style("font-size", d => d.group === 1 ? "10px" : "9px")
+            .attr("dy", d => d.group === 1 ? -12 : 12)
+            .style("font-size", d => d.group === 1 ? "11px" : "10px")
             .style("font-weight", d => d.group === 1 ? "700" : "600")
             .style("fill", d => d.group === 1 ? "#002147" : "#008080")
             .style("pointer-events", "none")
-            .style("text-shadow", "1px 1px 2px white, -1px -1px 2px white");
+            .style("text-shadow", "2px 2px 3px white, -2px -2px 3px white, 2px -2px 3px white, -2px 2px 3px white");
 
         simulation.on("tick", () => {
             link
