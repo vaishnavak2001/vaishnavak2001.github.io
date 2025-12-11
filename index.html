@@ -23,10 +23,10 @@
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23008080'%3E%3Cpath d='M30,10 C30,10 70,30 70,50 S30,90 30,90 M70,10 C70,10 30,30 30,50 S70,90 70,90' stroke='white' stroke-width='5' /%3E%3Ccircle cx='50' cy='50' r='45' stroke='%23002147' stroke-width='5' fill='none'/%3E%3C/svg%3E">
 
-    <!-- Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Libraries (Added crossorigin for better error logs) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v7.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/lucide@latest" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -188,7 +188,6 @@
         }
 
         // 2. D3 Force Graph (Dynamic Tech Ecosystem)
-        // HARDCODED DATA to Bypass Liquid Syntax Errors
         const rawData = [
             { "title": "ECG Arrhythmia Detection", "tags": ["CNN-LSTM", "Signal Processing", "MIT-BIH", "Real-time"] },
             { "title": "Pneumonia Detection", "tags": ["VGG16", "ResNet", "Transfer Learning", "Medical Imaging"] },
@@ -220,158 +219,178 @@
             { "title": "Python", "tags": ["Jupyter Notebook"] }
         ];
 
-        // Process Data for D3
-        const projects = rawData.map(p => ({
-            id: p.title,
-            group: 1,
-            type: 'project'
-        }));
+        try {
+            // FIX: Use Prefixes to avoid ID collisions (e.g., Project "Python" vs Tag "Python")
+            const projects = rawData.map(p => ({
+                id: "prj-" + p.title,
+                label: p.title,
+                group: 1,
+                type: 'project'
+            }));
 
-        const uniqueTags = new Set();
-        rawData.forEach(p => {
-            if (p.tags) p.tags.forEach(t => uniqueTags.add(t));
-        });
+            const uniqueTags = new Set();
+            rawData.forEach(p => {
+                if (p.tags) p.tags.forEach(t => uniqueTags.add(t));
+            });
 
-        uniqueTags.forEach(tag => {
-            projects.push({ id: tag, group: 2, type: 'tech' });
-        });
-
-        const links = [];
-        rawData.forEach(p => {
-            if (p.tags) {
-                p.tags.forEach(t => {
-                    links.push({ source: p.title, target: t });
+            uniqueTags.forEach(tag => {
+                projects.push({
+                    id: "tag-" + tag,
+                    label: tag,
+                    group: 2,
+                    type: 'tech'
                 });
+            });
+
+            const links = [];
+            rawData.forEach(p => {
+                if (p.tags) {
+                    p.tags.forEach(t => {
+                        links.push({
+                            source: "prj-" + p.title,
+                            target: "tag-" + t
+                        });
+                    });
+                }
+            });
+
+            const container = document.getElementById('d3-graph');
+            let width = container.clientWidth || 800;
+            let height = 600;
+
+            // Remove existing SVG
+            d3.select("#d3-graph svg").remove();
+
+            const svg = d3.select("#d3-graph").append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .call(d3.zoom().on("zoom", (event) => {
+                    svg.selectAll("g").attr("transform", event.transform);
+                }))
+                .append("g");
+
+            console.log("D3 Graph Loaded - Nodes:", projects.length, "Links:", links.length, "Version: Fixed-v5");
+
+            const simulation = d3.forceSimulation(projects)
+                .force("link", d3.forceLink(links).id(d => d.id).distance(100))
+                .force("charge", d3.forceManyBody().strength(-300))
+                .force("center", d3.forceCenter(width / 2, height / 2))
+                .force("collide", d3.forceCollide(20));
+
+            const link = svg.append("g")
+                .attr("stroke", "#999")
+                .attr("stroke-opacity", 0.4)
+                .selectAll("line")
+                .data(links)
+                .join("line");
+
+            const node = svg.append("g")
+                .attr("stroke", "#fff")
+                .attr("stroke-width", 1.5)
+                .selectAll("circle")
+                .data(projects)
+                .join("circle")
+                .attr("r", d => d.group === 1 ? 8 : 5)
+                .attr("fill", d => d.group === 1 ? "#002147" : "#008080")
+                .style("cursor", "grab");
+
+            node.append("title").text(d => d.label);
+
+            const labels = svg.append("g")
+                .selectAll("text")
+                .data(projects.filter(d => {
+                    // Show labels for ALL projects and MAJOR tags
+                    if (d.group === 1) return true;
+                    const majorTech = ['CNN-LSTM', 'VGG16', 'ResNet', 'Transfer Learning', 'Medical Imaging',
+                        'Reinforcement Learning', 'PPO', 'RAG', 'LLMs', 'Deep Learning',
+                        'Python', 'Signal Processing', 'Medical AI', 'Computer Vision'];
+                    return majorTech.includes(d.label);
+                }))
+                .join("text")
+                .text(d => d.label)
+                .attr("text-anchor", "middle")
+                .attr("dy", d => d.group === 1 ? -12 : 12)
+                .style("font-size", d => d.group === 1 ? "11px" : "10px")
+                .style("font-weight", d => d.group === 1 ? "700" : "600")
+                .style("fill", d => d.group === 1 ? "#002147" : "#008080")
+                .style("pointer-events", "none")
+                .style("text-shadow", "2px 2px 3px white, -2px -2px 3px white, 2px -2px 3px white, -2px 2px 3px white");
+
+            simulation.on("tick", () => {
+                link
+                    .attr("x1", d => d.source.x)
+                    .attr("y1", d => d.source.y)
+                    .attr("x2", d => d.target.x)
+                    .attr("y2", d => d.target.y);
+
+                node
+                    .attr("cx", d => d.x)
+                    .attr("cy", d => d.y);
+
+                labels
+                    .attr("x", d => d.x)
+                    .attr("y", d => d.y);
+            });
+
+            // FIX: Highlight Connections (Logic Fixed)
+            function highlightConnections(d, isHover) {
+                const connectedIds = new Set();
+                if (isHover) {
+                    connectedIds.add(d.id);
+                    links.forEach(l => {
+                        if (l.source.id === d.id) connectedIds.add(l.target.id);
+                        if (l.target.id === d.id) connectedIds.add(l.source.id);
+                    });
+                }
+
+                node.style('opacity', o => isHover ? (connectedIds.has(o.id) ? 1 : 0.1) : 1);
+                labels.style('opacity', o => isHover ? (connectedIds.has(o.id) ? 1 : 0.1) : 1);
+                link.style('opacity', l => isHover ? (connectedIds.has(l.source.id) && connectedIds.has(l.target.id) ? 1 : 0.1) : 0.4);
             }
-        });
 
-        const container = document.getElementById('d3-graph');
-        let width = container.clientWidth || 800;
-        let height = 600;
-
-        // Remove existing SVG if any
-        d3.select("#d3-graph svg").remove();
-
-        const svg = d3.select("#d3-graph").append("svg")
-            .attr("width", width)
-            .attr("height", height)
-            .call(d3.zoom().on("zoom", (event) => {
-                svg.selectAll("g").attr("transform", event.transform);
-            }))
-            .append("g");
-
-        console.log("D3 Graph Loaded - Projects:", projects.length, "Version: Hardcoded-v4");
-
-        const simulation = d3.forceSimulation(projects)
-            .force("link", d3.forceLink(links).id(d => d.id).distance(100))
-            .force("charge", d3.forceManyBody().strength(-200))
-            .force("center", d3.forceCenter(width / 2, height / 2))
-            .force("collide", d3.forceCollide(30));
-
-        // Restart simulation to ensure it runs
-        simulation.alpha(1).restart();
-
-        const link = svg.append("g")
-            .attr("stroke", "#999")
-            .attr("stroke-opacity", 0.4)
-            .selectAll("line")
-            .data(links)
-            .join("line");
-
-        const node = svg.append("g")
-            .attr("stroke", "#fff")
-            .attr("stroke-width", 1.5)
-            .selectAll("circle")
-            .data(projects)
-            .join("circle")
-            .attr("r", d => d.group === 1 ? 8 : 5)
-            .attr("fill", d => d.group === 1 ? "#002147" : "#008080")
-            .style("cursor", "grab");
-
-        function resetZoom() {
-            d3.select("#d3-graph svg").transition().duration(750)
-                .call(d3.zoom().transform, d3.zoomIdentity);
-        }
-
-        // Highlight Connections Logic
-        function highlightConnections(d, isHover) {
-            const connectedIds = new Set();
-
-            if (isHover) {
-                connectedIds.add(d.id);
-                links.forEach(l => {
-                    if (l.source.id === d.id) connectedIds.add(l.target.id);
-                    if (l.target.id === d.id) connectedIds.add(l.source.id);
-                });
-            }
-
-            node.style('opacity', o => isHover ? (connectedIds.has(o.id) ? 1 : 0.1) : 0.9);
-            labels.style('opacity', o => isHover ? (connectedIds.has(o.id) ? 1 : 0.1) : 1);
-            link.style('opacity', l => isHover ? (connectedIds.has(l.source.id) && connectedIds.has(l.target.id) ? 1 : 0.1) : 0.4);
-        }
-
-        // Update Drag Behavior
-        node.call(d3.drag()
-            .on("start", (event, d) => {
+            // FIX: Drag behavior (Arrow function 'this' fix)
+            function dragstarted(event, d) {
                 if (!event.active) simulation.alphaTarget(0.3).restart();
                 d.fx = d.x;
                 d.fy = d.y;
                 highlightConnections(d, true);
                 d3.select(this).style("cursor", "grabbing");
-            })
-            .on("drag", (event, d) => {
+            }
+
+            function dragged(event, d) {
                 d.fx = event.x;
                 d.fy = event.y;
-            })
-            .on("end", (event, d) => {
+            }
+
+            function dragended(event, d) {
                 if (!event.active) simulation.alphaTarget(0);
                 d.fx = null;
                 d.fy = null;
                 highlightConnections(d, false);
                 d3.select(this).style("cursor", "grab");
-            })
-            .on("mouseover", (event, d) => highlightConnections(d, true))
-            .on("mouseout", (event, d) => highlightConnections(d, false))
-        );
+            }
 
-        node.append("title").text(d => d.id);
+            node.call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended));
 
-        const labels = svg.append("g")
-            .selectAll("text")
-            .data(projects.filter(d => {
-                if (d.group === 1) return true; // Show ALL projects
-                // Show tech labels if they are major ones, or just show all to satisfy "Key technology tags"
-                const majorTech = ['CNN-LSTM', 'VGG16', 'ResNet', 'Transfer Learning', 'Medical Imaging',
-                    'Reinforcement Learning', 'PPO', 'RAG', 'LLMs', 'Deep Learning',
-                    'Python', 'Signal Processing', 'Medical AI', 'Computer Vision'
-                ];
-                return majorTech.includes(d.id);
-            }))
-            .join("text")
-            .text(d => d.id)
-            .attr("text-anchor", "middle")
-            .attr("dy", d => d.group === 1 ? -12 : 12)
-            .style("font-size", d => d.group === 1 ? "11px" : "10px")
-            .style("font-weight", d => d.group === 1 ? "700" : "600")
-            .style("fill", d => d.group === 1 ? "#002147" : "#008080")
-            .style("pointer-events", "none")
-            .style("text-shadow", "2px 2px 3px white, -2px -2px 3px white, 2px -2px 3px white, -2px 2px 3px white");
+            // Highlight on hover (using standardized logic)
+            node.on("mouseover", (event, d) => highlightConnections(d, true))
+                .on("mouseout", (event, d) => highlightConnections(d, false));
 
-        simulation.on("tick", () => {
-            link
-                .attr("x1", d => d.source.x)
-                .attr("y1", d => d.source.y)
-                .attr("x2", d => d.target.x)
-                .attr("y2", d => d.target.y);
+            window.resetZoom = function () {
+                d3.select("#d3-graph svg").transition().duration(750)
+                    .call(d3.zoom().transform, d3.zoomIdentity);
+            };
 
-            node
-                .attr("cx", d => d.x)
-                .attr("cy", d => d.y);
+            simulation.alpha(1).restart();
 
-            labels
-                .attr("x", d => d.x)
-                .attr("y", d => d.y);
-        });
+        } catch (err) {
+            console.error("D3 Graph Critical Error:", err);
+            document.getElementById('js-error-log').innerText += "\nD3 Error: " + err.message;
+            document.getElementById('js-error-log').style.display = 'block';
+        }
 
         // 3. Search Filter
         document.getElementById('archiveSearch').addEventListener('keyup', function () {
