@@ -94,7 +94,7 @@
                 style="width:100%; height:600px; border:1px solid #eee; border-radius:8px; position:relative;">
                 <button onclick="resetZoom()"
                     style="position:absolute; top:10px; right:10px; z-index:10; padding:5px 10px; background:white; border:1px solid #ccc; border-radius:4px; cursor:pointer; font-size:12px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
-                    Reset Zoom (v8)
+                    Reset Zoom (v9)
                 </button>
             </div>
         </div>
@@ -176,6 +176,8 @@
                     responsive: true,
                     scales: {
                         r: {
+                            min: 0,
+                            max: 100,
                             angleLines: { color: 'rgba(0,0,0,0.1)' },
                             grid: { color: 'rgba(0,0,0,0.05)' },
                             ticks: { display: false }
