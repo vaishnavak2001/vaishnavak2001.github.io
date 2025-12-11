@@ -233,7 +233,7 @@
             }))
             .append("g");
 
-        console.log("D3 Graph Loaded - Projects:", projects.length, "Version: Clean-v2");
+        console.log("D3 Graph Loaded - Projects:", projects.length, "Version: Fixed-v3");
 
         const simulation = d3.forceSimulation(projects)
             .force("link", d3.forceLink(links).id(d => d.id).distance(100))
