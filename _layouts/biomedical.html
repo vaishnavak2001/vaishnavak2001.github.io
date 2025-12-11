@@ -28,6 +28,17 @@
 </head>
 
 <body>
+    <div id="js-error-log"
+        style="display:none; background:red; color:white; padding:10px; position:fixed; top:0; left:0; right:0; z-index:9999; font-size:12px; white-space:pre-wrap;">
+    </div>
+    <script>
+        window.onerror = function (msg, url, line) {
+            var log = document.getElementById('js-error-log');
+            log.style.display = 'block';
+            log.innerHTML += "Error: " + msg + " at line " + line + "\n";
+            console.error(msg);
+        };
+    </script>
 
     <!-- Global Nav -->
     <nav class="navbar">
@@ -138,150 +149,12 @@
         <p style="font-size:0.8rem; margin-top:0.5rem; opacity:0.5;">MIT Licensed Content • Hosted on GitHub Pages</p>
     </footer>
 
-    <!DOCTYPE html>
-    <html lang="en">
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vaishnav AK | Biomedical AI Researcher</title>
-        <meta name="description"
-            content="Research portfolio of Vaishnav AK - Specializing in Biomedical AI, Deep Learning, and Clinical Data Science.">
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Fira+Code&display=swap"
-            rel="stylesheet">
-
-        <!-- CSS -->
-        <link rel="stylesheet" href="{{ '/assets/css/biomedical.css' | relative_url }}">
-
-        <!-- Favicon (DNA Helix/Caduceus Abstract) -->
-        <link rel="icon" type="image/svg+xml"
-            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23008080'%3E%3Cpath d='M30,10 C30,10 70,30 70,50 S30,90 30,90 M70,10 C70,10 30,30 30,50 S70,90 70,90' stroke='white' stroke-width='5' /%3E%3Ccircle cx='50' cy='50' r='45' stroke='%23002147' stroke-width='5' fill='none'/%3E%3C/svg%3E">
-
-        <!-- Libraries -->
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="https://d3js.org/d3.v7.min.js"></script>
-        <script src="https://unpkg.com/lucide@latest"></script>
-    </head>
-
-    <body>
-
-        <!-- Global Nav -->
-        <nav class="navbar">
-            <a href="/" class="nav-brand">VAISHNAV AK <span style="color:var(--teal-accent); font-weight:400;">|
-                    BIOMEDICAL
-                    AI</span></a>
-            <div>
-                <a href="https://github.com/vaishnavak2001" target="_blank"
-                    style="color:var(--navy-deep); margin-left:1rem;"><i data-lucide="github"></i></a>
-                <a href="mailto:vaishnavak001@gmail.com" style="color:var(--navy-deep); margin-left:1rem;"><i
-                        data-lucide="mail"></i></a>
-            </div>
-        </nav>
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-bio">
-                <h1>Redefining Healthcare<br><span style="color:var(--teal-accent)">Through Intelligence</span></h1>
-                <p>
-                    I’m an Engineer on a mission to redefine the future of healthcare through AI, Data Science, and
-                    Biomedical Innovation.
-                    With a core academic foundation in Applied Electronics and Instrumentation Engineering, my passion
-                    lies
-                    in merging the physical world of medical devices with the digital intelligence of machine learning.
-                    <br><br>
-                    My experience ranges from hardware instrumentation (ECG, Ventilators) to advanced Deep Learning
-                    pipelines, offering a rare end-to-end view of the healthcare ecosystem.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn">View Research</a>
-                    <a href="{{ site.resume | relative_url }}" class="btn btn-outline"
-                        style="margin-left:1rem;">Download
-                        CV</a>
-                </div>
-            </div>
-            <div class="hero-image-container">
-                <!-- User requested path: images/profile.jpg -->
-                <img src="{{ '/images/profile.jpg' | relative_url }}"
-                    onerror="this.src='https://ui-avatars.com/api/?name=Vaishnav+AK&background=002147&color=fff&size=512'"
-                    alt="Vaishnav AK" class="hero-img">
-            </div>
-        </section>
-
-        <!-- Visualizations -->
-        <section class="viz-container">
-            <!-- Skills Radar -->
-            <div class="viz-box">
-                <h3 style="text-align:center; color:var(--navy-deep); margin-bottom:1rem;">Research Expertise</h3>
-                <canvas id="skillsRadar"></canvas>
-            </div>
-            <!-- D3 Network -->
-            <div class="viz-box" style="position:relative; overflow:hidden;">
-                <h3 style="text-align:center; color:var(--navy-deep); margin-bottom:1rem;">Tech Ecosystem</h3>
-                <div id="d3-graph" style="width:100%; height:300px;"></div>
-            </div>
-        </section>
-
-        <!-- Featured Research -->
-        <h2 class="section-title">Featured Research</h2>
-        <section class="publications-grid">
-            {% assign featured = site.data.research_data | where: "featured", true %}
-            {% for project in featured %}
-            <div class="journal-card" onclick="window.location.href='{{ project.github }}'">
-                <div class="journal-meta">{{ project.category }} • {{ project.year }}</div>
-                <div class="journal-title">{{ project.title }}</div>
-                <div class="journal-abstract">{{ project.abstract }}</div>
-                <div style="font-size:0.85rem; color:var(--teal-accent);">
-                    {% for tag in project.tags limit:3 %}#{{ tag }} {% endfor %}
-                </div>
-            </div>
-            {% endfor %}
-        </section>
-
-        <!-- Software Archive -->
-        <h2 class="section-title">Scientific Software Archive</h2>
-        <div class="archive-container">
-            <input type="text" id="archiveSearch" placeholder="Filter by keyword (e.g., Python, CNN)..."
-                style="width:100%; padding:1rem; margin-bottom:1rem; border:1px solid #ccc; font-family:var(--font-heading);">
-
-            <table class="archive-table">
-                <thead>
-                    <tr>
-                        <th>Project</th>
-                        <th>Research Area</th>
-                        <th>Tech Stack</th>
-                        <th>Link</th>
-                    </tr>
-                </thead>
-                <tbody id="archiveBody">
-                    {% assign all_projects = site.data.research_data %}
-                    {% for project in all_projects %}
-                    <tr class="archive-row">
-                        <td style="font-weight:600; color:var(--navy-deep);">{{ project.title }}</td>
-                        <td>{{ project.category }}</td>
-                        <td style="color:var(--text-muted); font-size:0.85rem;">{{ project.tags | join: ", " }}</td>
-                        <td><a href="{{ project.github }}" target="_blank"
-                                style="color:var(--teal-accent); text-decoration:none;">Code &nearr;</a></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-
-        <footer style="text-align:center; padding:3rem; background:var(--navy-deep); color:white; margin-top:4rem;">
-            <p style="opacity:0.8; font-size:0.9rem;">&copy; 2024 Vaishnav AK. Engineered for Biomedical Innovation.</p>
-            <p style="font-size:0.8rem; margin-top:0.5rem; opacity:0.5;">MIT Licensed Content • Hosted on GitHub Pages
-            </p>
-        </footer>
-
-        <!-- Scripts -->
-        <script>
-            lucide.createIcons();
-
-            // 1. Radar Chart
+        // 1. Radar Chart
+        try {
             const ctx = document.getElementById('skillsRadar').getContext('2d');
             new Chart(ctx, {
                 type: 'radar',
@@ -309,176 +182,176 @@
                     plugins: { legend: { display: false } }
                 }
             });
+        } catch (e) {
+            console.error("Radar Chart Error:", e);
+        }
 
-            // 2. D3 Force Graph (Dynamic Tech Ecosystem)
-            const projects = [
-                {% for project in site.data.research_data %}
-            { id: { { project.title | jsonify } }, group: 1, type: 'project' },
-            {% endfor %}
-        ];
-
-            // Extract and dedupe tags using a temporary JS Set
-            const rawTags = [
-                {% for project in site.data.research_data %}
-            {% for tag in project.tags %}
-            { { tag | jsonify } },
-            {% endfor %}
-            {% endfor %}
-        ];
-            const uniqueTags = [...new Set(rawTags)];
-
-            // Add Tech Nodes
-            uniqueTags.forEach(tag => {
-                if (tag) projects.push({ id: tag, group: 2, type: 'tech' });
-            });
-
-            // Create Links
-            const links = [];
+        // 2. D3 Force Graph (Dynamic Tech Ecosystem)
+        const projects = [
             {% for project in site.data.research_data %}
-            {% for tag in project.tags %}
-            links.push({ source: {{ project.title | jsonify }}, target: {{ tag | jsonify }} });
-            {% endfor %}
-            {% endfor %}
+        { id: { { project.title | jsonify } }, group: 1, type: 'project' },
+        {% endfor %}
+    ];
 
-            const container = document.getElementById('d3-graph');
-            const width = container.clientWidth || 800; // Fallback to 800 if 0
-            const height = 600;
+        // Extract and dedupe tags using a temporary JS Set
+        const rawTags = [
+            {% for project in site.data.research_data %}
+        {% for tag in project.tags %}
+        { { tag | jsonify } },
+        {% endfor %}
+        {% endfor %}
+    ];
+        const uniqueTags = [...new Set(rawTags)];
 
-            console.log("Graph Width:", width); // Debug
+        // Add Tech Nodes
+        uniqueTags.forEach(tag => {
+            if (tag) projects.push({ id: tag, group: 2, type: 'tech' });
+        });
 
-            // Remove existing SVG if any (but keep the button)
-            d3.select("#d3-graph svg").remove();
+        // Create Links
+        const links = [];
+        {% for project in site.data.research_data %}
+        {% for tag in project.tags %}
+        links.push({ source: {{ project.title | jsonify }}, target: {{ tag | jsonify }} });
+        {% endfor %}
+        {% endfor %}
 
-            const svg = d3.select("#d3-graph").append("svg")
-                .attr("width", width)
-                .attr("height", height)
-                .call(d3.zoom().on("zoom", (event) => {
-                    svg.attr("transform", event.transform);
-                }))
-                .append("g"); // Zoom group
+        const container = document.getElementById('d3-graph');
+        const width = container.clientWidth || 800;
+        const height = 600;
 
-            console.log("D3 Graph Loaded - Projects:", projects.length);
+        // Remove existing SVG if any (but keep the button)
+        d3.select("#d3-graph svg").remove();
 
-            const simulation = d3.forceSimulation(projects)
-                .force("link", d3.forceLink(links).id(d => d.id).distance(100))
-                .force("charge", d3.forceManyBody().strength(-250))
-                .force("center", d3.forceCenter(width / 2, height / 2))
-                .force("collide", d3.forceCollide(30));
+        const svg = d3.select("#d3-graph").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .call(d3.zoom().on("zoom", (event) => {
+                svg.selectAll("g").attr("transform", event.transform);
+            }))
+            .append("g");
 
-            // Restart simulation to ensure it runs
-            simulation.alpha(1).restart();
+        console.log("D3 Graph Loaded - Projects:", projects.length);
 
-            const link = svg.append("g")
-                .attr("stroke", "#999")
-                .attr("stroke-opacity", 0.4)
-                .selectAll("line")
-                .data(links)
-                .join("line");
+        const simulation = d3.forceSimulation(projects)
+            .force("link", d3.forceLink(links).id(d => d.id).distance(100))
+            .force("charge", d3.forceManyBody().strength(-250))
+            .force("center", d3.forceCenter(width / 2, height / 2))
+            .force("collide", d3.forceCollide(30));
 
-            const node = svg.append("g")
-                .attr("stroke", "#fff")
-                .attr("stroke-width", 1.5)
-                .selectAll("circle")
-                .data(projects)
-                .join("circle")
-                .attr("r", d => d.group === 1 ? 6 : 4)
-                .attr("fill", d => d.group === 1 ? "#002147" : "#008080")
-            // Zoom logic is now attached to SVG directly
+        // Restart simulation to ensure it runs
+        simulation.alpha(1).restart();
 
-            function resetZoom() {
-                d3.select("#d3-graph svg").transition().duration(750)
-                    .call(d3.zoom().transform, d3.zoomIdentity);
-            }
+        const link = svg.append("g")
+            .attr("stroke", "#999")
+            .attr("stroke-opacity", 0.4)
+            .selectAll("line")
+            .data(links)
+            .join("line");
 
-            // Highlight Connections Logic
-            function highlightConnections(d, isHover) {
-                const opacity = isHover ? 0.1 : 1;
-                const connectedIds = new Set();
+        const node = svg.append("g")
+            .attr("stroke", "#fff")
+            .attr("stroke-width", 1.5)
+            .selectAll("circle")
+            .data(projects)
+            .join("circle")
+            .attr("r", d => d.group === 1 ? 6 : 4)
+            .attr("fill", d => d.group === 1 ? "#002147" : "#008080");
 
-                if (isHover) {
-                    connectedIds.add(d.id);
-                    links.forEach(l => {
-                        if (l.source.id === d.id) connectedIds.add(l.target.id);
-                        if (l.target.id === d.id) connectedIds.add(l.source.id);
-                    });
-                }
+        function resetZoom() {
+            d3.select("#d3-graph svg").transition().duration(750)
+                .call(d3.zoom().transform, d3.zoomIdentity);
+        }
 
-                node.style('opacity', o => isHover ? (connectedIds.has(o.id) ? 1 : 0.1) : 0.9);
-                labels.style('opacity', o => isHover ? (connectedIds.has(o.id) ? 1 : 0.1) : 1);
-                link.style('opacity', l => isHover ? (connectedIds.has(l.source.id) && connectedIds.has(l.target.id) ? 1 : 0.1) : 0.4);
-            }
+        // Highlight Connections Logic
+        function highlightConnections(d, isHover) {
+            const opacity = isHover ? 0.1 : 1;
+            const connectedIds = new Set();
 
-            // Update Drag Behavior to use highlightConnections
-            node.call(d3.drag()
-                .on("start", (event, d) => {
-                    if (!event.active) simulation.alphaTarget(0.3).restart();
-                    d.fx = d.x;
-                    d.fy = d.y;
-                    highlightConnections(d, true);
-                })
-                .on("drag", (event, d) => {
-                    d.fx = event.x;
-                    d.fy = event.y;
-                })
-                .on("end", (event, d) => {
-                    if (!event.active) simulation.alphaTarget(0);
-                    d.fx = null;
-                    d.fy = null;
-                    highlightConnections(d, false);
-                })
-                .on("mouseover", (event, d) => highlightConnections(d, true))
-                .on("mouseout", (event, d) => highlightConnections(d, false))
-            );
-
-            node.append("title").text(d => d.id);
-
-            const labels = svg.append("g")
-                .selectAll("text")
-                .data(projects.filter(d => {
-                    if (d.group === 1) return true; // Show ALL projects
-                    const majorTech = ['CNN-LSTM', 'VGG16', 'ResNet', 'Transfer Learning', 'Medical Imaging',
-                        'Reinforcement Learning', 'PPO', 'RAG', 'LLMs', 'Deep Learning',
-                        'Python', 'Signal Processing', 'Medical AI'
-                    ];
-                    return majorTech.includes(d.id);
-                }))
-                .join("text")
-                .text(d => d.id)
-                .attr("text-anchor", "middle")
-                .attr("dy", d => d.group === 1 ? -10 : 10)
-                .style("font-size", d => d.group === 1 ? "10px" : "9px")
-                .style("font-weight", d => d.group === 1 ? "700" : "600")
-                .style("fill", d => d.group === 1 ? "#002147" : "#008080")
-                .style("pointer-events", "none")
-                .style("text-shadow", "1px 1px 2px white, -1px -1px 2px white");
-
-            simulation.on("tick", () => {
-                link
-                    .attr("x1", d => d.source.x)
-                    .attr("y1", d => d.source.y)
-                    .attr("x2", d => d.target.x)
-                    .attr("y2", d => d.target.y);
-
-                node
-                    .attr("cx", d => d.x)
-                    .attr("cy", d => d.y);
-
-                labels
-                    .attr("x", d => d.x)
-                    .attr("y", d => d.y);
-            });
-
-            // 3. Search Filter
-            document.getElementById('archiveSearch').addEventListener('keyup', function () {
-                let filter = this.value.toLowerCase();
-                let rows = document.querySelectorAll('.archive-row');
-
-                rows.forEach(row => {
-                    let text = row.textContent.toLowerCase();
-                    row.style.display = text.includes(filter) ? '' : 'none';
+            if (isHover) {
+                connectedIds.add(d.id);
+                links.forEach(l => {
+                    if (l.source.id === d.id) connectedIds.add(l.target.id);
+                    if (l.target.id === d.id) connectedIds.add(l.source.id);
                 });
-            });
-        </script>
-    </body>
+            }
 
-    </html>
+            node.style('opacity', o => isHover ? (connectedIds.has(o.id) ? 1 : 0.1) : 0.9);
+            labels.style('opacity', o => isHover ? (connectedIds.has(o.id) ? 1 : 0.1) : 1);
+            link.style('opacity', l => isHover ? (connectedIds.has(l.source.id) && connectedIds.has(l.target.id) ? 1 : 0.1) : 0.4);
+        }
+
+        // Update Drag Behavior
+        node.call(d3.drag()
+            .on("start", (event, d) => {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+                highlightConnections(d, true);
+            })
+            .on("drag", (event, d) => {
+                d.fx = event.x;
+                d.fy = event.y;
+            })
+            .on("end", (event, d) => {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+                highlightConnections(d, false);
+            })
+            .on("mouseover", (event, d) => highlightConnections(d, true))
+            .on("mouseout", (event, d) => highlightConnections(d, false))
+        );
+
+        node.append("title").text(d => d.id);
+
+        const labels = svg.append("g")
+            .selectAll("text")
+            .data(projects.filter(d => {
+                if (d.group === 1) return true; // Show ALL projects
+                const majorTech = ['CNN-LSTM', 'VGG16', 'ResNet', 'Transfer Learning', 'Medical Imaging',
+                    'Reinforcement Learning', 'PPO', 'RAG', 'LLMs', 'Deep Learning',
+                    'Python', 'Signal Processing', 'Medical AI'
+                ];
+                return majorTech.includes(d.id);
+            }))
+            .join("text")
+            .text(d => d.id)
+            .attr("text-anchor", "middle")
+            .attr("dy", d => d.group === 1 ? -10 : 10)
+            .style("font-size", d => d.group === 1 ? "10px" : "9px")
+            .style("font-weight", d => d.group === 1 ? "700" : "600")
+            .style("fill", d => d.group === 1 ? "#002147" : "#008080")
+            .style("pointer-events", "none")
+            .style("text-shadow", "1px 1px 2px white, -1px -1px 2px white");
+
+        simulation.on("tick", () => {
+            link
+                .attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
+
+            node
+                .attr("cx", d => d.x)
+                .attr("cy", d => d.y);
+
+            labels
+                .attr("x", d => d.x)
+                .attr("y", d => d.y);
+        });
+
+        // 3. Search Filter
+        document.getElementById('archiveSearch').addEventListener('keyup', function () {
+            let filter = this.value.toLowerCase();
+            let rows = document.querySelectorAll('.archive-row');
+
+            rows.forEach(row => {
+                let text = row.textContent.toLowerCase();
+                row.style.display = text.includes(filter) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>
