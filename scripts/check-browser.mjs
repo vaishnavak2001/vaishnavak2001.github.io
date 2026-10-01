@@ -9,6 +9,8 @@ assert.equal(identity.headers.get('x-portfolio-preview'), 'vaishnav-ak', 'The ta
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
 const errors = [];
 const report = [];
+const caseStudies = JSON.parse(fs.readFileSync('_data/case_studies.json', 'utf8'));
+const repositories = JSON.parse(fs.readFileSync('_data/repositories.json', 'utf8'));
 fs.mkdirSync('local_scratch/screenshots', { recursive: true });
 try {
   for (const [name, viewport] of Object.entries({ desktop: { width: 1440, height: 1000 }, mobile: { width: 390, height: 844 } })) {
@@ -16,7 +18,7 @@ try {
     const page = await context.newPage();
     page.on('pageerror', error => errors.push(`${name}: ${error.message}`));
     page.on('response', response => { if (response.status() >= 400 && response.url().startsWith(base)) errors.push(`${name}: ${response.status()} ${response.url()}`); });
-    for (const route of ['/', '/work/', '/work/support-agent/', '/lab/', '/about/', '/resume/', '/404.html']) {
+    for (const route of ['/', '/work/', '/work/support-agent/', '/work/datapilot/', '/work/enterprise-guild/', '/work/welltrack/', '/work/pneumonia-classification/', '/lab/', '/about/', '/resume/', '/404.html']) {
       await page.goto(base + route);
       await page.evaluate(() => document.fonts.ready);
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
@@ -27,6 +29,12 @@ try {
       errors.push(...serious.map(v => `${name} ${route}: ${v.id} ${JSON.stringify(v.nodes.map(n => n.target))}`));
       if (['/', '/work/', '/lab/', '/about/', '/resume/'].includes(route)) await page.screenshot({ path: `local_scratch/screenshots/${name}-${route === '/' ? 'home' : route.replaceAll('/', '')}.png`, fullPage: true });
       if (route === '/') await page.screenshot({ path: `local_scratch/screenshots/${name}-hero.png` });
+      if (route === '/work/') {
+        await page.screenshot({ path: `local_scratch/screenshots/${name}-work-top.png` });
+        await page.locator('#repositories').scrollIntoViewIfNeeded();
+        await page.screenshot({ path: `local_scratch/screenshots/${name}-repositories.png` });
+      }
+      if (route === '/work/datapilot/') await page.screenshot({ path: `local_scratch/screenshots/${name}-datapilot.png` });
     }
     await page.goto(base + '/');
     await page.getByRole('button', { name: 'Data', exact: true }).click();
@@ -41,9 +49,36 @@ try {
     }
     await page.goto(base + '/work/');
     await page.getByRole('button', { name: 'Personal', exact: true }).click();
-    assert.equal(await page.locator('.work-item:visible').count(), 2);
+    assert.equal(await page.locator('.work-item:visible').count(), caseStudies.filter(p => p.kind === 'Personal').length);
+    assert.equal(await page.locator('.repository-item:visible').count(), repositories.length);
     await page.getByRole('button', { name: 'All work' }).click();
-    assert.equal(await page.locator('.work-item:visible').count(), 9);
+    assert.equal(await page.locator('.work-item:visible').count(), caseStudies.length);
+    const search = page.getByRole('searchbox', { name: 'Find a project' });
+    await search.fill('  DATAPILOT  ');
+    assert.equal(await page.locator('.work-item:visible').count(), 1);
+    assert.equal(await page.locator('.repository-item:visible').count(), 1);
+    assert.match(await page.locator('.filter-status').textContent(), /1 case study · 1 repository/);
+    await page.getByRole('button', { name: 'Machine learning', exact: true }).click();
+    assert.equal(await page.locator('.work-empty').isVisible(), true);
+    await page.getByRole('button', { name: 'Clear filters' }).click();
+    assert.equal(await search.inputValue(), '');
+    assert.equal(await search.evaluate(el => el === document.activeElement), true);
+    await search.fill('  CNN computer vision  ');
+    assert.equal(await page.locator('.repository-item:visible').count(), 1);
+    await search.fill('not-a-real-project-xyz');
+    assert.equal(await page.locator('.work-empty').isVisible(), true);
+    const emptyResults = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+    errors.push(...emptyResults.violations.map(v => `${name} empty search: ${v.id}`));
+    // Collection shortcuts recover from a hidden destination.
+    await page.getByRole('link', { name: `GitHub collection ${repositories.length}` }).click();
+    assert.equal(await page.locator('.repository-item:visible').count(), repositories.length);
+    await page.getByRole('button', { name: 'Data systems', exact: true }).click();
+    assert.equal(await page.locator('#repositories').isVisible(), false);
+    assert.equal(await page.locator('.work-item:visible').count(), caseStudies.filter(p => p.category === 'Data systems').length);
+    await page.getByRole('button', { name: 'All work' }).click();
+    await search.fill('README only');
+    assert.equal(await page.locator('.repository-item:visible').count(), 3);
+    await page.getByRole('button', { name: 'Clear filters' }).click();
     await page.goto(base + '/lab/#support');
     const support = page.locator('#support');
     for (let i = 0; i < 4; i++) await support.getByRole('button', { name: 'Next step' }).click();
@@ -61,6 +96,10 @@ try {
   await page.goto(base + '/');
   assert.equal(await page.locator('#navigation').isVisible(), true);
   assert.equal(await page.locator('.scene-fallback').isVisible(), true);
+  await page.goto(base + '/work/');
+  assert.equal(await page.locator('.work-tools').isVisible(), false);
+  assert.equal(await page.locator('.work-item:visible').count(), caseStudies.length);
+  assert.equal(await page.locator('.repository-item:visible').count(), repositories.length);
   await page.goto(base + '/lab/');
   assert.equal(await page.locator('.static-steps[open]').count(), 4);
   assert.equal(await page.locator('.static-steps li:visible').count(), 20);

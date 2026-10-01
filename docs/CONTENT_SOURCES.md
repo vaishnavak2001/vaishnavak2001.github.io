@@ -26,7 +26,7 @@ Company systems are team projects at chargeMOD. The user confirmed the role "Con
 
 All four company directories are read-only references. No credentials, secret files, private configuration, operational logs, customer data, internal screenshots, or internal source code are to be incorporated. Use newly authored conceptual diagrams and fictional walkthrough examples. No requests are sent to company APIs.
 
-Some personal GitHub pages could not be retrieved during planning. Their older portfolio summaries are not sufficient evidence for a detailed current case study. Keep the GitHub profile link available; add more featured projects when their contents can be checked.
+The October 2026 follow-up reviewed all 38 public GitHub repositories and selected implementation files. `_data/repositories.json` now holds the complete public collection, with explicit application, prototype, notebook, learning, and README-only labels. Four new case studies cover DataPilot AI, Enterprise Guild, WellTrack AI, and Pneumonia Image Classification. See [the complete review and evidence inventory](GITHUB_REVIEW.md) for sources, exclusions, and the corrections to older portfolio summaries. Public source was inspected, not executed; do not convert documentation claims into independently measured outcomes.
 
 ## Visual concept
 

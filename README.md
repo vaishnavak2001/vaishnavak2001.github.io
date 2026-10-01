@@ -40,9 +40,11 @@ The check workflow runs a real Jekyll build and link/content checks on pull requ
 
 - `_data/portfolio.json`: biography, career, qualifications, contact links, and the default résumé path.
 - `_data/case_studies.json`: curated case studies, attribution, project diagrams, and evidence context. Each entry needs a matching `_work/<slug>.md` with `title`, `project`, and `description` front matter.
+- `_data/repositories.json`: the complete public GitHub collection, with descriptions, technologies, format labels, and optional case-study links. Work search matches titles, repository names, descriptions, and technologies locally, without an API request. Set `home_personal: true` on a case study to include it in the homepage’s personal-project selection.
 - `_data/walkthroughs.json`: fictional lab scenarios and step descriptions. These are visual explanations, with no company API or live AI connection.
 - `resume/Vaishnav_AK_DS_AI_ATS.pdf`: the public résumé. See [the Overleaf workflow](docs/RESUME_WORKFLOW.md) for source editing and publication.
 - [Content sources](docs/CONTENT_SOURCES.md) records provenance and the distinction between reported outcomes and design targets.
+- [GitHub review](docs/GITHUB_REVIEW.md) records the 38-repository inventory, sampled implementation evidence, and treatment of early concepts.
 
 Company projects are credited as team work at chargeMOD, with Vaishnav as a contributing AI engineer. Preserve outcome qualifications and do not add private operational details.
 

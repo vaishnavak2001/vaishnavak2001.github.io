@@ -2,8 +2,38 @@
 layout: portfolio
 title: Selected work
 permalink: /work/
-description: Team-built AI agents and data systems at chargeMOD, alongside personal machine-learning projects.
+description: Explore team-built AI systems, personal project case studies, and Vaishnav AK’s complete public GitHub collection.
 ---
-<section class="page-section work-index"><div class="page-heading"><h1>Ideas, into<br><em>operation.</em></h1><p>Team-built systems and personal explorations.<br>The problems, the decisions, and the work behind them.</p></div>
-<div class="project-filter" aria-label="Filter projects" hidden><button type="button" data-filter="all" aria-pressed="true">All work</button><button type="button" data-filter="AI agents" aria-pressed="false">AI agents</button><button type="button" data-filter="Machine learning" aria-pressed="false">Machine learning</button><button type="button" data-filter="Data systems" aria-pressed="false">Data systems</button><button type="button" data-filter="Personal" aria-pressed="false">Personal</button></div><p class="filter-status" role="status" hidden></p>
-<div class="work-grid">{% for project in site.data.case_studies %}<article class="work-item" data-category="{{ project.category }}" data-kind="{{ project.kind }}"><a class="visual-link" href="{{ '/work/' | append: project.slug | append: '/' | relative_url }}" aria-label="Read {{ project.title }}">{% include project-visual.html project=project %}</a><h2><a href="{{ '/work/' | append: project.slug | append: '/' | relative_url }}">{{ project.title }} {% include arrow.html %}</a></h2><div class="project-meta"><span>{{ project.category }}</span><span>{% if project.kind == 'Company' %}Team project · chargeMOD{% else %}Personal project{% endif %}</span></div><p>{{ project.summary }}</p></article>{% endfor %}</div><div class="archive-link"><p>More notebooks, experiments, and explorations.</p><a class="text-link" href="{{ site.data.portfolio.github }}">Browse my GitHub {% include arrow.html %}</a></div></section>
+<section class="page-section work-index">
+  <div class="page-heading"><h1>Ideas, into<br><em>operation.</em></h1><p>Team-built systems. Personal experiments.<br>From agents and data tools to the notebooks where it all started.</p></div>
+  <nav class="collection-nav" aria-label="Work collections"><a href="#case-studies">Case studies <span>{{ site.data.case_studies | size }}</span></a><a href="#repositories">GitHub collection <span>{{ site.data.repositories | size }}</span>{% include arrow.html %}</a></nav>
+  <div class="work-tools" hidden>
+    <div class="project-filter" role="group" aria-label="Filter projects">
+      <button type="button" data-filter="all" aria-pressed="true">All work</button><button type="button" data-filter="Personal" aria-pressed="false">Personal</button><button type="button" data-filter="AI agents" aria-pressed="false">AI agents</button><button type="button" data-filter="Machine learning" aria-pressed="false">Machine learning</button><button type="button" data-filter="Data systems" aria-pressed="false">Data systems</button><button type="button" data-filter="Web apps" aria-pressed="false">Web apps</button><button type="button" data-filter="Learning" aria-pressed="false">Learning</button>
+    </div>
+    <div class="project-search"><label for="project-search">Find a project</label><div class="search-field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="project-search" type="search" placeholder="Try RAG, Python, computer vision…" autocomplete="off" spellcheck="false" aria-controls="case-studies repositories"></div></div>
+    <div class="filter-summary"><p class="filter-status" role="status" aria-live="polite" aria-atomic="true"></p><button type="button" class="reset-filters" hidden>Clear filters</button></div>
+  </div>
+  <div class="work-empty" hidden><h2>No matching projects.</h2><p>Try a different keyword or clear the filters to explore the collection.</p></div>
+  <section id="case-studies" class="work-collection" aria-labelledby="case-studies-title">
+    <div class="collection-heading"><h2 id="case-studies-title">A closer <em>look.</em></h2><p>The problem, the approach, and the decisions behind each project.</p></div>
+    <div class="work-grid">{% for project in site.data.case_studies %}
+      <article class="work-item" data-category="{{ project.category }}" data-kind="{{ project.kind }}" data-search="{{ project.title | escape }} {{ project.summary | escape }} {{ project.technologies | join: ' ' | escape }} {{ project.organization | escape }}">
+        <a class="visual-link" href="{{ '/work/' | append: project.slug | append: '/' | relative_url }}" aria-label="Read {{ project.title | escape }}">{% include project-visual.html project=project %}</a>
+        <h3><a href="{{ '/work/' | append: project.slug | append: '/' | relative_url }}">{{ project.title }} {% include arrow.html %}</a></h3>
+        <div class="project-meta"><span>{{ project.category }}</span><span>{% if project.kind == 'Company' %}Team project · chargeMOD{% else %}Personal project{% endif %}</span></div><p>{{ project.summary }}</p>
+      </article>
+    {% endfor %}</div>
+  </section>
+  <section id="repositories" class="repository-collection work-collection" aria-labelledby="repositories-title">
+    <div class="collection-heading"><h2 id="repositories-title">Built from<br><em>curiosity.</em></h2><div><p>The full public collection: applications, experiments, learning notebooks, and early concepts.</p><p class="collection-note">Reviewed October 2026 · Select a title to explore the source on GitHub.</p></div></div>
+    <div class="repository-list">{% for project in site.data.repositories %}
+      <article class="repository-item" data-category="{{ project.category }}" data-kind="Personal" data-search="{{ project.title | escape }} {{ project.repo | escape }} {{ project.summary | escape }} {{ project.technologies | join: ' ' | escape }} {{ project.status | escape }}">
+        <div class="repository-copy"><h3><a href="{{ project.github }}">{{ project.title }}{% include arrow.html %}</a></h3><p>{{ project.summary }}</p>{% if project.case_study != '' %}<a class="repository-case" href="{{ '/work/' | append: project.case_study | append: '/' | relative_url }}">Read the case study {% include arrow.html %}</a>{% endif %}</div>
+        <ul class="repository-tech" aria-label="Technologies">{% for tech in project.technologies %}<li>{{ tech }}</li>{% endfor %}</ul>
+        <div class="repository-context"><span>{{ project.category }}</span><span class="repository-status{% if project.status == 'README only' %} is-concept{% endif %}">{{ project.status }}</span></div>
+      </article>
+    {% endfor %}</div>
+  </section>
+  <div class="archive-link"><p>Follow the next experiment.</p><a class="text-link" href="{{ site.data.portfolio.github }}">Find me on GitHub {% include arrow.html %}</a></div>
+</section>

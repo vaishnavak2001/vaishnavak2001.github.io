@@ -1,0 +1,759 @@
+[
+  {
+    "repo": "DataPilot-AI",
+    "title": "DataPilot AI",
+    "category": "AI agents",
+    "kind": "Personal",
+    "status": "Application",
+    "summary": "Ask questions of a CSV through a LangGraph SQL workflow, with error recovery, explanations, and Plotly charts.",
+    "technologies": [
+      "LangGraph",
+      "SQLite",
+      "Streamlit",
+      "Plotly"
+    ],
+    "github": "https://github.com/vaishnavak2001/DataPilot-AI",
+    "case_study": "datapilot",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "src/graph.py",
+      "src/database.py",
+      "src/agents.py",
+      "src/visualizer.py"
+    ]
+  },
+  {
+    "repo": "THE_GUILD_V3",
+    "title": "Enterprise Guild",
+    "category": "AI agents",
+    "kind": "Personal",
+    "status": "Prototype",
+    "summary": "Turn project requests into structured assignments using MCP budget and capacity tools, with a pause for human approval.",
+    "technologies": [
+      "Google ADK",
+      "FastMCP",
+      "SQLite"
+    ],
+    "github": "https://github.com/vaishnavak2001/THE_GUILD_V3",
+    "case_study": "enterprise-guild",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "enterprise-guild-mvp/app/agent.py",
+      "enterprise-guild-mvp/mcp_server.py"
+    ]
+  },
+  {
+    "repo": "Web3-Adventurer-s-Guild-MVP",
+    "title": "Web3 Adventurer’s Guild",
+    "category": "AI agents",
+    "kind": "Personal",
+    "status": "Prototype",
+    "summary": "Coordinate quests, check reputation, and prepare escrow payloads against a simulated local blockchain.",
+    "technologies": [
+      "Google ADK",
+      "FastMCP",
+      "SQLite"
+    ],
+    "github": "https://github.com/vaishnavak2001/Web3-Adventurer-s-Guild-MVP",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "web3-adventurers-guild/app/agent.py",
+      "web3-adventurers-guild/app/mcp_server.py"
+    ]
+  },
+  {
+    "repo": "chatbot_organization_website",
+    "title": "Organization Website Chatbot",
+    "category": "AI agents",
+    "kind": "Personal",
+    "status": "Application",
+    "summary": "An embeddable chat widget backed by query routing, hybrid retrieval, cross-encoder reranking, and streamed answers.",
+    "technologies": [
+      "FastAPI",
+      "ChromaDB",
+      "BM25",
+      "JavaScript"
+    ],
+    "github": "https://github.com/vaishnavak2001/chatbot_organization_website",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "app/core/orchestrator.py",
+      "app/core/retriever.py",
+      "app/core/reranker.py"
+    ]
+  },
+  {
+    "repo": "Venture-Analyst-Agent",
+    "title": "Venture Analyst",
+    "category": "AI agents",
+    "kind": "Personal",
+    "status": "Prototype",
+    "summary": "Extract pitch-deck claims, compare them with web search results, and assemble a reviewable investment memo.",
+    "technologies": [
+      "LangGraph",
+      "FAISS",
+      "Pydantic",
+      "Streamlit"
+    ],
+    "github": "https://github.com/vaishnavak2001/Venture-Analyst-Agent",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "app.py",
+      "src/agents.py",
+      "src/graph.py"
+    ]
+  },
+  {
+    "repo": "Multi-Agent-Researcher",
+    "title": "Multi-Agent Researcher",
+    "category": "AI agents",
+    "kind": "Personal",
+    "status": "Prototype",
+    "summary": "A researcher–writer workflow with web search and a conditional loop for revising draft content.",
+    "technologies": [
+      "LangGraph",
+      "LangChain",
+      "Streamlit"
+    ],
+    "github": "https://github.com/vaishnavak2001/Multi-Agent-Researcher",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "agent_graph.py",
+      "app.py"
+    ]
+  },
+  {
+    "repo": "Autonomous-Analyst-Agent",
+    "title": "Autonomous Analyst",
+    "category": "AI agents",
+    "kind": "Personal",
+    "status": "Prototype",
+    "summary": "Route questions between a Pandas data-analysis tool and web search inside a Streamlit chat interface.",
+    "technologies": [
+      "LangChain",
+      "Pandas",
+      "DuckDuckGo",
+      "Streamlit"
+    ],
+    "github": "https://github.com/vaishnavak2001/Autonomous-Analyst-Agent",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "agent_backend.py",
+      "app.py",
+      "evaluate.py"
+    ]
+  },
+  {
+    "repo": "career_agent",
+    "title": "Career Agent",
+    "category": "AI agents",
+    "kind": "Personal",
+    "status": "Prototype",
+    "summary": "Explore job matching, résumé analysis, cover-letter drafting, and application workflows through an agent service.",
+    "technologies": [
+      "Python",
+      "LangChain",
+      "FastAPI"
+    ],
+    "github": "https://github.com/vaishnavak2001/career_agent",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "app/agent/orchestrator.py",
+      "app/tools/match_scorer.py",
+      "app/tools/resume_builder.py"
+    ]
+  },
+  {
+    "repo": "restaurant-rag-agent",
+    "title": "Restaurant Knowledge Assistant",
+    "category": "AI agents",
+    "kind": "Personal",
+    "status": "Prototype",
+    "summary": "A restaurant-data question-answering prototype with a Gemini-backed query engine, web interface, and WebSocket endpoint.",
+    "technologies": [
+      "Python",
+      "Gemini",
+      "Next.js"
+    ],
+    "github": "https://github.com/vaishnavak2001/restaurant-rag-agent",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "backend/rag_engine.py",
+      "backend/voice_server.py"
+    ]
+  },
+  {
+    "repo": "Project_RAG_Chatbot",
+    "title": "DocChat AI",
+    "category": "AI agents",
+    "kind": "Personal",
+    "status": "Application",
+    "summary": "Upload PDFs, retrieve relevant passages with ChromaDB, and inspect the context behind a generated answer.",
+    "technologies": [
+      "LangChain",
+      "ChromaDB",
+      "Streamlit"
+    ],
+    "github": "https://github.com/vaishnavak2001/Project_RAG_Chatbot",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "app.py",
+      "ingest.py",
+      "rag.py"
+    ]
+  },
+  {
+    "repo": "capstone-project-the-agentops-guardian-5dgai",
+    "title": "AgentOps Guardian",
+    "category": "AI agents",
+    "kind": "Personal",
+    "status": "Notebook",
+    "summary": "An ADK capstone exploring agent auditing, a mock threat feed, filter testing, and a deployment-approval workflow.",
+    "technologies": [
+      "Google ADK",
+      "FastAPI",
+      "Python"
+    ],
+    "github": "https://github.com/vaishnavak2001/capstone-project-the-agentops-guardian-5dgai",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "capstone-project-the-agentops-guardian-5dgai.ipynb"
+    ]
+  },
+  {
+    "repo": "capstone-project-the-The-AI-Website-Creator-5dgai",
+    "title": "AI Website Creator",
+    "category": "AI agents",
+    "kind": "Personal",
+    "status": "Notebook",
+    "summary": "An ADK capstone coordinating website generation, HTML validation, review, and a publication-approval step.",
+    "technologies": [
+      "Google ADK",
+      "A2A",
+      "Python"
+    ],
+    "github": "https://github.com/vaishnavak2001/capstone-project-the-The-AI-Website-Creator-5dgai",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "Capstone Project 2  The AI Website Creator 3.ipynb"
+    ]
+  },
+  {
+    "repo": "ControlGym-mass-spring-damper",
+    "title": "ControlGym",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Experiment",
+    "summary": "Compare reinforcement learning and classical controllers on a mass–spring–damper simulation.",
+    "technologies": [
+      "Stable-Baselines3",
+      "PPO",
+      "PID",
+      "LQR"
+    ],
+    "github": "https://github.com/vaishnavak2001/ControlGym-mass-spring-damper",
+    "case_study": "controlgym",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "src/train_ppo_msd.py",
+      "controllers/classical_controllers.py",
+      "controllers/benchmark.py"
+    ]
+  },
+  {
+    "repo": "Welltrack-ai",
+    "title": "WellTrack AI",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Prototype",
+    "summary": "A wellness-tracking app with assessment history, charts, report exports, and separate risk-model experiments.",
+    "technologies": [
+      "Streamlit",
+      "SQLAlchemy",
+      "scikit-learn",
+      "Plotly"
+    ],
+    "github": "https://github.com/vaishnavak2001/Welltrack-ai",
+    "case_study": "welltrack",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "app.py",
+      "models/train_model.py",
+      "models/predict.py",
+      "app/notifications.py"
+    ]
+  },
+  {
+    "repo": "Diabetic-Retinopathy-Detection",
+    "title": "Diabetic Retinopathy Classification",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebook",
+    "summary": "Compare transfer-learning backbones for three-class retinal fundus image classification.",
+    "technologies": [
+      "TensorFlow",
+      "EfficientNet",
+      "DenseNet",
+      "MobileNet"
+    ],
+    "github": "https://github.com/vaishnavak2001/Diabetic-Retinopathy-Detection",
+    "case_study": "retinopathy-detection",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "Diabetic-Retinopathy-Detection-Google-Colab.ipynb",
+      "Diabetic-Retinopathy-Detection-Jypter-notebook.ipynb"
+    ]
+  },
+  {
+    "repo": "Pneumonia-chest-X-Ray-classification",
+    "title": "Pneumonia Image Classification",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebook",
+    "summary": "Explore chest X-ray classification with image augmentation and several pretrained convolutional networks.",
+    "technologies": [
+      "TensorFlow",
+      "VGG16",
+      "DenseNet",
+      "Inception"
+    ],
+    "github": "https://github.com/vaishnavak2001/Pneumonia-chest-X-Ray-classification",
+    "case_study": "pneumonia-classification",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "Pneumonia chest X-Ray classification-Jypter-notebook.ipynb",
+      "Pneumonia-chest-X-Ray-classification-Google-colab.ipynb"
+    ]
+  },
+  {
+    "repo": "ecg-classification-cnn-lstm",
+    "title": "ECG Classification & Digitization",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebooks",
+    "summary": "ECG research notebooks covering image-to-signal digitization, lead segmentation, and signal-validation experiments.",
+    "technologies": [
+      "OpenCV",
+      "PyTorch",
+      "SciPy",
+      "PhysioNet"
+    ],
+    "github": "https://github.com/vaishnavak2001/ecg-classification-cnn-lstm",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "physionet-cognitive-digitization-system-7-0.ipynb",
+      "physionet-ecg-digitization-guardian-ops-mas.ipynb"
+    ]
+  },
+  {
+    "repo": "skin-disorder-detection",
+    "title": "Skin Disorder Classification",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebook",
+    "summary": "Compare supervised classifiers on tabular clinical and histopathological features for skin-condition classification.",
+    "technologies": [
+      "scikit-learn",
+      "SVM",
+      "Random forest"
+    ],
+    "github": "https://github.com/vaishnavak2001/skin-disorder-detection",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "Project-Skin Disorder Detection.ipynb"
+    ]
+  },
+  {
+    "repo": "TrafSignDetc",
+    "title": "Traffic Sign Recognition",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebook",
+    "summary": "Train a convolutional image classifier with augmentation, early stopping, and evaluation code.",
+    "technologies": [
+      "TensorFlow",
+      "CNN",
+      "OpenCV"
+    ],
+    "github": "https://github.com/vaishnavak2001/TrafSignDetc",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "TrafSignDetc_final_complete.ipynb"
+    ]
+  },
+  {
+    "repo": "PRCP_1002_Handwritten_Digits_Recognition",
+    "title": "Handwritten Digit Recognition",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebook",
+    "summary": "Compare classical classifiers and a convolutional network on handwritten digit images.",
+    "technologies": [
+      "TensorFlow",
+      "scikit-learn",
+      "CNN"
+    ],
+    "github": "https://github.com/vaishnavak2001/PRCP_1002_Handwritten_Digits_Recognition",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "PRCP_1002_Handwritten_Digits_Recognition.ipynb"
+    ]
+  },
+  {
+    "repo": "CATS-DOGS",
+    "title": "Cats & Dogs Classification",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebooks",
+    "summary": "Image-classification experiments with convolutional layers, batch normalization, and data augmentation.",
+    "technologies": [
+      "Keras",
+      "CNN",
+      "Computer vision"
+    ],
+    "github": "https://github.com/vaishnavak2001/CATS-DOGS",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "PRAICP-1011_complete_using_jupyter.ipynb",
+      "PRAICP-1011_completeusingcolab.ipynb",
+      "cats&dogscomplete1usingcolab.ipynb"
+    ]
+  },
+  {
+    "repo": "GenderDetc_complete_using_colab",
+    "title": "Face Dataset Classification Study",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebook",
+    "summary": "A transfer-learning exercise predicting the binary labels supplied with a face-image dataset.",
+    "technologies": [
+      "Keras",
+      "VGG16",
+      "MobileNet"
+    ],
+    "github": "https://github.com/vaishnavak2001/GenderDetc_complete_using_colab",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "PRAICP-1001-GenderDetc_complete_using_colab.ipynb"
+    ]
+  },
+  {
+    "repo": "Bike-Rental-Prediction",
+    "title": "Bike Rental Prediction",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebooks",
+    "summary": "Compare regression, boosting, support-vector, and neural-network approaches to predicting rental demand.",
+    "technologies": [
+      "scikit-learn",
+      "XGBoost",
+      "Keras"
+    ],
+    "github": "https://github.com/vaishnavak2001/Bike-Rental-Prediction",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "PRCP-1018 - Bike Rental Prediction.ipynb",
+      "PROJECT-PRCP-1018 - Bike Rental Prediction.ipynb"
+    ]
+  },
+  {
+    "repo": "Car_Price_Prediction",
+    "title": "Car Price Prediction",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebook",
+    "summary": "Explore vehicle-price regression with random forests, feature analysis, and randomized parameter search.",
+    "technologies": [
+      "scikit-learn",
+      "Random forest",
+      "Pandas"
+    ],
+    "github": "https://github.com/vaishnavak2001/Car_Price_Prediction",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "Car_Price_Prediction.ipynb"
+    ]
+  },
+  {
+    "repo": "fifa_cluster",
+    "title": "FIFA Player Clustering",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebook",
+    "summary": "Explore player attributes through scaling, PCA, K-means, and DBSCAN clustering.",
+    "technologies": [
+      "PCA",
+      "K-means",
+      "DBSCAN"
+    ],
+    "github": "https://github.com/vaishnavak2001/fifa_cluster",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "PROJECT_1_PRCP_1004_Fifa20(final).ipynb"
+    ]
+  },
+  {
+    "repo": "IABAC_CDS_Project_2_INX_Future_Emp_Data_V1.6",
+    "title": "Employee Performance Analysis",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebooks",
+    "summary": "An IABAC project exploring employee-performance classification, preprocessing, and model comparison.",
+    "technologies": [
+      "scikit-learn",
+      "SMOTE",
+      "Grid search"
+    ],
+    "github": "https://github.com/vaishnavak2001/IABAC_CDS_Project_2_INX_Future_Emp_Data_V1.6",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "IABAC_CDS_PROJECT.ipynb",
+      "IABAC_CDS_PROJECT_FINAL.ipynb"
+    ]
+  },
+  {
+    "repo": "COMP1-TITANIC-",
+    "title": "Titanic Survival Prediction",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebook",
+    "summary": "A classification exercise with missing-value handling, categorical encoding, and multiple baseline models.",
+    "technologies": [
+      "scikit-learn",
+      "XGBoost",
+      "Pandas"
+    ],
+    "github": "https://github.com/vaishnavak2001/COMP1-TITANIC-",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "Titanic.ipynb"
+    ]
+  },
+  {
+    "repo": "Advertising_Sales_-_Linear_Regression_-",
+    "title": "Advertising & Sales Regression",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebook",
+    "summary": "Model the relationship between advertising spend and sales with exploratory analysis and linear regression.",
+    "technologies": [
+      "Pandas",
+      "scikit-learn",
+      "Linear regression"
+    ],
+    "github": "https://github.com/vaishnavak2001/Advertising_Sales_-_Linear_Regression_-",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "Advertising_Sales_(_Linear_Regression_).ipynb"
+    ]
+  },
+  {
+    "repo": "Admission_Prediction_-Linear_Regression-",
+    "title": "Graduate Admission Regression",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "Notebook",
+    "summary": "Explore an admissions dataset with linear models, polynomial features, and regularization.",
+    "technologies": [
+      "scikit-learn",
+      "Ridge",
+      "Lasso"
+    ],
+    "github": "https://github.com/vaishnavak2001/Admission_Prediction_-Linear_Regression-",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "Admission_Prediction(Linear_Regression).ipynb"
+    ]
+  },
+  {
+    "repo": "medtrack-ai",
+    "title": "MediForge AI",
+    "category": "Web apps",
+    "kind": "Personal",
+    "status": "Prototype",
+    "summary": "A medical-AI interface experiment with React, agent scaffolding, and a dummy-model export pipeline.",
+    "technologies": [
+      "React",
+      "Python",
+      "ONNX"
+    ],
+    "github": "https://github.com/vaishnavak2001/medtrack-ai",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "MediForge-v5-Free/src/App.jsx",
+      "MediForge-v5-Free/scripts/train_free.py"
+    ]
+  },
+  {
+    "repo": "Privacy-First-Skin-Lesion-Analyzer",
+    "title": "Browser Image Analysis",
+    "category": "Web apps",
+    "kind": "Personal",
+    "status": "Prototype",
+    "summary": "An image-upload interface using TensorFlow.js and a generic MobileNet model. An interface experiment, without a validated skin-lesion model.",
+    "technologies": [
+      "React",
+      "TensorFlow.js",
+      "MobileNet"
+    ],
+    "github": "https://github.com/vaishnavak2001/Privacy-First-Skin-Lesion-Analyzer",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "src/utils/analysis.js",
+      "src/hooks/useModel.js"
+    ]
+  },
+  {
+    "repo": "vaishnavak2001.github.io",
+    "title": "This Portfolio",
+    "category": "Web apps",
+    "kind": "Personal",
+    "status": "Website",
+    "summary": "A static portfolio with a canvas particle system, project case studies, interactive walkthroughs, and a résumé viewer.",
+    "technologies": [
+      "Jekyll",
+      "JavaScript",
+      "Canvas",
+      "CSS"
+    ],
+    "github": "https://github.com/vaishnavak2001/vaishnavak2001.github.io",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": []
+  },
+  {
+    "repo": "ai-bootcamp-",
+    "title": "AI Bootcamp Explorations",
+    "category": "Learning",
+    "kind": "Personal",
+    "status": "Learning collection",
+    "summary": "Python experiments connecting retrieval, web search, data-analysis tools, and agent graphs.",
+    "technologies": [
+      "LangChain",
+      "LangGraph",
+      "Streamlit"
+    ],
+    "github": "https://github.com/vaishnavak2001/ai-bootcamp-",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "agent_backend.py",
+      "agent_graph.py",
+      "app.py"
+    ]
+  },
+  {
+    "repo": "Data_science",
+    "title": "Data Science Notebooks",
+    "category": "Learning",
+    "kind": "Personal",
+    "status": "Learning collection",
+    "summary": "Practice notebooks spanning statistics, regression, classification, dimensionality reduction, and neural networks.",
+    "technologies": [
+      "Python",
+      "scikit-learn",
+      "Pandas"
+    ],
+    "github": "https://github.com/vaishnavak2001/Data_science",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "01_Linear Regression/Linear Regression-Python Implementation.ipynb",
+      "01_Linear Regression/Linear_Regression.ipynb",
+      "02_Logistic Regression/Python Implementation.ipynb"
+    ]
+  },
+  {
+    "repo": "Python",
+    "title": "Python Foundations",
+    "category": "Learning",
+    "kind": "Personal",
+    "status": "Learning collection",
+    "summary": "Python exercises and notebooks for NumPy, Pandas, data manipulation, and visualization.",
+    "technologies": [
+      "Python",
+      "NumPy",
+      "Pandas"
+    ],
+    "github": "https://github.com/vaishnavak2001/Python",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": [
+      "01-Introduction-Python.ipynb",
+      "ML.ipynb",
+      "Pandas/Data Manipulation-02.ipynb"
+    ]
+  },
+  {
+    "repo": "dronegym-rl-quadcopter-attitude",
+    "title": "DroneGym Concept",
+    "category": "Machine learning",
+    "kind": "Personal",
+    "status": "README only",
+    "summary": "A documented quadcopter-control idea; implementation files are not present in the public repository.",
+    "technologies": [
+      "Reinforcement learning",
+      "Control"
+    ],
+    "github": "https://github.com/vaishnavak2001/dronegym-rl-quadcopter-attitude",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": []
+  },
+  {
+    "repo": "Autonomous-Job-Application-Agent",
+    "title": "Job Application Agent Concept",
+    "category": "AI agents",
+    "kind": "Personal",
+    "status": "README only",
+    "summary": "An early job-application agent concept. The separate Career Agent repository contains implementation work.",
+    "technologies": [
+      "Agents",
+      "Career tools"
+    ],
+    "github": "https://github.com/vaishnavak2001/Autonomous-Job-Application-Agent",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": []
+  },
+  {
+    "repo": "anti-gravity-test1",
+    "title": "Anti-Gravity Experiment",
+    "category": "Learning",
+    "kind": "Personal",
+    "status": "README only",
+    "summary": "An exploratory repository containing a README, with no published implementation files.",
+    "technologies": [
+      "Exploration"
+    ],
+    "github": "https://github.com/vaishnavak2001/anti-gravity-test1",
+    "case_study": "",
+    "reviewed": "2026-10-02",
+    "sources": []
+  }
+]

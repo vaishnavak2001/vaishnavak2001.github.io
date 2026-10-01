@@ -33,4 +33,13 @@ for (const project of projects) {
   if (project.kind === 'Company' && !source.includes('Contributing AI engineer')) failures.push(`${project.slug}: attribution missing`);
 }
 assert.deepEqual(failures, [], failures.join('\n'));
+const repositories = JSON.parse(fs.readFileSync('_data/repositories.json', 'utf8'));
+const workPage = fs.readFileSync(path.join(root, 'work', 'index.html'), 'utf8');
+assert.equal(new Set(repositories.map(p => p.repo)).size, repositories.length, 'Duplicate repository entries');
+for (const repository of repositories) {
+  assert.equal(repository.github, `https://github.com/vaishnavak2001/${repository.repo}`);
+  assert.ok(workPage.includes(`href="${repository.github}"`), `Repository missing from Work: ${repository.repo}`);
+  if (repository.case_study) assert.ok(projects.some(p => p.slug === repository.case_study), `Missing linked case study: ${repository.repo}`);
+}
 console.log(`Checked ${html.length} HTML pages, local asset/link targets, case-study attribution, and evidence notes.`);
+console.log(`Verified ${repositories.length} unique public repository entries and their case-study links.`);

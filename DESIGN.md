@@ -182,6 +182,8 @@ The primary filled action uses ink on paper, compact 14px type, a matching 1px b
 
 Filters are 44px minimum-height pill buttons. Pressed filters invert to ink and paper; hover strengthens the border. Technology tags are quiet 11px text with individual bottom rules, not filled chips. Company attribution remains adjacent to project headings and summaries.
 
+The Work collection shares a keyword search and category filters across case studies and public repositories. Collection shortcuts link directly to each section. Search uses a labeled, transparent input with a fine bottom rule and an authored search SVG; the result count is a live status. Clear filters returns focus to the input. With JavaScript disabled, both complete collections remain visible. Repository rows use title/summary, technologies, and category/format columns on desktop, stacking on mobile; README-only concepts have a dashed format label. The homepage adds three personal-project links in open ruled rows.
+
 ### Project media and containers
 
 Projects on the homepage are open ruled rows; the index uses image-led entries. Their rounded media contains abstract diagrams. Default media uses `#dfe5d8` with `#2b4d40` drawing color, shifting to `#d2ddca` on hover. Forecast and pipeline illustrations have their own muted surface variations. Desktop media has a 310px minimum height, reducing on smaller screens; these diagram-specific colors are not additional global brand accents.
@@ -198,7 +200,7 @@ The hero headline enters over 1.3s using the shared ease; walkthrough details us
 
 ### Walkthrough and resume
 
-Walkthrough step controls use connected circular nodes with mint pressed states. Details sit below the sequence; explicit previous/next controls and a complete text transcript support linear reading. The dark scenario panel uses the media radius with `#1b2b24` fill. Resume actions use the shared action styles above a bordered PDF viewer and an HTML summary. No text-input component is present in the inspected system.
+Walkthrough step controls use connected circular nodes with mint pressed states. Details sit below the sequence; explicit previous/next controls and a complete text transcript support linear reading. The dark scenario panel uses the media radius with `#1b2b24` fill. Resume actions use the shared action styles above a bordered PDF viewer and an HTML summary.
 
 ## Do's and Don'ts
 

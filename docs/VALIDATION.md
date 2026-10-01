@@ -1,5 +1,17 @@
 # Validation record
 
+## Public project collection — 2026-10-02
+
+- Inventoried all 38 public repositories and compared them with the previous portfolio; reviewed README documentation, file trees, and selected implementation structure. Scope and project-specific evidence are recorded in `GITHUB_REVIEW.md`.
+- Real Jekyll 3.10.0 build passed for 19 pages. `npm test` passed local links/assets, all 13 case-study routes, preserved company attribution/evidence notes, and 38 unique repository entries with valid case-study mappings.
+- Chrome checked 11 routes at 1440×1000 and 390×844, including all four new case studies. All 22 route scans reported zero axe WCAG 2 A/AA and 2.1 AA violations, with no page errors or local resource failures.
+- Browser interactions passed: combined category/keyword search, case-insensitive matching, multiple search terms, empty results, reset and focus recovery, collection shortcuts after filtering, README-only filtering, and complete no-JavaScript collections. Existing navigation, walkthrough, reduced-motion state, and PDF-download checks passed.
+- Additional checks at 320px, 900px, and 1920px covered Home, Work, DataPilot, Enterprise Guild, and Pneumonia. Narrow-screen headline and grid overflow were corrected; the final checks passed on all 15 combinations. Mobile search uses 16px text and follows visual/keyboard order.
+- Desktop/mobile captures were reviewed for the Work index, repository rows, case-study diagrams, and homepage personal-project section. Final narrow-screen and tablet captures confirmed the responsive correction. JavaScript syntax and `git diff --check` passed.
+- No public project application was run as part of content research. No benchmark or clinical-validation claims were inferred from README text.
+
+## Original redesign
+
 The redesign was built and reviewed locally, then approved by the owner for finalization. This record describes the pre-publication checks; repository history and GitHub Pages deployment status record publication.
 
 ## Build and content
