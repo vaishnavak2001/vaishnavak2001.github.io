@@ -1,0 +1,15 @@
+<div class="project-visual visual-{{ include.project.slug }}" aria-hidden="true">
+  {% case include.project.slug %}
+  {% when 'support-agent' %}
+    <div class="support-diagram"><div class="diagram-question"><span class="tiny-orbit"></span><span>“A charger isn’t starting.”</span></div><span class="diagram-connector"></span><div class="diagram-tools"><span>Live tools</span><span>Knowledge retrieval</span></div><span class="diagram-connector"></span><div class="diagram-response"><span class="signal-dot"></span>Guided next step</div></div>
+    <div class="visual-caption"><span>Illustrative support flow</span><span>Question → response</span></div>
+  {% when 'client-analytics' %}
+    <div class="analytics-diagram"><span class="analytics-question">“How did energy use change?”</span><div class="analytics-scope"><span>Authorized scope</span><div class="analytics-query"><span>Prepared query</span><div class="analytics-bars"><i></i><i></i><i></i><i></i><i></i></div></div></div><span class="analytics-answer">A grounded analytical answer</span></div><div class="visual-caption"><span>Question → scoped query → answer</span></div>
+  {% when 'demand-forecasting' %}
+    <svg viewBox="0 0 600 250" fill="none"><path class="chart-guide" d="M20 50H580M20 125H580M20 200H580"/><path class="forecast-history" d="M20 190 50 165 80 180 110 100 140 145 170 130 200 160 230 75 260 95 290 60 320 105"/><path class="forecast-band" d="M320 105 365 40 410 65 450 20 495 65 550 30 580 35V125L550 100 495 130 450 90 410 135 365 100Z"/><path class="forecast-line" d="M320 105 365 70 410 100 450 55 495 95 550 65 580 80"/><path class="forecast-divider" d="M320 20V220"/></svg><div class="visual-caption"><span>Historical demand</span><span>Forecast →</span></div>
+  {% when 'cloud-data-pipeline' %}
+    <div class="pipeline-art"><div class="data-stack"><i></i><i></i><i></i></div><span class="pipeline-stream"></span><div class="data-stack refined"><i></i><i></i><i></i></div><span class="pipeline-stream"></span><div class="data-bars"><i></i><i></i><i></i><i></i></div></div><div class="visual-caption"><span>Raw transactions</span><span>Useful intelligence</span></div>
+  {% else %}
+    <div class="orbital-art"><i></i><i></i><i></i><span>{{ include.project.category }}</span></div><div class="visual-caption">{{ include.project.technologies | first }} <span>Systems, connected.</span></div>
+  {% endcase %}
+</div>

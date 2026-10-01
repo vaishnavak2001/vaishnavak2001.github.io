@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T20:58:50.142Z",
+  "title": "Design System: Vaishnav AK",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Warm paper",
+        "canonical": "#f1efe7",
+        "tonalRamp": [
+          "oklch(15% 0.0108 95.17)",
+          "oklch(26.43% 0.0108 95.17)",
+          "oklch(37.86% 0.0108 95.17)",
+          "oklch(49.29% 0.0108 95.17)",
+          "oklch(60.71% 0.0108 95.17)",
+          "oklch(72.14% 0.0108 95.17)",
+          "oklch(83.57% 0.0108 95.17)",
+          "oklch(95% 0.0108 95.17)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Green-black ink",
+        "canonical": "#152823",
+        "tonalRamp": [
+          "oklch(15% 0.0268 175.50)",
+          "oklch(26.43% 0.0268 175.50)",
+          "oklch(37.86% 0.0268 175.50)",
+          "oklch(49.29% 0.0268 175.50)",
+          "oklch(60.71% 0.0268 175.50)",
+          "oklch(72.14% 0.0268 175.50)",
+          "oklch(83.57% 0.0268 175.50)",
+          "oklch(95% 0.0268 175.50)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Secondary ink",
+        "canonical": "#596760",
+        "tonalRamp": [
+          "oklch(15% 0.0203 164.03)",
+          "oklch(26.43% 0.0203 164.03)",
+          "oklch(37.86% 0.0203 164.03)",
+          "oklch(49.29% 0.0203 164.03)",
+          "oklch(60.71% 0.0203 164.03)",
+          "oklch(72.14% 0.0203 164.03)",
+          "oklch(83.57% 0.0203 164.03)",
+          "oklch(95% 0.0203 164.03)"
+        ]
+      },
+      "dark": {
+        "role": "neutral",
+        "displayName": "Studio dark",
+        "canonical": "#101b19",
+        "tonalRamp": [
+          "oklch(15% 0.0163 182.16)",
+          "oklch(26.43% 0.0163 182.16)",
+          "oklch(37.86% 0.0163 182.16)",
+          "oklch(49.29% 0.0163 182.16)",
+          "oklch(60.71% 0.0163 182.16)",
+          "oklch(72.14% 0.0163 182.16)",
+          "oklch(83.57% 0.0163 182.16)",
+          "oklch(95% 0.0163 182.16)"
+        ]
+      },
+      "mint": {
+        "role": "primary",
+        "displayName": "Mint",
+        "canonical": "#c0eddb",
+        "tonalRamp": [
+          "oklch(15% 0.0525 168.85)",
+          "oklch(26.43% 0.0525 168.85)",
+          "oklch(37.86% 0.0525 168.85)",
+          "oklch(49.29% 0.0525 168.85)",
+          "oklch(60.71% 0.0525 168.85)",
+          "oklch(72.14% 0.0525 168.85)",
+          "oklch(83.57% 0.0525 168.85)",
+          "oklch(95% 0.0525 168.85)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Citron accent",
+        "canonical": "#d6ed8e",
+        "tonalRamp": [
+          "oklch(15% 0.1225 120.01)",
+          "oklch(26.43% 0.1225 120.01)",
+          "oklch(37.86% 0.1225 120.01)",
+          "oklch(49.29% 0.1225 120.01)",
+          "oklch(60.71% 0.1225 120.01)",
+          "oklch(72.14% 0.1225 120.01)",
+          "oklch(83.57% 0.1225 120.01)",
+          "oklch(95% 0.1225 120.01)"
+        ]
+      },
+      "light-muted": {
+        "role": "neutral",
+        "displayName": "Dark-surface secondary",
+        "canonical": "#aebfb6",
+        "tonalRamp": [
+          "oklch(15% 0.0225 162.90)",
+          "oklch(26.43% 0.0225 162.90)",
+          "oklch(37.86% 0.0225 162.90)",
+          "oklch(49.29% 0.0225 162.90)",
+          "oklch(60.71% 0.0225 162.90)",
+          "oklch(72.14% 0.0225 162.90)",
+          "oklch(83.57% 0.0225 162.90)",
+          "oklch(95% 0.0225 162.90)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Paper rule",
+        "canonical": "#c8cec4",
+        "tonalRamp": [
+          "oklch(15% 0.0151 132.49)",
+          "oklch(26.43% 0.0151 132.49)",
+          "oklch(37.86% 0.0151 132.49)",
+          "oklch(49.29% 0.0151 132.49)",
+          "oklch(60.71% 0.0151 132.49)",
+          "oklch(72.14% 0.0151 132.49)",
+          "oklch(83.57% 0.0151 132.49)",
+          "oklch(95% 0.0151 132.49)"
+        ]
+      },
+      "dark-line": {
+        "role": "neutral",
+        "displayName": "Studio rule",
+        "canonical": "#344740",
+        "tonalRamp": [
+          "oklch(15% 0.0268 170.22)",
+          "oklch(26.43% 0.0268 170.22)",
+          "oklch(37.86% 0.0268 170.22)",
+          "oklch(49.29% 0.0268 170.22)",
+          "oklch(60.71% 0.0268 170.22)",
+          "oklch(72.14% 0.0268 170.22)",
+          "oklch(83.57% 0.0268 170.22)",
+          "oklch(95% 0.0268 170.22)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Hero display",
+        "purpose": "Grotesk hero headline; responsive overrides documented in DESIGN.md."
+      },
+      "headline": {
+        "displayName": "Section headline",
+        "purpose": "Shared h2 role."
+      },
+      "title": {
+        "displayName": "Section title",
+        "purpose": "Shared h3 role."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading copy, with smaller component variants."
+      },
+      "label": {
+        "displayName": "Project metadata",
+        "purpose": "Category and team attribution adjacent to project headings."
+      },
+      "expressive": {
+        "displayName": "Expressive italic",
+        "purpose": "Instrument Serif emphasis within headings."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Shared navigation, arrow, diagram, and entrance easing."
+      },
+      {
+        "name": "hero-enter",
+        "value": "1.3s",
+        "purpose": "Clipped headline entrance when reduced motion is not requested."
+      },
+      {
+        "name": "detail-enter",
+        "value": ".5s",
+        "purpose": "Walkthrough detail entrance."
+      },
+      {
+        "name": "map-flow",
+        "value": "20s linear infinite",
+        "purpose": "Slow dashed lab path."
+      },
+      {
+        "name": "scene-morph",
+        "value": ".065 per rendered frame",
+        "purpose": "Point interpolation; immediate when paused."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "static geometry; no CSS animation or transition",
+        "purpose": "Initial scene pause and immediate selected shape changes."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile-max",
+        "value": "760px"
+      },
+      {
+        "name": "intermediate-max",
+        "value": "1100px"
+      },
+      {
+        "name": "wide-min",
+        "value": "1600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Filled resume action with its shipped hover and focus treatment.",
+      "html": "<a class=\"ds-primary ds-focus\" href=\"#resume\">Download PDF <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:24px;padding:14px 22px;background:var(--ink,#152823);color:var(--paper,#f1efe7);font-size:14px;border:1px solid var(--ink,#152823);text-decoration:none;transition:background .25s;font-family:var(--sans,Space,'Helvetica Neue',sans-serif);line-height:1.65;}.ds-primary svg{width:24px;height:24px}.ds-primary:hover{background:#315044}.ds-focus:focus-visible{outline:2px solid #49876b;outline-offset:6px}.ds-dark .ds-focus:focus-visible{outline-color:var(--accent,#d6ed8e)}@media(prefers-reduced-motion:reduce){.ds-focus,.ds-focus svg,.ds-nav a:after{transition:none!important}}"
+    },
+    {
+      "name": "Editorial text link",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "Underlined case-study link with a directional arrow.",
+      "html": "<a class=\"ds-text-link ds-focus\" href=\"#work\">Read the case study <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-text-link{display:inline-flex;align-items:center;gap:28px;min-height:44px;font-size:15px;color:var(--ink,#152823);border-bottom:1px solid currentColor;padding-bottom:3px;text-decoration:none;font-family:var(--sans,Space,'Helvetica Neue',sans-serif);line-height:1.65;}.ds-text-link svg{width:24px;height:24px;transition:transform .35s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-text-link:hover svg{transform:translateX(6px)}.ds-focus:focus-visible{outline:2px solid #49876b;outline-offset:6px}.ds-dark .ds-focus:focus-visible{outline-color:var(--accent,#d6ed8e)}@media(prefers-reduced-motion:reduce){.ds-focus,.ds-focus svg,.ds-nav a:after{transition:none!important}}"
+    },
+    {
+      "name": "Contact navigation link",
+      "kind": "button",
+      "refersTo": "contact-link",
+      "description": "Outlined contact action shown on the dark navigation surface.",
+      "html": "<div class=\"ds-dark ds-contact-surface\"><a class=\"ds-contact ds-focus\" href=\"mailto:hello@example.com\">Let's talk <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></a></div>",
+      "css": ".ds-contact-surface{background:var(--dark,#101b19);color:var(--paper,#f1efe7);padding:16px}.ds-contact{border:1px solid currentColor;padding:9px 16px;display:inline-flex;align-items:center;gap:20px;color:inherit;font-size:14px;text-decoration:none;font-family:var(--sans,Space,'Helvetica Neue',sans-serif);line-height:1.65;}.ds-contact svg{width:18px;height:24px}.ds-contact:hover{background:var(--mint,#c0eddb);color:var(--ink,#152823);border-color:var(--mint,#c0eddb)}.ds-focus:focus-visible{outline:2px solid #49876b;outline-offset:6px}.ds-dark .ds-focus:focus-visible{outline-color:var(--accent,#d6ed8e)}"
+    },
+    {
+      "name": "Project filter",
+      "kind": "chip",
+      "refersTo": "filter",
+      "description": "Normal and pressed filter states; the preview represents state without a runtime.",
+      "html": "<div class=\"ds-filters\"><button class=\"ds-filter ds-focus\" type=\"button\" aria-pressed=\"true\">All work</button><button class=\"ds-filter ds-focus\" type=\"button\" aria-pressed=\"false\">AI systems</button></div>",
+      "css": ".ds-filters{display:flex;flex-wrap:wrap;gap:10px}.ds-filter{min-height:44px;padding:8px 18px;border:1px solid var(--line,#c8cec4);border-radius:30px;font-size:13px;transition:background .2s;background:none;color:var(--ink,#152823);cursor:pointer;font-family:var(--sans,Space,'Helvetica Neue',sans-serif);line-height:1.65;}.ds-filter[aria-pressed=true]{background:var(--ink,#152823);color:var(--paper,#f1efe7);border-color:var(--ink,#152823)}.ds-filter:hover{border-color:var(--ink,#152823)}.ds-focus:focus-visible{outline:2px solid #49876b;outline-offset:6px}.ds-dark .ds-focus:focus-visible{outline-color:var(--accent,#d6ed8e)}@media(prefers-reduced-motion:reduce){.ds-focus,.ds-focus svg,.ds-nav a:after{transition:none!important}}"
+    },
+    {
+      "name": "Main navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Dark navigation links with hover and current-page underlines.",
+      "html": "<nav class=\"ds-nav ds-dark\" aria-label=\"Portfolio preview\"><a class=\"ds-focus\" href=\"#work\" aria-current=\"page\">Work</a><a class=\"ds-focus\" href=\"#lab\">Lab</a><a class=\"ds-focus\" href=\"#about\">About</a><a class=\"ds-focus\" href=\"#resume\">Resume</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:36px;font-size:14px;background:var(--dark,#101b19);color:var(--paper,#f1efe7);padding:16px;font-family:var(--sans,Space,'Helvetica Neue',sans-serif);line-height:1.65;}.ds-nav a{position:relative;padding:10px 0;color:inherit;text-decoration:none}.ds-nav a:after{content:'';position:absolute;bottom:5px;left:0;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-nav a:hover:after,.ds-nav a[aria-current]:after{transform:scaleX(1)}@media(max-width:760px){.ds-nav{gap:15px;flex-wrap:wrap;font-size:12px}}.ds-focus:focus-visible{outline:2px solid #49876b;outline-offset:6px}.ds-dark .ds-focus:focus-visible{outline-color:var(--accent,#d6ed8e)}@media(prefers-reduced-motion:reduce){.ds-focus,.ds-focus svg,.ds-nav a:after{transition:none!important}}"
+    },
+    {
+      "name": "Technology tags",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Quiet metadata with individual rules, with no invented interactive states.",
+      "html": "<ul class=\"ds-tags\" aria-label=\"Technologies\"><li>Python</li><li>Tool calling</li><li>Retrieval</li></ul>",
+      "css": ".ds-tags{display:flex;gap:8px 15px;flex-wrap:wrap;color:var(--muted,#596760);font-size:11px;margin:24px 0;padding:0;list-style:none;font-family:var(--sans,Space,'Helvetica Neue',sans-serif);line-height:1.65;}.ds-tags li{padding-bottom:3px;border-bottom:1px solid var(--line,#c8cec4)}"
+    },
+    {
+      "name": "Project media",
+      "kind": "card",
+      "refersTo": "project-media",
+      "description": "Rounded abstract orbital illustration inside an editorial project link.",
+      "html": "<a class=\"ds-media ds-focus\" href=\"#project\" aria-label=\"Explore conceptual system\"><div class=\"ds-visual\"><div class=\"ds-orbits\"><i></i><i></i><i></i><span>Context to action</span></div></div></a>",
+      "css": ".ds-media{display:block;overflow:hidden;border-radius:12px;text-decoration:none;font-family:var(--sans,Space,'Helvetica Neue',sans-serif);line-height:1.65;}.ds-visual{min-height:310px;position:relative;display:flex;flex-direction:column;justify-content:center;padding:34px;background:#dfe5d8;color:#2b4d40;overflow:hidden;transition:background .6s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-media:hover .ds-visual{background:#d2ddca}.ds-orbits{height:200px;display:grid;place-items:center;position:relative;margin-bottom:20px}.ds-orbits i{position:absolute;width:68%;height:90px;border:1px solid #6e9380;border-radius:50%;transform:rotate(-25deg);transition:transform .8s var(--ease,cubic-bezier(.16,1,.3,1))}.ds-orbits i:nth-child(2){transform:rotate(25deg)}.ds-orbits i:nth-child(3){transform:rotate(90deg)}.ds-orbits span{font-size:11px;background:#dfe5d8;position:relative;padding:8px 15px}.ds-media:hover .ds-orbits i:first-child{transform:rotate(-45deg)}.ds-media:hover .ds-orbits i:nth-child(2){transform:rotate(45deg)}.ds-focus:focus-visible{outline:2px solid #49876b;outline-offset:6px}.ds-dark .ds-focus:focus-visible{outline-color:var(--accent,#d6ed8e)}@media(prefers-reduced-motion:reduce){.ds-visual,.ds-orbits i{transition:none}}"
+    },
+    {
+      "name": "Walkthrough step",
+      "kind": "custom",
+      "refersTo": "walkthrough-step",
+      "description": "Connected circular step controls shown in resting and selected states.",
+      "html": "<div class=\"ds-step-surface ds-dark\"><button class=\"ds-step ds-focus\" type=\"button\" aria-pressed=\"true\"><span class=\"ds-step-dot\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></span>Retrieve context</button><button class=\"ds-step ds-focus\" type=\"button\" aria-pressed=\"false\"><span class=\"ds-step-dot\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></span>Ground the answer</button></div>",
+      "css": ".ds-step-surface{display:flex;gap:22px;background:var(--dark,#101b19);padding:24px}.ds-step{position:relative;z-index:1;text-align:left;padding:0;font-size:12px;color:var(--light-muted,#aebfb6);width:100%;min-height:86px;display:flex;flex-direction:column;gap:13px;border:0;background:none;cursor:pointer;font-family:var(--sans,Space,'Helvetica Neue',sans-serif);line-height:1.65;}.ds-step-dot{width:48px;height:48px;display:grid;place-items:center;border:1px solid #537963;border-radius:50%;background:var(--dark,#101b19);transition:background .4s,color .4s}.ds-step-dot svg{width:18px;height:18px}.ds-step[aria-pressed=true]{color:var(--mint,#c0eddb)}.ds-step[aria-pressed=true] .ds-step-dot{background:var(--mint,#c0eddb);color:var(--ink,#152823);border-color:var(--mint,#c0eddb)}.ds-focus:focus-visible{outline:2px solid #49876b;outline-offset:6px}.ds-dark .ds-focus:focus-visible{outline-color:var(--accent,#d6ed8e)}@media(prefers-reduced-motion:reduce){.ds-step-dot{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Spatial AI studio",
+    "overview": "A dark spatial AI studio connects to warm editorial reading surfaces. Large grotesk headlines, expressive italic serif words, mint geometry, and restrained citron active states make the work approachable while preserving a technical character. Borders and generous space give the narrative structure.\n\nThe accepted first concept establishes the dark hero, light work, and dark lab sequence. The user's request for more modern, attractive animation informs the denser procedural sculpture. Conventional links and readable project evidence remain central. Company work retains visible team attribution; conceptual diagrams and fictional lab scenarios must not suggest company screenshots or live connections.",
+    "keyCharacteristics": [
+      "Dark animated introduction, warm editorial work, dark walkthrough lab.",
+      "Self-hosted grotesk type with selective italic serif emphasis.",
+      "Ruled project layouts and diagrams that explain systems.",
+      "Optional motion with accessible static content and conventional navigation."
+    ],
+    "rules": [
+      {
+        "name": "The Surface Pairing Rule",
+        "body": "Use the matching foreground, secondary text, and rule colors for each surface; the dark surface swaps its muted and line roles together.",
+        "section": "colors"
+      },
+      {
+        "name": "The Expressive Word Rule",
+        "body": "Reserve Instrument Serif for emphasis within headings; keep body copy, navigation, metadata, and controls in Space Grotesk.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ruled Surface Rule",
+        "body": "Separate reading sections with tonal contrast and fine rules; preserve the flat editorial treatment of project content.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** retain the dark hero, light editorial work, and dark lab sequence.",
+      "**Do** keep team attribution and outcome context visible beside project evidence.",
+      "**Do** use self-hosted Space Grotesk and Instrument Serif in their established roles.",
+      "**Do** retain visible focus, conventional links, static fallback content, and reduced-motion behavior.",
+      "**Do** label conceptual diagrams and fictional walkthroughs honestly."
+    ],
+    "donts": [
+      "**Don't** introduce live AI, company connections, or game navigation into the portfolio.",
+      "**Don't** add scroll hijacking, forced loading sequences, custom cursors, or text hidden pending animation.",
+      "**Don't** replace editorial project rows with repeated dashboard cards or decorative shadows.",
+      "**Don't** treat generated mockup wording or incidental imagery as evidence of real work.",
+      "**Don't** represent the refinement mockup as a separately approved pixel specification."
+    ]
+  }
+}

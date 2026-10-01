@@ -1,0 +1,141 @@
+[
+  {
+    "slug": "support-agent", "title": "Customer Support AI Agent", "category": "AI agents", "kind": "Company", "organization": "chargeMOD", "role": "Contributing AI engineer", "featured": true,
+    "summary": "Helping support operators move from an EV charging issue to a grounded diagnosis and a guided next step.",
+    "technologies": ["Python", "Hybrid RAG", "LLM tool calling", "SSE"],
+    "problem": "Support teams need to combine live charger information with troubleshooting knowledge. A useful assistant must select the right tools, ground its answers in returned data, and ask focused questions when an issue is unclear.",
+    "contribution": "As part of the chargeMOD team, I contributed to the support platform described in my résumé: hybrid retrieval, live API validation, fuzzy charger-name resolution, and streamed responses across multiple reasoning paths.",
+    "architecture": ["Operator question", "Tool routing and validation", "Live context or hybrid retrieval", "Diagnosis or guided questions", "Streamed response"],
+    "decisions": [
+      {"title": "More than one path to an answer", "body": "The documented pipeline selects between direct diagnosis from logs, retrieval of troubleshooting procedures, and guided questioning. The response path follows the evidence available for the issue."},
+      {"title": "Combine keyword and semantic retrieval", "body": "BM25 and ChromaDB provide complementary retrieval signals, followed by cross-encoder reranking to select relevant troubleshooting material."},
+      {"title": "Ground operational details", "body": "Live tool responses validate identifiers and account details before they enter the answer context. The architecture separates model reasoning from the systems that execute actions."}
+    ],
+    "outcome": "My résumé reports approximately 50% lower average support resolution time for the team-built platform.",
+    "evidence_note": "Reported résumé outcome; the measurement period and evaluation dataset are not included in the supplied material. The diagram is a conceptual explanation, not an internal deployment map.",
+    "lab": "support"
+  },
+  {
+    "slug": "client-analytics", "title": "Conversational Analytics Agent", "category": "AI agents", "kind": "Company", "organization": "chargeMOD", "role": "Contributing AI engineer", "featured": true,
+    "summary": "Turning questions about charging operations into scoped analytics through predefined tools.",
+    "technologies": ["Python", "PostgreSQL", "Redis", "Tool calling"],
+    "problem": "Charging operators need answers about energy, sessions, and faults without repeatedly navigating dashboards. Natural-language access must still respect the user's authorized data scope.",
+    "contribution": "I contributed to the team's conversational analytics agent, including parameterized query functions, caching, pre-aggregation, reliability controls, and prompt-regression evaluation described in my résumé.",
+    "architecture": ["Authenticated question", "LLM tool selection", "Scoped query function", "Validated analytics result", "Readable answer"],
+    "decisions": [
+      {"title": "Predefined queries", "body": "The assistant selects from prepared, parameterized tools instead of generating arbitrary SQL. This keeps data access bounded and makes each query behavior testable."},
+      {"title": "Access scope belongs to the application", "body": "The application supplies authorized context to analytics tools. The model does not decide which customer's data it may access."},
+      {"title": "Responsiveness and evaluation", "body": "Redis caching and nightly pre-aggregation reduce repeated work. The résumé describes a 95% prompt-regression accuracy requirement as a deployment gate, not a universal accuracy claim."}
+    ],
+    "outcome": "The résumé describes the agent serving 1,700+ daily active users through 15–20 parameterized query functions.",
+    "evidence_note": "Usage and tool-count figures are reported in the supplied résumé. Local architecture documents describe evolving access-scoping implementations; this case study presents only the shared principle.",
+    "lab": "analytics"
+  },
+  {
+    "slug": "sales-agent", "title": "Sales & Feasibility AI Agent", "category": "AI agents", "kind": "Company", "organization": "chargeMOD", "role": "Contributing AI engineer", "featured": false,
+    "summary": "Connecting site analysis, financial calculations, and proposal creation for EV infrastructure.",
+    "technologies": ["Python", "Agent workflows", "Financial modeling", "Document generation"],
+    "problem": "Evaluating an EV charging site combines location context, market information, installation costs, operating costs, and financial projections. These inputs then need to become a coherent proposal.",
+    "contribution": "My résumé describes contributions to a sequential Site, Market, Financial, and Proposal Writer agent workflow, with Python tools handling geolocation, market metrics, and financial calculations.",
+    "architecture": ["Site and cost inputs", "Site and market analysis", "Deterministic calculations", "Proposal assembly", "Review and export"],
+    "decisions": [
+      {"title": "Calculate outside the language model", "body": "Financial calculations belong to deterministic tools. The language model coordinates the workflow and explains results instead of inventing financial values."},
+      {"title": "Make the output reviewable", "body": "Proposal creation turns analytical results into a document that a person can review. Current reference documentation also describes an editable presentation workflow."},
+      {"title": "Keep project versions distinct", "body": "The résumé describes a CrewAI-based workflow and PDF proposals. Newer documentation describes an evolved proposal studio with Word and PowerPoint output; those are project-level developments rather than additional individual ownership claims."}
+    ],
+    "outcome": "A team-built workflow that brings feasibility analysis and proposal preparation into one process.",
+    "evidence_note": "No independently measured conversion or time-saving metric was supplied. Descriptions distinguish the résumé version from the newer documented system.",
+    "lab": "sales"
+  },
+  {
+    "slug": "voice-agent", "title": "Voice Support Architecture", "category": "AI agents", "kind": "Company", "organization": "chargeMOD", "role": "Contributing AI engineer", "featured": false,
+    "summary": "A voice-oriented support design that separates conversational orchestration from reliable operational tools.",
+    "technologies": ["Python", "FastAPI", "Voice orchestration", "State machines"],
+    "problem": "A caller experiences latency differently from someone reading a chat window. Voice support needs short spoken responses, safe operational actions, and a clear way to handle slower work.",
+    "contribution": "I contributed as an AI engineer to this team project. This overview explains the documented architecture; the supplied résumé does not identify individual ownership of specific voice modules.",
+    "architecture": ["Spoken question", "Voice orchestrator", "Validated tool call", "Domain result", "Templated speech"],
+    "decisions": [
+      {"title": "Separate conversation from execution", "body": "A voice orchestrator manages the conversation while a layered tool service handles operational requests. Tool boundaries make responsibilities explicit."},
+      {"title": "Render critical facts into speech", "body": "Templates turn tool results into spoken responses for operational facts. Longer requests can return a pending state with a short spoken acknowledgement."},
+      {"title": "Explicit states for consequential actions", "body": "The server owns the confirmation sequence for actions. The conversational model follows that state instead of deciding whether required steps can be skipped."}
+    ],
+    "outcome": "The architecture is designed around a roughly 1.5-second voice-turn response budget.",
+    "evidence_note": "This is a documented design target, not a verified latency result or a claim of production deployment. The walkthrough uses a fictional scenario.",
+    "lab": "voice"
+  },
+  {
+    "slug": "demand-forecasting", "title": "Dynamic Tariff & Demand Forecasting", "category": "Machine learning", "kind": "Company", "organization": "chargeMOD", "role": "Contributing AI engineer", "featured": true,
+    "summary": "Connecting network demand forecasts to bounded pricing decisions at individual chargers.",
+    "technologies": ["XGBoost", "Random Forest", "Prophet", "KMeans"],
+    "problem": "Demand varies across locations and time. A pricing system needs to account for network trends and individual charger behavior while keeping adjustments within defined limits.",
+    "contribution": "I contributed to the nightly forecasting and pricing pipeline described in my résumé, including model selection, charger profiling, preprocessing, and bounded tariff adjustments.",
+    "architecture": ["Historical charging data", "Network demand forecast", "Charger activity profiles", "Energy estimation", "Bounded tariff adjustment"],
+    "decisions": [
+      {"title": "Model at two levels", "body": "Network-wide forecasts compare XGBoost, Random Forest, and Prophet. Per-charger decisions combine activity classification with log-space energy regression."},
+      {"title": "Represent different charging patterns", "body": "KMeans clusters 36-feature charger profiles. Outlier clipping and log transformation help handle skewed demand data."},
+      {"title": "Constrain the final decision", "body": "The résumé describes asymmetric sigmoid adjustments bounded between −6% and +12%. A model output becomes a pricing input within explicit limits."}
+    ],
+    "outcome": "The résumé reports approximately 10% revenue uplift alongside peak-hour load suppression.",
+    "evidence_note": "Reported résumé outcome; the supplied material does not include a measurement window or controlled attribution analysis."
+  },
+  {
+    "slug": "cloud-data-pipeline", "title": "Cloud Data Pipeline & Analytics", "category": "Data systems", "kind": "Company", "organization": "chargeMOD", "role": "Contributing AI engineer", "featured": true,
+    "summary": "A partitioned analytics pipeline connecting charging transactions to daily business reporting.",
+    "technologies": ["AWS Glue", "PySpark", "S3 / Parquet", "Athena", "Power BI"],
+    "problem": "Growing transaction volumes make repeated analytics queries expensive. A reporting pipeline also needs to handle late-arriving records, reruns, and unexpected data shapes.",
+    "contribution": "I contributed to the nightly ETL pipeline described in my résumé, including partitioned transformations, repeatable writes, late-data handling, and dashboard refreshes.",
+    "architecture": ["Transaction source", "Nightly PySpark transformation", "Partitioned Parquet in S3", "Athena queries", "Power BI reporting"],
+    "decisions": [
+      {"title": "Match storage to queries", "body": "Date-partitioned Parquet reduces the amount of data scanned by analytical queries. AWS Glue and PySpark handle the nightly transformation."},
+      {"title": "Design for reruns and late data", "body": "Idempotent partition overwrites make repeated processing predictable. A 48-hour lookback buffer incorporates recent late-arriving transactions."},
+      {"title": "Separate anomalous records", "body": "Schema-anomaly quarantine keeps unexpected records visible for follow-up while supporting the regular reporting process."}
+    ],
+    "outcome": "The résumé reports approximately 95% lower cloud query costs and 30% less ETL processing time, with 1M+ transactions processed nightly.",
+    "evidence_note": "Reported résumé outcomes; baseline workloads and billing evidence are not part of the supplied material."
+  },
+  {
+    "slug": "operational-analytics", "title": "Operational & Retention Analytics", "category": "Data systems", "kind": "Company", "organization": "chargeMOD", "role": "Contributing AI engineer", "featured": false,
+    "summary": "Making charger uptime and customer lifecycle changes visible to operational teams.",
+    "technologies": ["Python", "AWS Glue", "Lifecycle clustering", "Power BI"],
+    "problem": "Operations teams need to spot gaps in charger availability, while customer teams need to recognize changes in charging activity and organize follow-up.",
+    "contribution": "My résumé describes work on uptime batch processing, schema handling, churn detection, lifecycle clustering, calling-console support, and retention reporting as part of the team.",
+    "architecture": ["Operational activity", "Daily and monthly processing", "Uptime and lifecycle measures", "Area and customer views", "Human follow-up"],
+    "decisions": [
+      {"title": "Compute availability from activity gaps", "body": "Daily jobs account for AC/DC schema differences and configurable gap thresholds, with idempotent batch updates."},
+      {"title": "Track changes across customer lifecycles", "body": "Monthly energy-drop thresholds and rolling-percentile clustering organize users into five activity tiers."},
+      {"title": "Connect analytics to follow-up", "body": "A calling console, call-outcome records, and Power BI views support operational decisions and customer recovery work."}
+    ],
+    "outcome": "The résumé reports approximately 20% lower operational downtime in connection with the uptime-monitoring work.",
+    "evidence_note": "Reported résumé outcome. The supplied material does not establish a measured churn-reduction percentage."
+  },
+  {
+    "slug": "controlgym", "title": "ControlGym", "category": "Machine learning", "kind": "Personal", "organization": "Independent project", "role": "Personal project", "featured": false,
+    "summary": "Exploring reinforcement learning and classical control on a mass–spring–damper system.",
+    "technologies": ["Python", "Reinforcement learning", "Control theory", "Streamlit"],
+    "problem": "How do learned controllers compare with classical control when the system model changes or measurements become noisy? A simple physical system provides a repeatable setting for that question.",
+    "contribution": "This personal repository brings together controller implementations, benchmark scripts, system identification, and an interactive dashboard.",
+    "architecture": ["System parameters", "Controller selection", "Mass–spring–damper environment", "Simulation trajectory", "Evaluation plots"],
+    "decisions": [
+      {"title": "Compare multiple approaches", "body": "The repository documents PPO, SAC, and TD3 alongside PID, LQR, and MPC, with a hybrid RL/PD approach."},
+      {"title": "Explore robustness", "body": "Documented experiments include parameter variation, sensor noise, and impulse disturbances. These expose behavior beyond a single idealized setup."}
+    ],
+    "outcome": "A public environment for exploring controller behavior, benchmarking, and system identification.",
+    "evidence_note": "This summary is based on the public repository documentation. It does not claim that one controller universally outperforms another.",
+    "github": "https://github.com/vaishnavak2001/ControlGym-mass-spring-damper"
+  },
+  {
+    "slug": "retinopathy-detection", "title": "Diabetic Retinopathy Classification", "category": "Machine learning", "kind": "Personal", "organization": "Independent project", "role": "Personal project", "featured": false,
+    "summary": "Comparing deep-learning models for retinal fundus image classification.",
+    "technologies": ["Python", "Deep learning", "Computer vision", "Transfer learning"],
+    "problem": "Retinal images provide a practical setting for studying representation learning and multi-class image classification.",
+    "contribution": "This personal project explores multiple deep-learning architectures in published notebooks for classifying retinal fundus images.",
+    "architecture": ["Retinal image dataset", "Preprocessing", "Model training", "Three-class prediction", "Evaluation"],
+    "decisions": [
+      {"title": "Compare model families", "body": "The public project describes EfficientNet, VGG16, DenseNet, ResNet50, and MobileNetV2 experiments."},
+      {"title": "Define the classification task", "body": "The repository describes three categories: No DR, Mild DR, and Severe DR. The portfolio follows that public description rather than conflicting older summaries."}
+    ],
+    "outcome": "Public notebooks documenting a medical-image classification learning project.",
+    "evidence_note": "A research and learning project; no clinical deployment or diagnostic performance is claimed here. Older portfolio accuracy figures are omitted because their evaluation context has not been verified.",
+    "github": "https://github.com/vaishnavak2001/Diabetic-Retinopathy-Detection"
+  }
+]

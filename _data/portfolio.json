@@ -1,0 +1,35 @@
+{
+  "name": "Vaishnav AK",
+  "role": "Data Scientist & AI Engineer",
+  "tagline": "Building AI agents, predictive models, and data systems.",
+  "location": "Kerala, India",
+  "email": "vaishnavak001@gmail.com",
+  "github": "https://github.com/vaishnavak2001",
+  "linkedin": "https://www.linkedin.com/in/vaishnav-ak",
+  "resume": "/resume/Vaishnav_AK_DS_AI_ATS.pdf",
+  "biography": "I work at the intersection of machine learning, software, and real-world operations. At chargeMOD, I contribute to team-built AI agents and data systems for EV charging. My earlier experience in biomedical engineering shaped an interest in systems that connect digital intelligence to physical infrastructure.",
+  "experience": [
+    {"role": "Data Scientist and AI Engineer", "organization": "chargeMOD", "dates": "Mar 2026 — Present", "location": "Thiruvananthapuram, Kerala", "summary": "Contributing to team-built AI agents, forecasting, analytics, and cloud data pipelines for EV infrastructure."},
+    {"role": "Biomedical Engineer Trainee", "organization": "Aster Mother Hospital", "dates": "Nov 2024 — May 2025", "location": "Malappuram, India", "summary": "Supported installation, calibration, troubleshooting, and maintenance of medical devices in a hospital environment."},
+    {"role": "Data Science and AI Consultant Intern", "organization": "Rubixe", "dates": "Oct 2023 — Jun 2024", "location": "Bangalore, India", "summary": "Worked on AI proofs of concept, data preparation, feature engineering, and machine-learning models for retail and healthcare use cases."}
+  ],
+  "education": [
+    {"name": "B.Tech in Applied Electronics and Instrumentation", "organization": "Government Engineering College Kozhikode", "dates": "2019 — 2023"},
+    {"name": "Higher Secondary Education · Bio-Maths", "organization": "G.H.S.S. Vazhakkad", "dates": "2017 — 2019"}
+  ],
+  "certifications": [
+    {"name": "Certified Data Scientist", "organization": "IABAC", "date": "2025 — 2028"},
+    {"name": "AI Expert", "organization": "IABAC", "date": "2025"},
+    {"name": "Data Science Foundation", "organization": "IABAC", "date": "2024"},
+    {"name": "AI Expert · Professional Training", "organization": "DataMites", "date": "2024"},
+    {"name": "Certified Data Scientist · Professional Training", "organization": "DataMites", "date": "2023 — 2024"},
+    {"name": "Machine Learning", "organization": "Coursera", "date": "2023"},
+    {"name": "MATLAB Workshop", "organization": "GEC Kozhikode & E-CELL IIT Bombay", "date": "2021"},
+    {"name": "Python for Everybody", "organization": "Coursera", "date": "2020"}
+  ],
+  "expertise": [
+    {"title": "AI engineering", "items": "LLM tool calling, hybrid RAG, reranking, LangGraph, CrewAI, prompt evaluation"},
+    {"title": "Machine learning", "items": "XGBoost, scikit-learn, Prophet, TensorFlow, PyTorch, forecasting, computer vision"},
+    {"title": "Data systems", "items": "Python, SQL, PostgreSQL, Redis, AWS Glue, S3, Athena, PySpark, Power BI"}
+  ]
+}

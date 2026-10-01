@@ -1,0 +1,11 @@
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+node_modules/
+.tools/
+local_scratch/
+playwright-report/
+test-results/
+*.log

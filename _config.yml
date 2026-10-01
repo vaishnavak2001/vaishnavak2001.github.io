@@ -12,10 +12,13 @@ darkmode: false                  # true / false / never
 
 # Personal info
 name: Vaishnav AK
-title: Data Scientist & AI Enthusiast | Biomedical Engineer
+title: Vaishnav AK — Data Scientist & AI Engineer
+description: AI agents, predictive models, and data systems. Explore team-built engineering work and personal machine-learning projects by Vaishnav AK.
+url: https://vaishnavak2001.github.io
+baseurl: ""
 email: vaishnavak001@gmail.com
 website: https://github.com/vaishnavak2001
-resume: assets/Vaishnav_Ak_Resume.pdf
+resume: /resume/Vaishnav_AK_DS_AI_ATS.pdf
 
 # Social Links
 github_username: vaishnavak2001
@@ -189,11 +192,38 @@ content:
 footer_show_references: true
 
 # Build settings
-remote_theme: sproogen/resume-theme
+collections:
+  work:
+    output: true
+    permalink: /work/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: work
+    values:
+      layout: case-study
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+  - package.json
+  - package-lock.json
+  - scripts
+  - docs
+  - PRODUCT.md
+  - DESIGN.md
+  - README.md
+  - MISSION_COMPLETE.md
+  - PHASE_5_AUDIT_REPORT.md
+  - local_scratch
+  - test-results
+  - playwright-report
 
 sass:
   sass_dir: _sass
   style: compressed
 
-plugins:
-  - jekyll-seo-tag
+plugins: []

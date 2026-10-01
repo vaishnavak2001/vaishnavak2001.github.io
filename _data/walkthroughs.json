@@ -1,0 +1,30 @@
+[
+  {"id":"support","title":"From a fault to a next step.","project":"support-agent","summary":"Follow a support question through validation, retrieval, and a guided response.","scenario":"“The charger at Example Plaza is not starting. What should I check?”","steps":[
+    {"label":"Question","title":"Understand the request","body":"The fictional operator names a location and a symptom. The assistant first needs enough context to identify the charger and the kind of problem."},
+    {"label":"Validate","title":"Resolve the equipment","body":"A lookup tool would validate the charger against authorized operational data. In this illustration, Example Plaza is a fictional location; no lookup is performed."},
+    {"label":"Retrieve","title":"Find relevant procedures","body":"Keyword and semantic retrieval surface relevant troubleshooting material. Reranking helps prioritize passages related to the reported symptom."},
+    {"label":"Reason","title":"Choose the response path","body":"The available evidence determines whether to explain a known issue, suggest a documented check, or ask the operator a focused follow-up question."},
+    {"label":"Respond","title":"Offer a grounded next step","body":"The assistant would deliver a clear, contextual next step. Operational actions are handled through validated tools, not through an unsupported claim that an action succeeded."}
+  ]},
+  {"id":"analytics","title":"A question becomes an answer.","project":"client-analytics","summary":"See how natural-language analytics stays connected to bounded, scoped data access.","scenario":"“How did charging energy change at my locations last week?”","steps":[
+    {"label":"Question","title":"Identify the analytical intent","body":"The question asks for a time-based energy comparison. The application supplies the authorized user context and the assistant selects a suitable analytics tool."},
+    {"label":"Scope","title":"Apply the authorized scope","body":"Access boundaries come from the application session. The model cannot expand the request to another operator's locations."},
+    {"label":"Query","title":"Run a prepared query","body":"The selected tool uses a predefined, parameterized query. It does not execute model-generated SQL. This walkthrough does not connect to any database."},
+    {"label":"Check","title":"Check what came back","body":"A typed result makes the available fields and empty-data behavior explicit. Cached or pre-aggregated data can reduce repeated computation."},
+    {"label":"Explain","title":"Explain the result in context","body":"The final response describes the comparison supported by the returned data. Missing information should be acknowledged rather than filled with invented figures."}
+  ]},
+  {"id":"sales","title":"A location becomes a proposal.","project":"sales-agent","summary":"Explore the separation between analysis, deterministic calculations, and proposal writing.","scenario":"“Prepare a charging-site proposal for this example location and budget.”","steps":[
+    {"label":"Inputs","title":"Collect the site assumptions","body":"A site location and cost assumptions establish the task. In a real proposal, missing assumptions need to be requested before the analysis proceeds."},
+    {"label":"Analyze","title":"Build the site and market context","body":"Tools collect the inputs relevant to feasibility. The agent coordinates those tools and organizes the resulting evidence."},
+    {"label":"Calculate","title":"Keep financial math deterministic","body":"Python tools compute financial projections from explicit inputs. An LLM may explain the numbers, but does not invent the calculations."},
+    {"label":"Compose","title":"Assemble a coherent proposal","body":"The workflow turns the analysis into a structured document. The later documented system supports an editable proposal presentation."},
+    {"label":"Review","title":"Leave room for human judgment","body":"A person checks assumptions and the proposed output before using it. This example produces no financial recommendation or downloadable company proposal."}
+  ]},
+  {"id":"voice","title":"Built for a spoken conversation.","project":"voice-agent","summary":"Explore why voice support separates orchestration, operational tools, and speech rendering.","scenario":"“Can you help me understand why my charging session stopped?”","steps":[
+    {"label":"Listen","title":"Capture the spoken request","body":"A voice orchestrator manages speech input and the conversational turn. This walkthrough uses text only and does not access your microphone."},
+    {"label":"Route","title":"Select a bounded tool","body":"The orchestrator selects a tool suited to the question. Typed inputs and application-controlled context define the request boundary."},
+    {"label":"Execute","title":"Handle the operational work","body":"The tool service applies domain logic. Work that may take longer can return a pending state so the caller receives a short acknowledgement."},
+    {"label":"Render","title":"Turn facts into speech","body":"Templates render critical operational facts into spoken responses. This helps keep balances, tariffs, and other concrete values tied to tool results."},
+    {"label":"Continue","title":"Continue or hand off","body":"The conversation can ask for clarification or move toward human help. The roughly 1.5-second turn budget is a documented design target, not a measured result shown here."}
+  ]}
+]
